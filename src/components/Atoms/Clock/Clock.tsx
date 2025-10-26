@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from 'react';
 import '@/components/Atoms/Clock/Clock.scss';
+import * as React from "react";
 
 export interface ClockProps {
     /** What font color to use? */

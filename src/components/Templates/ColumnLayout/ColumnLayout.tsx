@@ -61,7 +61,7 @@ export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
     return (
         <section className={`section-column-layout ${backgroundType}`}>
             <div className=" section container">
-                <div className="row gx-5 gy-5">
+                <div className="row gx-4 gy-4">
                     {childArray.map((child, idx) => (
                         <div key={idx} className={cols[idx] ?? "col-12"}>
                             {child}

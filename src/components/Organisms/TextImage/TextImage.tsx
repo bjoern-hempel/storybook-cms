@@ -11,20 +11,17 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import components. */
-import {Button, type ButtonProps} from "@/components/Atoms/Button/Button.tsx";
-import {Title, type TitleProps} from "@/components/Atoms/Title/Title.tsx";
-import {Paragraph, type ParagraphProps} from "@/components/Atoms/Paragraph/Paragraph.tsx";
+import {Button} from "@/components/Atoms/Button/Button.tsx";
+import {Title} from "@/components/Atoms/Title/Title.tsx";
+import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
+import {ReactNode} from "react";
 
-export type TextBlockItem =
-    | { type: "Title"; props: TitleProps; }
-    | { type: "Paragraph"; props: ParagraphProps; }
-    | { type: "Button"; props: ButtonProps;
-};
+export type TextChildItem = Title | Paragraph | Button;
 
 export interface TextImageProps {
     /* Which content should be displayed? */
-    textContent: TextBlockItem[];
+    textChildren: TextChildItem[];
 
     /** What background type to use? */
     backgroundType?: 'dark'|'light';
@@ -37,7 +34,7 @@ export interface TextImageProps {
 }
 
 export const TextImage = ({
-    textContent,
+    textChildren,
     backgroundType = 'dark',
     imageAlignment = 'right',
     columnLayout = '66%:33%',
@@ -54,18 +51,9 @@ export const TextImage = ({
 
     const Text: React.FC = () => (
         <>
-            {textContent.map((block, index) => {
-                switch (block.type) {
-                    case "Title":
-                        return <Title key={index} {...block.props} />;
-                    case "Paragraph":
-                        return <Paragraph key={index} {...block.props} />;
-                    case "Button":
-                        return <Button key={index} {...block.props} />;
-                    default:
-                        return null;
-                }
-            })}
+            {textChildren.map((child, index) => (
+                <React.Fragment key={index}>{child as ReactNode}</React.Fragment>
+            ))}
         </>
     );
 
