@@ -1,0 +1,351 @@
+@use "sass:color";
+
+$clock-color-default: #333;
+$clock-color-red: #900;
+$clock-color-green: #090;
+$clock-color-blue: #009;
+$clock-font-size-small: 1rem;
+$clock-font-size-medium: 2rem;
+$clock-font-size-large: 3rem;
+$clock-padding-small: 0.5rem;
+$clock-padding-medium: 1rem;
+$clock-padding-large: 1.5rem;
+$clock-font-family: 'Arial, sans-serif';
+
+$clock-background-color-second: #fff;
+
+$size-1: 25%;
+$size-2: 75%;
+
+$clock-background-color-default: color.adjust($clock-color-default, $lightness: 75%);
+$clock-background-color-red: color.adjust($clock-color-red, $lightness: 65%);
+$clock-background-color-green: color.adjust($clock-color-green, $lightness: 64%);
+$clock-background-color-blue: color.adjust($clock-color-blue, $lightness: 65%);
+
+$clock-background-image-default: repeating-linear-gradient(45deg, $clock-background-color-default $size-1, transparent $size-1, transparent $size-2, $clock-background-color-default $size-2, $clock-background-color-default), repeating-linear-gradient(45deg, $clock-background-color-default $size-1, $clock-background-color-second $size-1, $clock-background-color-second $size-2, $clock-background-color-default $size-2, $clock-background-color-default);
+$clock-background-image-red: repeating-linear-gradient(45deg, $clock-background-color-red $size-1, transparent $size-1, transparent $size-2, $clock-background-color-red $size-2, $clock-background-color-red), repeating-linear-gradient(45deg, $clock-background-color-red $size-1, $clock-background-color-second $size-1, $clock-background-color-second $size-2, $clock-background-color-red $size-2, $clock-background-color-red);
+$clock-background-image-green: repeating-linear-gradient(45deg, $clock-background-color-green $size-1, transparent $size-1, transparent $size-2, $clock-background-color-green $size-2, $clock-background-color-green), repeating-linear-gradient(45deg, $clock-background-color-green $size-1, $clock-background-color-second $size-1, $clock-background-color-second $size-2, $clock-background-color-green $size-2, $clock-background-color-green);
+$clock-background-image-blue: repeating-linear-gradient(45deg, $clock-background-color-blue $size-1, transparent $size-1, transparent $size-2, $clock-background-color-blue $size-2, $clock-background-color-blue), repeating-linear-gradient(45deg, $clock-background-color-blue $size-1, $clock-background-color-second $size-1, $clock-background-color-second $size-2, $clock-background-color-blue $size-2, $clock-background-color-blue);
+
+.clock {
+    font-family: $clock-font-family;
+    font-size: $clock-font-size-medium;
+    text-align: center;
+    color: $clock-color-default;
+    border-color: $clock-color-default;
+
+    .tents {
+        font-size: 0.8em;
+    }
+
+    &:hover {
+        color: color.adjust($clock-color-default, $lightness: 15%)
+    }
+
+    &.small {
+        font-size: $clock-font-size-small;
+        padding: $clock-padding-small;
+    }
+
+    &.large {
+        font-size: $clock-font-size-large;
+        padding: $clock-padding-large;
+    }
+
+    &.red {
+        color: $clock-color-red;
+        border-color: $clock-color-red;
+
+        &:hover {
+            color: color.adjust($clock-color-red, $lightness: 15%)
+        }
+    }
+
+    &.green {
+        color: $clock-color-green;
+        border-color: $clock-color-green;
+
+        &:hover {
+            color: color.adjust($clock-color-green, $lightness: 15%)
+        }
+    }
+
+    &.blue {
+        color: $clock-color-blue;
+        border-color: $clock-color-blue;
+
+        &:hover {
+            color: color.adjust($clock-color-blue, $lightness: 15%)
+        }
+    }
+
+    &.with-border {
+        border-width: 1px;
+        border-style: solid;
+        padding: $clock-padding-medium;
+    }
+
+    .analog-clock {
+        font-size: 1px;
+        position: relative;
+        width: 200em;
+        height: 200em;
+        border: 0;
+        border-radius: 50%;
+        margin: 5em;
+        background-color: $clock-background-color-default;
+        background-image: $clock-background-image-default;
+        background-position: 0 0, 5em 5em;
+        background-size: 10em 10em;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: -5em;
+            left: -5em;
+            right: -5em;
+            bottom: -5em;
+            border: 5em solid $clock-color-default;
+            border-radius: 50%;
+            box-shadow: inset 1em 1em 1.5em rgba(0, 0, 0, 0.5), 1em 1em 1.5em rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .clock-face {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .point {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 10em;
+                height: 10em;
+                z-index: 5;
+
+                .point-marker {
+                    height: 100%;
+                    width: 100%;
+                    margin-left: -50%;
+                    margin-top: -50%;
+                    border-radius: 50%;
+                    background-color: $clock-color-default;
+                    box-shadow: 1em 1em 1.5em rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            .hand {
+                position: absolute;
+                left: 100em;
+                transform-origin: bottom;
+                transition: transform 0.25s cubic-bezier(.1,.68,.33,.85);
+
+                &.hour-hand {
+                    top: 40em;
+                    width: 10em;
+                    height: 60em;
+                    margin-left: -5em;
+                    background: #444;
+                    border-top-right-radius: 5em;
+                    border-top-left-radius: 5em;
+                    z-index: 2;
+                }
+
+                &.minute-hand {
+                    top: 15em;
+                    width: 6em;
+                    height: 85em;
+                    margin-left: -3em;
+                    background: #666;
+                    border-top-right-radius: 3em;
+                    border-top-left-radius: 3em;
+                    z-index: 3;
+                }
+
+                &.second-hand {
+                    top: 10em;
+                    width: 4em;
+                    height: 90em;
+                    margin-left: -2em;
+                    background: $clock-color-default;
+                    border-top-right-radius: 2em;
+                    border-top-left-radius: 2em;
+                    z-index: 4;
+                }
+            }
+
+            /* Hour marks. */
+            .mark {
+                position: absolute;
+                left: 100em;
+                top: 0;
+                width: 2em;
+                height: 100em;
+                margin-left: -1em;
+                transform-origin: bottom;
+
+                .mark-line {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: $clock-color-default;
+                    width: 2em;
+                    border-bottom-left-radius: 1em;
+                    border-bottom-right-radius: 1em;
+                    z-index: -1;
+                    box-shadow: 5px 5px 5px 0 color.adjust($clock-color-default, $lightness: 30%);
+                }
+
+                &.mark-long {
+                    .mark-line {
+                        height: 20em;
+                    }
+                }
+
+                &.mark-middle {
+                    .mark-line {
+                        height: 10em;
+                    }
+                }
+
+                &.mark-short {
+                    .mark-line {
+                        height: 5em;
+                    }
+                }
+            }
+        }
+
+        .display {
+            position: absolute;
+            top: 140em;
+            left: 50em;
+            right: 50em;
+            border: 1em solid $clock-color-default;
+            background-color: $clock-background-color-second;
+            //background-image: $clock-background-image-default;
+            border-radius: 5em;
+            color: $clock-color-default;
+            padding: 3em 2em 2em;
+            box-shadow: inset 1em 1em 1.5em rgba(0, 0, 0, 0.5);
+            z-index: 1;
+
+            .date-text {
+                font-size: 10em;
+                font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace;
+            }
+        }
+    }
+
+    &.red {
+        .analog-clock {
+            background-color: $clock-background-color-red;
+            background-image: $clock-background-image-red;
+
+            &::before {
+                border-color: $clock-color-red;
+            }
+            .clock-face {
+                .mark {
+                    .mark-line {
+                        background-color: $clock-color-red;
+                    }
+                }
+
+                .hand {
+                    &.second-hand {
+                        background: $clock-color-red;
+                    }
+                }
+
+                .point {
+                    .point-marker {
+                        background-color: $clock-color-red;
+                    }
+                }
+            }
+
+            .display {
+                border-color: $clock-color-red;
+                background-color: $clock-background-color-second;
+            }
+        }
+    }
+
+    &.green {
+        .analog-clock {
+            background-color: $clock-background-color-green;
+            background-image: $clock-background-image-green;
+
+            &::before {
+                border-color: $clock-color-green;
+            }
+            .clock-face {
+                .mark {
+                    .mark-line {
+                        background-color: $clock-color-green;
+                    }
+                }
+
+                .hand {
+                    &.second-hand {
+                        background: $clock-color-green;
+                    }
+                }
+
+                .point {
+                    .point-marker {
+                        background-color: $clock-color-green;
+                    }
+                }
+            }
+
+            .display {
+                border-color: $clock-color-green;
+                background-color: $clock-background-color-second;
+            }
+        }
+    }
+
+    &.blue {
+        .analog-clock {
+            background-color: $clock-background-color-blue;
+            background-image: $clock-background-image-blue;
+
+            &::before {
+                border-color: $clock-color-blue;
+            }
+            .clock-face {
+                .hand {
+                    &.second-hand {
+                        background: $clock-color-blue;
+                    }
+                }
+
+                .point {
+                    .point-marker {
+                        background-color: $clock-color-blue;
+                    }
+                }
+            }
+
+            .display {
+                border-color: $clock-color-blue;
+                background-color: $clock-background-color-second;
+            }
+        }
+    }
+
+    &.small {
+        .analog-clock {
+            font-size: 0.5px;
+        }
+    }
+
+    &.large {
+        .analog-clock {
+            font-size: 2px;
+        }
+    }
+}

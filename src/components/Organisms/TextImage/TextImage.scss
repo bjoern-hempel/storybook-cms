@@ -1,0 +1,13 @@
+@import "@/assets/css/_variables.scss";
+
+.section-text-image {
+    &.dark {
+        background: $background-dark;
+        color: $font-color-dark;
+    }
+
+    &.light {
+        background: $background-light;
+        color: $font-color-light;
+    }
+}

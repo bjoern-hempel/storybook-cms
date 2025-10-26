@@ -1,0 +1,28 @@
+@import "@/assets/css/_variables.scss";
+
+@font-face {
+    font-family: 'Inter';
+    src: url('@/assets/font/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('@/assets/font/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+body {
+    .section {
+        padding-top: $section-distance;
+        padding-bottom: $section-distance;
+    }
+}
