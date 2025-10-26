@@ -1,3 +1,5 @@
+import * as React from "react";
+
 /* Import assets. */
 import '@/assets/css/style.scss';
 import '@/components/Organisms/TextImage/TextImage.scss';
@@ -7,15 +9,22 @@ import TextImageImg from "@/assets/image/text-image.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import {Button} from "@/components/Atoms/Button/Button.tsx";
-import {Title} from "@/components/Atoms/Title/Title.tsx";
-import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
+
+/* Import components. */
+import {Button, type ButtonProps} from "@/components/Atoms/Button/Button.tsx";
+import {Title, type TitleProps} from "@/components/Atoms/Title/Title.tsx";
+import {Paragraph, type ParagraphProps} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
-import * as React from "react";
+
+export type TextBlockItem =
+    | { type: "Title"; props: TitleProps; }
+    | { type: "Paragraph"; props: ParagraphProps; }
+    | { type: "Button"; props: ButtonProps;
+};
 
 export interface TextImageProps {
-    /** Which title should be displayed? */
-    title: string;
+    /* Which content should be displayed? */
+    textContent: TextBlockItem[];
 
     /** What background type to use? */
     backgroundType?: 'dark'|'light';
@@ -28,7 +37,7 @@ export interface TextImageProps {
 }
 
 export const TextImage = ({
-    title,
+    textContent,
     backgroundType = 'dark',
     imageAlignment = 'right',
     columnLayout = '66%:33%',
@@ -45,37 +54,18 @@ export const TextImage = ({
 
     const Text: React.FC = () => (
         <>
-            <Title title={title} type="h2" className="fw-bold" alignment="left" />
-
-            <Paragraph text={`
-                            Der <strong>Digitale Zwilling</strong> ist das virtuelle Abbild eines
-                            realen Ortes – etwa eines Stadtteils, Gebäudes oder Energiesystems. Er
-                            verbindet reale Daten, Modelle und Simulationen zu einem lebendigen,
-                            interaktiven Erlebnis, das technische Zusammenhänge verständlich,
-                            anschaulich und beteiligungsfähig macht.
-                        `} alignment={`left`} />
-
-            <Paragraph text={`
-                            Hinter dem sichtbaren 3D-Modell steckt ein wissenschaftlich fundiertes
-                            digitales Modell, das physikalische Gegebenheiten unter pseudo­realen
-                            Bedingungen abbildet. So lassen sich Energieflüsse, Verbrauch,
-                            Steuerungsstrategien oder CO₂-Einsparpotenziale präzise simulieren –
-                            und gleichzeitig verständlich kommunizieren.
-                        `} alignment={`left`} />
-
-            <Paragraph text={`
-                            Komplexe Energiezukunft, einfach erklärt.
-                        `} alignment={`left`} className={`mb-4`} />
-
-            <Button
-                label="Kontaktieren Sie uns für mehr Informationen."
-                onClick={() => {
-                    document.getElementById('kontakt')?.scrollIntoView({
-                        behavior: 'smooth',
-                    });
-                }}
-                primary
-            />
+            {textContent.map((block, index) => {
+                switch (block.type) {
+                    case "Title":
+                        return <Title key={index} {...block.props} />;
+                    case "Paragraph":
+                        return <Paragraph key={index} {...block.props} />;
+                    case "Button":
+                        return <Button key={index} {...block.props} />;
+                    default:
+                        return null;
+                }
+            })}
         </>
     );
 

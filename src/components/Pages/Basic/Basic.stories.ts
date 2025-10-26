@@ -31,7 +31,59 @@ export const Default: Story = {
                 subtitle: 'Energie sichtbar machen. Zukunft verstehen. Gemeinsam gestalten.',
             },
             textImage: {
-                title: 'Was ist der Digitale Zwilling?',
+                textContent: [
+                    {
+                        type: "Title",
+                        props: {
+                            title: "Was ist der Digitale Zwilling?",
+                            type: "h2",
+                            className: "fw-bold",
+                            alignment: "left"
+                        }
+                    },
+                    {
+                        type: "Paragraph",
+                        props: {
+                            text: `
+                                Der <strong>Digitale Zwilling</strong> ist das virtuelle Abbild eines
+                                realen Ortes – etwa eines Stadtteils, Gebäudes oder Energiesystems. Er
+                                verbindet reale Daten, Modelle und Simulationen zu einem lebendigen,
+                                interaktiven Erlebnis, das technische Zusammenhänge verständlich,
+                                anschaulich und beteiligungsfähig macht.
+                            `,
+                            alignment: "left"
+                        }
+                    },
+                    {
+                        type: "Paragraph",
+                        props: {
+                            text: `
+                                Hinter dem sichtbaren 3D-Modell steckt ein wissenschaftlich fundiertes
+                                digitales Modell, das physikalische Gegebenheiten unter pseudo­realen
+                                Bedingungen abbildet. So lassen sich Energieflüsse, Verbrauch,
+                                Steuerungsstrategien oder CO₂-Einsparpotenziale präzise simulieren –
+                                und gleichzeitig verständlich kommunizieren.
+                            `,
+                            alignment: "left"
+                        }
+                    },
+                    {
+                        type: "Paragraph",
+                        props: {
+                            text: `Komplexe Energiezukunft, einfach erklärt.`,
+                            alignment: `left`,
+                            className: `mb-4`
+                        }
+                    },
+                    {
+                        type: "Button",
+                        props: {
+                            label: `Kontaktieren Sie uns für mehr Informationen.`,
+                            onClick: () => { fn() },
+                            primary: true,
+                        }
+                    }
+                ],
                 backgroundType: "dark",
                 columnLayout: "66%:33%",
                 imageAlignment: "right",
