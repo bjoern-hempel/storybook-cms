@@ -4,6 +4,7 @@ import * as React from "react";
 import {Header, type HeaderProps} from "@/components/Organisms/Header/Header";
 import {Hero, type HeroProps} from "@/components/Organisms/Hero/Hero.tsx";
 import {TextImage, type TextImageProps} from "@/components/Organisms/TextImage/TextImage.tsx";
+import {Content, type ContentProps} from "@/components/Organisms/Content/Content.tsx";
 
 /* Import assets. */
 import '@/components/Pages/Basic/Basic.scss';
@@ -18,17 +19,19 @@ export interface BasicProps {
         header: HeaderProps,
         hero: HeroProps,
         textImage: TextImageProps,
+        content1: ContentProps,
     };
 }
 
 export const Basic: React.FC<BasicProps> = ({
-    content: { header, hero, textImage },
+    content: { header, hero, textImage, content1 },
 }) => {
     return (
         <article>
             <Header {...header} />
             <Hero {...hero} />
             <TextImage {...textImage} />
+            <Content {...content1} />
         </article>
     );
 };

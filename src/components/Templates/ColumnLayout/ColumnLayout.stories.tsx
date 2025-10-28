@@ -21,6 +21,10 @@ const meta = {
             control: { type: 'radio' },
             table: { category: 'Design' },
         },
+        isContained: {
+            control: { type: 'boolean' },
+            table: { category: 'Design' },
+        }
     },
 } satisfies Meta<typeof ColumnLayout>;
 
@@ -39,19 +43,19 @@ sit amet.
 const children = [
     <>
         <Title title={`Title 1`} type={`h3`} />
-        <Paragraph text={`Text for paragraph 1. ${text}`} className={`mb-0`} />
+        <Paragraph text={`Text for paragraph 1. ${text}`} className={`mb-0 word-break text-hyphens`} />
     </>,
     <>
         <Title title={`Title 2`} type={`h3`} />
-        <Paragraph text={`Text for paragraph 2. ${text}`} className={`mb-0`} />
+        <Paragraph text={`Text for paragraph 2. ${text}`} className={`mb-0 word-break text-hyphens`} />
     </>,
     <>
         <Title title={`Title 3`} type={`h3`} />
-        <Paragraph text={`Text for paragraph 3. ${text}`} className={`mb-0`} />
+        <Paragraph text={`Text for paragraph 3. ${text}`} className={`mb-0 word-break text-hyphens`} />
     </>,
     <>
         <Title title={`Title 4`} type={`h3`} />
-        <Paragraph text={`Text for paragraph 4. ${text}`} className={`mb-0`} />
+        <Paragraph text={`Text for paragraph 4. ${text}`} className={`mb-0 word-break text-hyphens`} />
     </>,
 ];
 
@@ -59,6 +63,7 @@ export const OneColumn: Story = {
     args: {
         layout: "100%",
         backgroundType: "dark",
+        isContained: true,
         children: children
     },
 };
@@ -67,6 +72,7 @@ export const TwoColumns: Story = {
     args: {
         layout: "50%:50%",
         backgroundType: "dark",
+        isContained: true,
         children: children
     },
 };
@@ -75,6 +81,7 @@ export const TwoColumns_2to1: Story = {
     args: {
         layout: "66%:33%",
         backgroundType: "dark",
+        isContained: true,
         children: children
     },
 };
@@ -83,6 +90,7 @@ export const TwoColumns_1to2: Story = {
     args: {
         layout: "33%:66%",
         backgroundType: "dark",
+        isContained: true,
         children: children
     },
 };
@@ -91,6 +99,7 @@ export const ThreeColumns: Story = {
     args: {
         layout: "33%:33%:33%",
         backgroundType: "dark",
+        isContained: true,
         children: children
     },
 };
@@ -99,6 +108,7 @@ export const FourColumns: Story = {
     args: {
         layout: "25%:25%:25%:25%",
         backgroundType: "dark",
+        isContained: true,
         children: children
     },
 };

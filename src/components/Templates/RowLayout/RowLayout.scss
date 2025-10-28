@@ -1,0 +1,13 @@
+@import "../../../assets/css/variables";
+
+.section-row-layout {
+    &.dark {
+        background: $background-dark;
+        color: $font-color-dark;
+    }
+
+    &.light {
+        background: $background-light;
+        color: $font-color-light;
+    }
+}

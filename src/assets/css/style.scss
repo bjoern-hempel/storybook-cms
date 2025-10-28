@@ -25,4 +25,8 @@ body {
         padding-top: $section-distance;
         padding-bottom: $section-distance;
     }
+
+    .text-hyphens {
+        hyphens: auto;
+    }
 }

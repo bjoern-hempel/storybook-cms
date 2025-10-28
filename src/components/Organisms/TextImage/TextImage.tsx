@@ -16,6 +16,7 @@ import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 import {ReactNode} from "react";
+import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 
 export type TextChildItem = Title | Paragraph | Button;
 
@@ -24,7 +25,7 @@ export interface TextImageProps {
     textChildren: TextChildItem[];
 
     /** What background type to use? */
-    backgroundType?: 'dark'|'light';
+    backgroundType: 'dark'|'light';
 
     /** What is the direction of the image? */
     imageAlignment?: 'right'|'left';
@@ -59,7 +60,7 @@ export const TextImage = ({
 
     if (isImageLeft) {
         return (
-            <ColumnLayout layout={columnLayout} backgroundType={backgroundType}>
+            <ColumnLayout layout={columnLayout} backgroundType={backgroundType} isContained={true}>
                 <Image />
                 <Text />
             </ColumnLayout>
@@ -67,7 +68,7 @@ export const TextImage = ({
     }
 
     return (
-        <ColumnLayout layout={columnLayout} backgroundType={backgroundType}>
+        <ColumnLayout layout={columnLayout} backgroundType={backgroundType} isContained={true}>
             <Text />
             <Image />
         </ColumnLayout>
