@@ -5,7 +5,7 @@ import {fn} from 'storybook/test';
 import {Button} from '@/components/Atoms/Button/Button.tsx';
 
 const meta = {
-    title: 'Atom/Button',
+    title: 'Atoms/Button',
     component: Button,
     parameters: {
         layout: 'centered',

@@ -4,7 +4,7 @@ import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 
 const meta = {
-    title: 'Atom/Paragraph',
+    title: 'Atoms/Paragraph',
     component: Paragraph,
     parameters: {
         layout: 'fullscreen',

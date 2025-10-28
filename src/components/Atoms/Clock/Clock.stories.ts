@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Clock } from '@/components/Atoms/Clock/Clock';
 
 const meta: Meta<typeof Clock> = {
-    title: 'Atom/Clock',
+    title: 'Atoms/Clock',
     component: Clock,
     parameters: {
         layout: 'centered',
