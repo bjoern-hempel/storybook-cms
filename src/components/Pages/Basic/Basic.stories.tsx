@@ -50,25 +50,46 @@ export const Default: Story = {
             },
             textImage: {
                 textChildren: [
-                    <Title title={`Was ist der Digitale Zwilling?`} type={`h2`} classNames={``} alignment={`left`} />,
-                    <Paragraph text={`
-                        Der <strong>Digitale Zwilling</strong> ist das virtuelle Abbild eines
-                        realen Ortes – etwa eines Stadtteils, Gebäudes oder Energiesystems. Er
-                        verbindet reale Daten, Modelle und Simulationen zu einem lebendigen,
-                        interaktiven Erlebnis, das technische Zusammenhänge verständlich,
-                        anschaulich und beteiligungsfähig macht.
-                    `} alignment={`left`} classNames={`word-break text-hyphens`} />,
-                    <Paragraph text={`
-                        Hinter dem sichtbaren 3D-Modell steckt ein wissenschaftlich fundiertes
-                        digitales Modell, das physikalische Gegebenheiten unter pseudorealen
-                        Bedingungen abbildet. So lassen sich Energieflüsse, Verbrauch,
-                        Steuerungsstrategien oder CO₂-Einsparpotenziale präzise simulieren –
-                        und gleichzeitig verständlich kommunizieren.
-                    `} alignment={`left`} classNames={`word-break text-hyphens`} />,
-                    <Paragraph text={`
-                        Komplexe Energiezukunft, einfach erklärt.
-                    `} alignment={`left`} classNames={`mb-4 word-break text-hyphens`} />,
-                    <Button label={`Kontaktieren Sie uns für mehr Informationen.`} onClick={() => { fn() }} primary={true} />
+                    <Title
+                        title={`Was ist der Digitale Zwilling?`}
+                        type={`h2`}
+                        classNames={``}
+                        alignment={`left`}
+                    />,
+                    <Paragraph
+                        text={`
+                            Der <strong>Digitale Zwilling</strong> ist das virtuelle Abbild eines
+                            realen Ortes – etwa eines Stadtteils, Gebäudes oder Energiesystems. Er
+                            verbindet reale Daten, Modelle und Simulationen zu einem lebendigen,
+                            interaktiven Erlebnis, das technische Zusammenhänge verständlich,
+                            anschaulich und beteiligungsfähig macht.
+                        `}
+                        alignment={`left`}
+                        classNames={`word-break text-hyphens`}
+                    />,
+                    <Paragraph
+                        text={`
+                            Hinter dem sichtbaren 3D-Modell steckt ein wissenschaftlich fundiertes
+                            digitales Modell, das physikalische Gegebenheiten unter pseudorealen
+                            Bedingungen abbildet. So lassen sich Energieflüsse, Verbrauch,
+                            Steuerungsstrategien oder CO₂-Einsparpotenziale präzise simulieren –
+                            und gleichzeitig verständlich kommunizieren.
+                        `}
+                        alignment={`left`}
+                        classNames={`word-break text-hyphens`}
+                    />,
+                    <Paragraph
+                        text={`
+                            Komplexe Energiezukunft, einfach erklärt.
+                        `}
+                        alignment={`left`}
+                        classNames={`mb-4 word-break text-hyphens`}
+                    />,
+                    <Button
+                        label={`Kontaktieren Sie uns für mehr Informationen.`}
+                        onClick={() => { fn() }}
+                        primary={true}
+                    />
                 ],
                 backgroundType: "dark",
                 columnLayout: "66%:33%",
@@ -82,11 +103,15 @@ export const Default: Story = {
                         classNames={``}
                         alignment={`left`}
                     />,
-                    <Paragraph text={`
-                        Energiewende und Stadtentwicklung brauchen innovative Technologien, Verständnis für diese, sowie Transparenz
-                        und Akzeptanz innerhalb Entscheider- und Verbrauchergruppen. Der Digitale Zwilling macht sichtbar, wie Gebäude,
-                        Netze und Technologien zusammenwirken – und wie aus Daten greifbare Entscheidungen werden.
-                    `} alignment={`left`} classNames={`mb-4 word-break text-hyphens`} />,
+                    <Paragraph
+                        text={`
+                            Energiewende und Stadtentwicklung brauchen innovative Technologien, Verständnis für diese, sowie Transparenz
+                            und Akzeptanz innerhalb Entscheider- und Verbrauchergruppen. Der Digitale Zwilling macht sichtbar, wie Gebäude,
+                            Netze und Technologien zusammenwirken – und wie aus Daten greifbare Entscheidungen werden.
+                        `}
+                        alignment={`left`}
+                        classNames={`mb-4 word-break text-hyphens`}
+                    />,
                     <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:66%`}>
                         <Image />
                         <RowLayout backgroundType={`none`} isContained={false}>
@@ -126,6 +151,58 @@ export const Default: Story = {
                     </ColumnLayout>
                 ],
                 backgroundType: "light",
+            },
+            content2: {
+                textChildren: [
+                    <Title
+                        title={`Anwendungsbeispiel: Digitaler Zwilling Hosterwitz`}
+                        type={`h2`}
+                        classNames={``}
+                        alignment={`left`}
+                    />,
+                    <ColumnLayout backgroundType={`none`} isContained={false} layout={`50%:50%`}>
+                        <RowLayout backgroundType={`none`} isContained={false}>
+                            <Paragraph
+                                text={`
+                                    Der <strong>Digitale Zwilling Hosterwitz</strong> zeigt, wie sich ein reales
+                                    Energiequartier virtuell abbilden lässt: Ein digitaler Stadtteil, gespeist mit
+                                    echten Daten aus Photovoltaik, Wärmepumpen, Speichern und Verbrauchern.
+                                `}
+                            />
+                            <Paragraph
+                                text={`
+                                    Die Darstellung macht Energieflüsse sichtbar – live und verständlich:
+                                `}
+                            />
+                        </RowLayout>
+                        <RowLayout backgroundType={`none`} isContained={false}>
+                            <Paragraph
+                                text={`
+                                    Für Fachleute bietet der Zwilling die Möglichkeit, reale Szenarien zu berechnen
+                                    und zu simulieren. Für Bürgerinnen und Bürger wird er zum Erlebnisraum, in dem die
+                                    Energiewende sichtbar und greifbar wird.
+                                `}
+                            />
+                            <Paragraph
+                                text={`
+                                    Technik trifft Transparenz – und schafft Akzeptanz.
+                                `}
+                            />
+                            <Button
+                                label={`zur WiD Webdemo`}
+                                onClick={() => { fn() }}
+                                primary={true}
+                            />
+                        </RowLayout>
+                    </ColumnLayout>,
+                    <Title
+                        title={`Digitaler Zwilling Demo`}
+                        type={`h3`}
+                        classNames={``}
+                        alignment={`left`}
+                    />,
+                ],
+                backgroundType: "dark",
             }
         }
     }

@@ -20,12 +20,13 @@ export interface BasicProps {
         hero: HeroProps,
         textImage: TextImageProps,
         content1: ContentProps,
+        content2: ContentProps,
     };
 }
 
 /** `Basic` page */
 export const Basic: React.FC<BasicProps> = ({
-    content: { header, hero, textImage, content1 },
+    content: { header, hero, textImage, content1, content2 },
 }) => {
     return (
         <article>
@@ -33,6 +34,7 @@ export const Basic: React.FC<BasicProps> = ({
             <Hero {...hero} />
             <TextImage {...textImage} />
             <Content {...content1} />
+            <Content {...content2} />
         </article>
     );
 };
