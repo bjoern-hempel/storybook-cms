@@ -10,6 +10,8 @@ import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 import DtImg from "@/assets/image/dt.jpg";
+import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
+import {Table} from "@/components/Atoms/Table/Table.tsx";
 
 const meta = {
     title: 'Pages/Basic',
@@ -81,11 +83,31 @@ export const Default: Story = {
                     `} alignment={`left`} className={`mb-4 word-break text-hyphens`} />,
                     <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:66%`}>
                         <Image />
-                        <Paragraph text={`
-                            Energiewende und Stadtentwicklung brauchen innovative Technologien, Verständnis für diese, sowie Transparenz
-                            und Akzeptanz innerhalb Entscheider- und Verbrauchergruppen. Der Digitale Zwilling macht sichtbar, wie Gebäude,
-                            Netze und Technologien zusammenwirken – und wie aus Daten greifbare Entscheidungen werden.
-                        `} alignment={`left`} className={`mb-4 word-break text-hyphens`} />
+                        <Table headers={
+                            [
+                                "Zielgruppe",
+                                "Nutzen"
+                            ]
+                        } rows={
+                            [
+                                [
+                                    <strong>Kommunen & Stadtwerke</strong>,
+                                    "Anschauliche Darstellung von Energie- und Stadtentwicklungsprojekten."
+                                ],
+                                [
+                                    <strong>Wohnungsunternehmen</strong>,
+                                    "Visualisierung von Modernisierungsmaßnahmen."
+                                ],
+                                [
+                                    <strong>Bürgerinnen & Bürger</strong>,
+                                    "Verständnis lokaler Energieprojekte."
+                                ],
+                                [
+                                    <strong>Industrie & Forschung</strong>,
+                                    "Simulation, Analyse und Optimierung."
+                                ],
+                            ]
+                        } />
                     </ColumnLayout>
                 ],
                 backgroundType: "light",
