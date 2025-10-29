@@ -43,19 +43,19 @@ sit amet.
 const children = [
     <>
         <Title title={`Title 1`} type={`h3`} />
-        <Paragraph text={`Text for paragraph 1. ${text}`} className={`mb-0 word-break text-hyphens`} />
+        <Paragraph text={`Text for paragraph 1. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
     </>,
     <>
         <Title title={`Title 2`} type={`h3`} />
-        <Paragraph text={`Text for paragraph 2. ${text}`} className={`mb-0 word-break text-hyphens`} />
+        <Paragraph text={`Text for paragraph 2. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
     </>,
     <>
         <Title title={`Title 3`} type={`h3`} />
-        <Paragraph text={`Text for paragraph 3. ${text}`} className={`mb-0 word-break text-hyphens`} />
+        <Paragraph text={`Text for paragraph 3. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
     </>,
     <>
         <Title title={`Title 4`} type={`h3`} />
-        <Paragraph text={`Text for paragraph 4. ${text}`} className={`mb-0 word-break text-hyphens`} />
+        <Paragraph text={`Text for paragraph 4. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
     </>,
 ];
 

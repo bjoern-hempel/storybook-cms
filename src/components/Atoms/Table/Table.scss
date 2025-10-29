@@ -1,5 +1,9 @@
 @use "@/assets/css/variables" as *;
 
 .section-table {
-
+    .table-transparent {
+        th, td {
+            background-color: transparent;
+        }
+    }
 }

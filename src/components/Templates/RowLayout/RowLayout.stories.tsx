@@ -38,7 +38,7 @@ const text = `
 
 const children = [
     <Title title={`Title 1`} type={`h3`} />,
-    <Paragraph text={`Text for paragraph 1. ${text}`} className={`mb-0 word-break text-hyphens`} />
+    <Paragraph text={`Text for paragraph 1. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
 ];
 
 export const Default: Story = {

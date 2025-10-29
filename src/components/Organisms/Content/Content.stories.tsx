@@ -29,23 +29,23 @@ export default meta;
 type Story = StoryObj<typeof Content>;
 
 const textChildren: TextChildItem[] = [
-    <Title title={`Warum ein Digitaler Zwilling?`} type={`h2`} className={``} alignment={`left`} />,
+    <Title title={`Warum ein Digitaler Zwilling?`} type={`h2`} classNames={``} alignment={`left`} />,
     <Paragraph text={`
         Energiewende und Stadtentwicklung brauchen innovative Technologien, Verständnis für diese, sowie Transparenz
         und Akzeptanz innerhalb Entscheider- und Verbrauchergruppen. Der Digitale Zwilling macht sichtbar, wie Gebäude,
         Netze und Technologien zusammenwirken – und wie aus Daten greifbare Entscheidungen werden.
-    `} alignment={`left`} className={`mb-4 word-break text-hyphens`} />,
+    `} alignment={`left`} classNames={`mb-4 word-break text-hyphens`} />,
     <ColumnLayout layout={`50%:50%`} backgroundType={`none`} isContained={false}>
         <Paragraph text={`
             Energiewende und Stadtentwicklung brauchen innovative Technologien, Verständnis für diese, sowie Transparenz
             und Akzeptanz innerhalb Entscheider- und Verbrauchergruppen. Der Digitale Zwilling macht sichtbar, wie Gebäude,
             Netze und Technologien zusammenwirken – und wie aus Daten greifbare Entscheidungen werden.
-        `} alignment={`left`} className={`mb-4 word-break text-hyphens`} />
+        `} alignment={`left`} classNames={`mb-4 word-break text-hyphens`} />
         <Paragraph text={`
             Energiewende und Stadtentwicklung brauchen innovative Technologien, Verständnis für diese, sowie Transparenz
             und Akzeptanz innerhalb Entscheider- und Verbrauchergruppen. Der Digitale Zwilling macht sichtbar, wie Gebäude,
             Netze und Technologien zusammenwirken – und wie aus Daten greifbare Entscheidungen werden.
-        `} alignment={`left`} className={`mb-4 word-break text-hyphens`} />
+        `} alignment={`left`} classNames={`mb-4 word-break text-hyphens`} />
     </ColumnLayout>
 ];
 

@@ -23,7 +23,7 @@ const meta = {
             control: { type: 'radio' },
             table: { category: 'Design' },
         },
-        className: {
+        classNames: {
             control: { type: 'text' },
             table: { category: 'Design' },
         },

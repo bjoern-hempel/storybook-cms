@@ -9,37 +9,52 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 /* Import styles. */
 import '@/components/Atoms/Button/Button.scss';
 
+/* Import types. */
+import type {TypeClassNames} from "@/utils/classNames.ts";
+
+/* Import utils. */
+import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
+
+/* Import constants. */
+import {MARGIN_CLASS_PARAGRAPH} from "@/utils/margins.ts";
+
 export interface ParagraphProps {
     /** Text contents */
     text: string;
 
     /** Which alignment should be used? */
-    alignment?: 'left' | 'center' | 'right';
+    alignment?: "left" | "center" | "right";
 
-    /** Which class name should be added? */
-    className?: string;
+    /** Additional class names */
+    classNames?: TypeClassNames;
 }
 
 const alignmentMap = {
-    left: 'text-start',
-    center: 'text-center',
-    right: 'text-end',
+    left: "text-start",
+    center: "text-center",
+    right: "text-end",
 } as const;
 
 /** Primary UI component for user interaction */
 export const Paragraph = ({
     text,
-    alignment = 'left',
-    className = '',
+    alignment = "left",
+    classNames = "",
     ...props
 }: ParagraphProps) => {
-    const alignmentClass = alignmentMap[alignment] ?? 'text-start';
-    const hasMarginClass = /\bmb-\d+\b/.test(className ?? '');
-    const marginClass = hasMarginClass ? "" : "mb-3";
+    const alignmentClass = alignmentMap[alignment] ?? "text-start";
+    const marginClass = applyMarginClass(MARGIN_CLASS_PARAGRAPH, classNames);
+
+    const finalClasses = [
+        "section-title",
+        alignmentClass,
+        marginClass,
+        ...normalizeClassNames(classNames),
+    ].filter(Boolean).join(" ");
 
     return (
         <p
-            className={`section-title ${marginClass} ${alignmentClass} ${className}`}
+            className={finalClasses}
             dangerouslySetInnerHTML={{ __html: text }}
             {...props}
         />

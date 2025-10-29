@@ -38,24 +38,24 @@ export default meta;
 type Story = StoryObj<typeof TextImage>;
 
 const textChildren: TextChildItem[] = [
-    <Title title={`Was ist der Digitale Zwilling?`} type={`h2`} className={`fw-bold`} alignment={`left`} />,
+    <Title title={`Was ist der Digitale Zwilling?`} type={`h2`} classNames={`fw-bold`} alignment={`left`} />,
     <Paragraph text={`
         Der <strong>Digitale Zwilling</strong> ist das virtuelle Abbild eines
         realen Ortes – etwa eines Stadtteils, Gebäudes oder Energiesystems. Er
         verbindet reale Daten, Modelle und Simulationen zu einem lebendigen,
         interaktiven Erlebnis, das technische Zusammenhänge verständlich,
         anschaulich und beteiligungsfähig macht.
-    `} alignment={`left`} className={`word-break text-hyphens`} />,
+    `} alignment={`left`} classNames={`word-break text-hyphens`} />,
     <Paragraph text={`
         Hinter dem sichtbaren 3D-Modell steckt ein wissenschaftlich fundiertes
         digitales Modell, das physikalische Gegebenheiten unter pseudo realen
         Bedingungen abbildet. So lassen sich Energieflüsse, Verbrauch,
         Steuerungsstrategien oder CO₂-Einsparpotenziale präzise simulieren –
         und gleichzeitig verständlich kommunizieren.
-    `} alignment={`left`} className={`word-break text-hyphens`} />,
+    `} alignment={`left`} classNames={`word-break text-hyphens`} />,
     <Paragraph text={`
         Komplexe Energiezukunft, einfach erklärt.
-    `} alignment={`left`} className={`mb-4 word-break text-hyphens`} />,
+    `} alignment={`left`} classNames={`mb-4 word-break text-hyphens`} />,
     <Button label={`Kontaktieren Sie uns für mehr Informationen.`} onClick={() => { fn() }} primary={true} />
 ];
 

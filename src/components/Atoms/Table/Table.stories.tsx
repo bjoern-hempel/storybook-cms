@@ -19,7 +19,15 @@ const meta = {
             control: { type: 'object' },
             table: { category: 'Content' },
         },
-        className: {
+        bordered: {
+            control: { type: 'select' },
+            table: { category: 'Design' },
+        },
+        groupDivider: {
+            control: { type: 'boolean' },
+            table: { category: 'Design' },
+        },
+        classNames: {
             control: { type: 'text' },
             table: { category: 'Design' },
         },
@@ -49,6 +57,8 @@ export const Default: Story = {
                 <strong>Industrie & Forschung</strong>,
                 "Simulation, Analyse und Optimierung."
             ],
-        ]
+        ],
+        bordered: "none",
+        groupDivider: false
     },
 };

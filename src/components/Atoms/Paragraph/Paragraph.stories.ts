@@ -19,7 +19,7 @@ const meta = {
             control: { type: 'radio' },
             table: { category: 'Design' },
         },
-        className: {
+        classNames: {
             control: { type: 'text' },
             table: { category: 'Design' },
         },
@@ -33,7 +33,7 @@ export const Left: Story = {
     args: {
         text: 'Text with <strong>left content</strong>.',
         alignment: 'left',
-        className: ''
+        classNames: ''
     },
 };
 
@@ -41,7 +41,7 @@ export const Center: Story = {
     args: {
         text: 'Text with <strong>centered content</strong>.',
         alignment: 'center',
-        className: ''
+        classNames: ''
     },
 };
 
@@ -49,6 +49,6 @@ export const Right: Story = {
     args: {
         text: 'Text with <strong>right content</strong>.',
         alignment: 'right',
-        className: ''
+        classNames: ''
     },
 };
