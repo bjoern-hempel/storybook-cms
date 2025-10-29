@@ -83,31 +83,33 @@ export const Default: Story = {
                     `} alignment={`left`} className={`mb-4 word-break text-hyphens`} />,
                     <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:66%`}>
                         <Image />
-                        <Table headers={
-                            [
-                                "Zielgruppe",
-                                "Nutzen"
-                            ]
-                        } rows={
-                            [
+                        <RowLayout backgroundType={`none`} isContained={false}>
+                            <Table headers={
                                 [
-                                    <strong>Kommunen & Stadtwerke</strong>,
-                                    "Anschauliche Darstellung von Energie- und Stadtentwicklungsprojekten."
-                                ],
+                                    "Zielgruppe",
+                                    "Nutzen"
+                                ]
+                            } rows={
                                 [
-                                    <strong>Wohnungsunternehmen</strong>,
-                                    "Visualisierung von Modernisierungsmaßnahmen."
-                                ],
-                                [
-                                    <strong>Bürgerinnen & Bürger</strong>,
-                                    "Verständnis lokaler Energieprojekte."
-                                ],
-                                [
-                                    <strong>Industrie & Forschung</strong>,
-                                    "Simulation, Analyse und Optimierung."
-                                ],
-                            ]
-                        } />
+                                    [
+                                        <strong>Kommunen & Stadtwerke</strong>,
+                                        "Anschauliche Darstellung von Energie- und Stadtentwicklungsprojekten."
+                                    ],
+                                    [
+                                        <strong>Wohnungsunternehmen</strong>,
+                                        "Visualisierung von Modernisierungsmaßnahmen."
+                                    ],
+                                    [
+                                        <strong>Bürgerinnen & Bürger</strong>,
+                                        "Verständnis lokaler Energieprojekte."
+                                    ],
+                                    [
+                                        <strong>Industrie & Forschung</strong>,
+                                        "Simulation, Analyse und Optimierung."
+                                    ],
+                                ]
+                            } />
+                        </RowLayout>
                     </ColumnLayout>
                 ],
                 backgroundType: "light",

@@ -60,7 +60,7 @@ export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
     children,
 }) => {
     const cols = layoutMap[layout];
-    const childArray = React.Children.toArray(children.slice(0, cols.length));
+    const childArray = React.Children.toArray(children).slice(0, cols.length);
 
     const SectionClasses = [
         "section-column-layout",

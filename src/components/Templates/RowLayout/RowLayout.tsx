@@ -32,6 +32,8 @@ export const RowLayout: React.FC<ColumnLayoutProps> = ({
     isContained = false,
     children,
 }) => {
+    const childArray = React.Children.toArray(children);
+
     const SectionClasses = [
         "section-row-layout",
         backgroundType !== "none" && backgroundType
@@ -39,7 +41,7 @@ export const RowLayout: React.FC<ColumnLayoutProps> = ({
 
     const Content = (
         <>
-            {children.map((child, i) => (
+            {childArray.map((child, i) => (
                 <div key={i}>
                     {child}
                 </div>
