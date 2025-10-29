@@ -82,7 +82,7 @@ export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
             {isContained ? (
                 <div className="section container">{Content}</div>
             ) : (
-                <div className="">{Content}</div>
+                <>{Content}</>
             )}
         </section>
     );
