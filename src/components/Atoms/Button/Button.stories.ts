@@ -50,26 +50,39 @@ export const Primary: Story = {
         primary: true,
         size: 'medium',
         alignment: 'left',
-        classNames: null,
+        classNames: '',
     },
 };
 
 export const Secondary: Story = {
     args: {
         label: 'Button',
+        onClick: fn(),
+        primary: false,
+        size: 'medium',
+        alignment: 'left',
+        classNames: '',
     },
 };
 
 export const Large: Story = {
     args: {
-        size: 'large',
         label: 'Button',
+        onClick: fn(),
+        primary: true,
+        size: 'large',
+        alignment: 'left',
+        classNames: '',
     },
 };
 
 export const Small: Story = {
     args: {
-        size: 'small',
         label: 'Button',
+        onClick: fn(),
+        primary: true,
+        size: 'small',
+        alignment: 'left',
+        classNames: '',
     },
 };

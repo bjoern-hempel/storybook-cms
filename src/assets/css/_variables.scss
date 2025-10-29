@@ -12,4 +12,8 @@ $button-primary-background-color-2: rgb(223, 183, 39);
 $button-primary-background-color-hover: mix(black, $button-primary-background-color, 20%);
 $button-primary-background-color-hover-2: mix(black, $button-primary-background-color-2, 20%);
 
+$button-secondary-background-color: rgb(255, 255, 255);
+
+$button-secondary-background-color-hover: mix(black, $button-secondary-background-color, 20%);
+
 $section-distance: 2rem !important;

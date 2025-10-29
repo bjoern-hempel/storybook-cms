@@ -22,8 +22,12 @@
 }
 
 .button--secondary {
-    background-color: transparent;
+    background-color: $button-secondary-background-color;
     color: $primary-color;
+
+    &:hover {
+        background: $button-secondary-background-color-hover;
+    }
 }
 
 .button--small {
