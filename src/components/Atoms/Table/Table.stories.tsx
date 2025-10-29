@@ -4,10 +4,10 @@ import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Table} from "@/components/Atoms/Table/Table.tsx";
 
 const meta = {
-    title: 'Atoms/Table',
+    title: "Atoms/Table",
     component: Table,
     parameters: {
-        layout: 'fullscreen',
+        layout: "padded",
     },
     tags: ['autodocs'],
     argTypes: {
@@ -21,6 +21,10 @@ const meta = {
         },
         bordered: {
             control: { type: 'select' },
+            table: { category: 'Design' },
+        },
+        transparentBackground: {
+            control: { type: 'boolean' },
             table: { category: 'Design' },
         },
         groupDivider: {
@@ -59,6 +63,7 @@ export const Default: Story = {
             ],
         ],
         bordered: "none",
+        transparentBackground: true,
         groupDivider: false
     },
 };

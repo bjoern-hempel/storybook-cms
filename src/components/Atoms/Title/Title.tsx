@@ -23,10 +23,10 @@ export interface TitleProps {
     title: string;
 
     /** Which title type should be used? */
-    type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+    type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
     /** Which alignment should be used? */
-    alignment?: 'left' | 'center' | 'right';
+    alignment: 'left' | 'center' | 'right';
 
     /** Additional class names */
     classNames?: TypeClassNames;

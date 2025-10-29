@@ -4,10 +4,10 @@ import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 
 const meta = {
-    title: 'Atoms/Title',
+    title: "Atoms/Title",
     component: Title,
     parameters: {
-        layout: 'fullscreen',
+        layout: "padded",
     },
     tags: ['autodocs'],
     argTypes: {
@@ -35,22 +35,25 @@ type Story = StoryObj<typeof Title>;
 
 export const H1: Story = {
     args: {
-        title: 'Title',
-        type: 'h1'
+        title: "Title",
+        type: "h1",
+        alignment: "left",
     },
 };
 
 export const H2: Story = {
     args: {
-        title: 'Title',
-        type: 'h2'
+        title: "Title",
+        type: "h2",
+        alignment: "left",
     },
 };
 
 export const H3: Story = {
     args: {
-        title: 'Title',
-        type: 'h3'
+        title: "Title",
+        type: "h3",
+        alignment: "left",
     },
 };
 

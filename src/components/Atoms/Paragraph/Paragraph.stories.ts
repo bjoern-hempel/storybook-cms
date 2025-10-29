@@ -7,7 +7,7 @@ const meta = {
     title: 'Atoms/Paragraph',
     component: Paragraph,
     parameters: {
-        layout: 'fullscreen',
+        layout: "padded",
     },
     tags: ['autodocs'],
     argTypes: {

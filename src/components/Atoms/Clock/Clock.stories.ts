@@ -6,7 +6,7 @@ const meta: Meta<typeof Clock> = {
     title: 'Atoms/Clock',
     component: Clock,
     parameters: {
-        layout: 'centered',
+        layout: 'padded',
     },
     tags: ['autodocs'],
     argTypes: {

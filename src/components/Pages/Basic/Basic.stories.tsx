@@ -192,6 +192,8 @@ export const Default: Story = {
                                 label={`zur WiD Webdemo`}
                                 onClick={() => { fn() }}
                                 primary={true}
+                                alignment={`right`}
+                                classNames={`mb-0`}
                             />
                         </RowLayout>
                     </ColumnLayout>,

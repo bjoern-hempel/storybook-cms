@@ -29,7 +29,7 @@ export interface ParagraphProps {
     classNames?: TypeClassNames;
 }
 
-const alignmentMap = {
+const classMap = {
     left: "text-start",
     center: "text-center",
     right: "text-end",
@@ -39,10 +39,10 @@ const alignmentMap = {
 export const Paragraph = ({
     text,
     alignment = "left",
-    classNames = "",
+    classNames = null,
     ...props
 }: ParagraphProps) => {
-    const alignmentClass = alignmentMap[alignment] ?? "text-start";
+    const alignmentClass = classMap[alignment] ?? "text-start";
     const marginClass = applyMarginClass(MARGIN_CLASS_PARAGRAPH, classNames);
 
     const finalClasses = [
