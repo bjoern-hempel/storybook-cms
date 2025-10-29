@@ -1,13 +1,1 @@
 @use "@/assets/css/variables" as *;
-
-.section-content {
-    &.dark {
-        background: $background-dark;
-        color: $font-color-dark;
-    }
-
-    &.light {
-        background: $background-light;
-        color: $font-color-light;
-    }
-}

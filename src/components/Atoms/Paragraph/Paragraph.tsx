@@ -35,7 +35,7 @@ const alignmentMap = {
     right: "text-end",
 } as const;
 
-/** Primary UI component for user interaction */
+/** `Paragraph` atom */
 export const Paragraph = ({
     text,
     alignment = "left",

@@ -17,6 +17,7 @@ import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 import {ReactNode} from "react";
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
+import {Hero} from "@/components/Organisms/Hero/Hero.tsx";
 
 export type TextChildItem = Title | Paragraph | Button;
 
@@ -34,6 +35,7 @@ export interface TextImageProps {
     columnLayout?: '66%:33%'|'50%:50%'|'33%:66%';
 }
 
+/** `TextImage` organism (`ColumnLayout` alias) */
 export const TextImage = ({
     textChildren,
     backgroundType = 'dark',

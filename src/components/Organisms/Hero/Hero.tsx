@@ -13,6 +13,7 @@ export interface HeroProps {
     subtitle: string;
 }
 
+/** `Hero` organism */
 export const Hero = ({title, subtitle}: HeroProps) => (
     <section className="section-hero">
         <div

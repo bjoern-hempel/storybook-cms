@@ -23,7 +23,7 @@ export interface ButtonProps {
     onClick?: () => void;
 }
 
-/** Primary UI component for user interaction */
+/** `Button` atom */
 export const Button = ({
         primary = false,
         size = 'medium',

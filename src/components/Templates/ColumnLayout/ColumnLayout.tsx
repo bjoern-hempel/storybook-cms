@@ -50,9 +50,7 @@ const layoutMap: Record<LayoutType, string[]> = {
     ],
 };
 
-/**
- * Generic responsive column layout template
- */
+/** `ColumnLayout` template */
 export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
     layout = "50%:50%",
     backgroundType = "none",

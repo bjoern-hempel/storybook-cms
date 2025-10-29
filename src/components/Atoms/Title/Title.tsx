@@ -38,7 +38,7 @@ const classMap = {
     right: 'text-end',
 } as const;
 
-/** Primary UI component for user interaction */
+/** `Title` atom */
 export const Title = ({
     title,
     type = 'h1',

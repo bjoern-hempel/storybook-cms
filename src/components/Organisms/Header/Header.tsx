@@ -21,6 +21,7 @@ export interface HeaderProps {
     menuItems: MenuItem[];
 }
 
+/** `Header` organism */
 export const Header = ({title, subtitle, menuItems}: HeaderProps) => (
     <header className="section-header">
         <Navbar

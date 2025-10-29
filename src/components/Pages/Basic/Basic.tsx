@@ -23,6 +23,7 @@ export interface BasicProps {
     };
 }
 
+/** `Basic` page */
 export const Basic: React.FC<BasicProps> = ({
     content: { header, hero, textImage, content1 },
 }) => {

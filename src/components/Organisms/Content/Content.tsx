@@ -14,6 +14,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
+import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 
 export type TextChildItem = Title | Paragraph | Button;
 
@@ -22,9 +23,10 @@ export interface ContentProps {
     textChildren: TextChildItem[];
 
     /** What background type to use? */
-    backgroundType?: 'dark'|'light';
+    backgroundType: 'dark'|'light';
 }
 
+/** `Content` organism (`RowLayout` alias) */
 export const Content = ({
     textChildren,
     backgroundType = 'dark',
@@ -38,12 +40,8 @@ export const Content = ({
     );
 
     return (
-        <section className={`section-content ${backgroundType}`}>
-            <div
-                className="section container"
-            >
-                <Content />
-            </div>
-        </section>
+        <RowLayout backgroundType={backgroundType} isContained={true}>
+            <Content />
+        </RowLayout>
     );
 };

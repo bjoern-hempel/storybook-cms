@@ -24,9 +24,7 @@ export interface ColumnLayoutProps {
     children: ReactNode[];
 }
 
-/**
- * Generic responsive column layout template
- */
+/** `RowLayout` template */
 export const RowLayout: React.FC<ColumnLayoutProps> = ({
     backgroundType = "none",
     isContained = false,

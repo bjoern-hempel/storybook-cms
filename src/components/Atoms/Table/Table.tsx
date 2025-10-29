@@ -46,7 +46,7 @@ const classMap = {
     none: "table-borderless",
 } as const;
 
-/** Primary UI component for user interaction */
+/** `Table` atom */
 export const Table = ({
     headers,
     rows,
