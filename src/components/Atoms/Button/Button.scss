@@ -15,6 +15,10 @@
     border-width: 0;
     background: linear-gradient(135deg, $button-primary-background-color 0%, $button-primary-background-color-2 100%);
     color: $primary-color;
+
+    &:hover {
+        background: linear-gradient(135deg, $button-primary-background-color-hover 0%, $button-primary-background-color-hover-2 100%);
+    }
 }
 
 .button--secondary {
