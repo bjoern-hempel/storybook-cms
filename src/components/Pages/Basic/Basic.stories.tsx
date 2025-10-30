@@ -258,7 +258,28 @@ export const Default: Story = {
                 ]}
                 backgroundType={`light`}
                 classNames={`mb-0`}
-            />
+            />,
+            <Content
+                children={[
+                    <Title
+                        title={`Ihre Vorteile auf einen Blick!`}
+                        type={`h2`}
+                        classNames={``}
+                        alignment={`left`}
+                    />,
+                    <Paragraph
+                        text={`
+                            Der Digitale Zwilling zielt darauf ab, komplexe technische Themen verständlich und greifbar
+                            zu machen und reale Szenarien unter pseudorealen Bedingungen zu berechnen – um Vertrauen,
+                            Beteiligung und ein positives Verständnis für innovative Entwicklungen zu fördern. So werden
+                            Menschen aktiv in Veränderungsprozesse einbezogen und fundierte Entscheidungen auf Fachebene
+                            ermöglicht.
+                        `}
+                    />
+                ]}
+                backgroundType={`dark`}
+                classNames={`mb-0`}
+            />,
         ],
     }
 };
