@@ -17,7 +17,7 @@ import {TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 
 /* Import assets. */
-import DtImg from "@/assets/image/dt.jpg";
+import {Image} from "@/components/Atoms/Image/Image.tsx";
 
 const meta = {
     title: 'Pages/Basic',
@@ -35,14 +35,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof Basic>;
-
-const Image: React.FC = () => (
-    <img
-        src={DtImg as string}
-        alt="Digitale Zwilling Illustration"
-        className="img-fluid feature-image"
-    />
-);
 
 export const Default: Story = {
     args: {
@@ -125,7 +117,7 @@ export const Default: Story = {
                         classNames={`mb-4 word-break text-hyphens`}
                     />,
                     <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:66%`}>
-                        <Image />
+                        <Image src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/istock-636304660-2-1-2048x1536.jpg`} alt={`Digital Twin`} />
                         <RowLayout backgroundType={`none`} isContained={false} classNames={`mb-0`}>
                             <Table
                                 headers={

@@ -17,12 +17,6 @@ import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx
 /* Import types. */
 import type {TypeClassNames} from "@/utils/classNames.ts";
 
-/* Import utils. */
-import {applyMarginClass} from "@/utils/classNames.ts";
-
-/* Import constants. */
-import {MARGIN_CLASS_TEXT_IMAGE} from "@/utils/margins.ts";
-
 export type ChildItem = ReactNode;
 
 export interface TextImageProps {
