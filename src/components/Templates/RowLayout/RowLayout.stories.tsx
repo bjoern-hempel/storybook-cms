@@ -13,6 +13,10 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
+        children: {
+            control: { type: 'object' },
+            table: { category: 'Content' },
+        },
         backgroundType: {
             control: { type: 'radio' },
             table: { category: 'Design' },
@@ -20,7 +24,11 @@ const meta = {
         isContained: {
             control: { type: 'boolean' },
             table: { category: 'Design' },
-        }
+        },
+        classNames: {
+            control: { type: 'text' },
+            table: { category: 'Design' },
+        },
     },
 } satisfies Meta<typeof RowLayout>;
 
@@ -37,14 +45,22 @@ const text = `
 `;
 
 const children = [
-    <Title title={`Title 1`} type={`h3`} />,
-    <Paragraph text={`Text for paragraph 1. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
+    <Title
+        title={`Title 1`}
+        type={`h3`}
+        alignment={`left`}
+    />,
+    <Paragraph
+        text={`Text for paragraph 1. ${text}`}
+        classNames={`mb-0 word-break text-hyphens`}
+    />
 ];
 
 export const Default: Story = {
     args: {
         backgroundType: "dark",
         isContained: true,
-        children: children
+        children: children,
+        classNames: ''
     },
 };

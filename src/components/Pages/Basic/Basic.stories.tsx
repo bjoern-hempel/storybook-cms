@@ -13,6 +13,7 @@ import {Table} from "@/components/Atoms/Table/Table.tsx";
 
 /* Import assets. */
 import DtImg from "@/assets/image/dt.jpg";
+import {List} from "@/components/Atoms/List/List.tsx";
 
 const meta = {
     title: 'Pages/Basic',
@@ -96,7 +97,7 @@ export const Default: Story = {
                 imageAlignment: "right",
             },
             content1: {
-                textChildren: [
+                children: [
                     <Title
                         title={`Warum ein Digitaler Zwilling?`}
                         type={`h2`}
@@ -114,7 +115,7 @@ export const Default: Story = {
                     />,
                     <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:66%`}>
                         <Image />
-                        <RowLayout backgroundType={`none`} isContained={false}>
+                        <RowLayout backgroundType={`none`} isContained={false} classNames={`mb-0`}>
                             <Table
                                 headers={
                                     [
@@ -151,60 +152,74 @@ export const Default: Story = {
                     </ColumnLayout>
                 ],
                 backgroundType: "light",
+                classNames: `mb-0`
             },
             content2: {
-                textChildren: [
+                children: [
                     <Title
                         title={`Anwendungsbeispiel: Digitaler Zwilling Hosterwitz`}
                         type={`h2`}
                         classNames={``}
                         alignment={`left`}
                     />,
-                    <ColumnLayout backgroundType={`none`} isContained={false} layout={`50%:50%`}>
-                        <RowLayout backgroundType={`none`} isContained={false}>
-                            <Paragraph
-                                text={`
-                                    Der <strong>Digitale Zwilling Hosterwitz</strong> zeigt, wie sich ein reales
-                                    Energiequartier virtuell abbilden lässt: Ein digitaler Stadtteil, gespeist mit
-                                    echten Daten aus Photovoltaik, Wärmepumpen, Speichern und Verbrauchern.
-                                `}
-                            />
-                            <Paragraph
-                                text={`
-                                    Die Darstellung macht Energieflüsse sichtbar – live und verständlich:
-                                `}
-                            />
-                        </RowLayout>
-                        <RowLayout backgroundType={`none`} isContained={false}>
-                            <Paragraph
-                                text={`
-                                    Für Fachleute bietet der Zwilling die Möglichkeit, reale Szenarien zu berechnen
-                                    und zu simulieren. Für Bürgerinnen und Bürger wird er zum Erlebnisraum, in dem die
-                                    Energiewende sichtbar und greifbar wird.
-                                `}
-                            />
-                            <Paragraph
-                                text={`
-                                    Technik trifft Transparenz – und schafft Akzeptanz.
-                                `}
-                            />
-                            <Button
-                                label={`zur WiD Webdemo`}
-                                onClick={() => { fn() }}
-                                primary={true}
-                                alignment={`right`}
-                                classNames={`mb-0`}
-                            />
-                        </RowLayout>
-                    </ColumnLayout>,
-                    <Title
-                        title={`Digitaler Zwilling Demo`}
-                        type={`h3`}
-                        classNames={``}
-                        alignment={`left`}
-                    />,
+                    <RowLayout backgroundType={`none`} isContained={false}>
+                        <ColumnLayout backgroundType={`none`} isContained={false} layout={`50%:50%`}>
+                            <RowLayout backgroundType={`none`} isContained={false}>
+                                <Paragraph
+                                    text={`
+                                        Der <strong>Digitale Zwilling Hosterwitz</strong> zeigt, wie sich ein reales
+                                        Energiequartier virtuell abbilden lässt: Ein digitaler Stadtteil, gespeist mit
+                                        echten Daten aus Photovoltaik, Wärmepumpen, Speichern und Verbrauchern.
+                                    `}
+                                />
+                                <Paragraph
+                                    text={`
+                                        Die Darstellung macht Energieflüsse sichtbar – live und verständlich:
+                                    `}
+                                />
+                                <List
+                                    items={
+                                        [
+                                            "Wie viel Strom erzeugt die PV-Anlage heute?",
+                                            "Wann arbeitet die Wärmepumpe am effizientesten?",
+                                            "Wie wirkt sich das Nutzerverhalten auf den Energieverbrauch aus?",
+                                        ]
+                                    }
+                                    classNames={`mb-0`}
+                                />
+                            </RowLayout>
+                            <RowLayout backgroundType={`none`} isContained={false}>
+                                <Paragraph
+                                    text={`
+                                        Für Fachleute bietet der Zwilling die Möglichkeit, reale Szenarien zu berechnen
+                                        und zu simulieren. Für Bürgerinnen und Bürger wird er zum Erlebnisraum, in dem die
+                                        Energiewende sichtbar und greifbar wird.
+                                    `}
+                                />
+                                <Paragraph
+                                    text={`
+                                        Technik trifft Transparenz – und schafft Akzeptanz.
+                                    `}
+                                />
+                                <Button
+                                    label={`zur WiD Webdemo`}
+                                    onClick={() => { fn() }}
+                                    primary={true}
+                                    alignment={`right`}
+                                    classNames={`mb-0`}
+                                />
+                            </RowLayout>
+                        </ColumnLayout>
+                        <Title
+                            title={`Digitaler Zwilling Demo`}
+                            type={`h3`}
+                            classNames={``}
+                            alignment={`left`}
+                        />
+                    </RowLayout>
                 ],
                 backgroundType: "dark",
+                classNames: `mb-0`
             }
         }
     }

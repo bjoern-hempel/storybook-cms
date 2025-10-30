@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react-vite';
 
 import {fn} from 'storybook/test';
 
-import {type TextChildItem, TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
+import {type ChildItem, TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
@@ -37,7 +37,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof TextImage>;
 
-const textChildren: TextChildItem[] = [
+const textChildren: ChildItem[] = [
     <Title title={`Was ist der Digitale Zwilling?`} type={`h2`} classNames={`fw-bold`} alignment={`left`} />,
     <Paragraph text={`
         Der <strong>Digitale Zwilling</strong> ist das virtuelle Abbild eines

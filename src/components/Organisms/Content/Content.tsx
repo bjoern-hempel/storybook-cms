@@ -11,36 +11,48 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import components. */
-import {Button} from "@/components/Atoms/Button/Button.tsx";
-import {Title} from "@/components/Atoms/Title/Title.tsx";
-import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 
-export type TextChildItem = Title | Paragraph | Button;
+/* Import types. */
+import type {TypeClassNames} from "@/utils/classNames.ts";
+
+/* Import utils. */
+import {applyMarginClass} from "@/utils/classNames.ts";
+
+/* Import constants. */
+import {MARGIN_CLASS_CONTENT} from "@/utils/margins.ts";
+
+export type ChildItem = ReactNode;
 
 export interface ContentProps {
     /* Which content should be displayed? */
-    textChildren: TextChildItem[];
+    children: ChildItem[];
 
     /** What background type to use? */
     backgroundType: 'dark'|'light';
+
+    /** Additional class names */
+    classNames?: TypeClassNames;
 }
 
 /** `Content` organism (`RowLayout` alias) */
 export const Content = ({
-    textChildren,
+    children,
     backgroundType = 'dark',
+    classNames = null,
 }: ContentProps) => {
+    const marginClass = applyMarginClass(MARGIN_CLASS_CONTENT, classNames);
+
     const Content: React.FC = () => (
         <>
-            {textChildren.map((child, index) => (
+            {children.map((child, index) => (
                 <React.Fragment key={index}>{child as ReactNode}</React.Fragment>
             ))}
         </>
     );
 
     return (
-        <RowLayout backgroundType={backgroundType} isContained={true}>
+        <RowLayout backgroundType={backgroundType} isContained={true} classNames={`${marginClass} ${classNames}`}>
             <Content />
         </RowLayout>
     );

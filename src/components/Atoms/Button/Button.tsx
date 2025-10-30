@@ -11,8 +11,12 @@ import '@/components/Atoms/Button/Button.scss';
 
 /* Import types. */
 import type {TypeClassNames} from "@/utils/classNames.ts";
+
+/* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
-import {MARGIN_CLASS_PARAGRAPH} from "@/utils/margins.ts";
+
+/* Import constants. */
+import {MARGIN_CLASS_BUTTON} from "@/utils/margins.ts";
 
 export interface ButtonProps {
     /** Button contents */
@@ -52,7 +56,7 @@ export const Button = ({
 }: ButtonProps) => {
     const mode = primary ? 'button--primary' : 'button--secondary';
     const alignmentClass = classMap[alignment] ?? "text-start";
-    const marginClass = applyMarginClass(MARGIN_CLASS_PARAGRAPH, classNames);
+    const marginClass = applyMarginClass(MARGIN_CLASS_BUTTON, classNames);
 
     const finalClasses = [
         alignmentClass,

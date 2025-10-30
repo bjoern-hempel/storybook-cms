@@ -1,3 +1,4 @@
+import {ReactNode} from "react";
 import * as React from "react";
 
 /* Import assets. */
@@ -11,19 +12,13 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import components. */
-import {Button} from "@/components/Atoms/Button/Button.tsx";
-import {Title} from "@/components/Atoms/Title/Title.tsx";
-import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
-import {ReactNode} from "react";
-import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
-import {Hero} from "@/components/Organisms/Hero/Hero.tsx";
 
-export type TextChildItem = Title | Paragraph | Button;
+export type ChildItem = ReactNode;
 
 export interface TextImageProps {
     /* Which content should be displayed? */
-    textChildren: TextChildItem[];
+    textChildren: ChildItem[];
 
     /** What background type to use? */
     backgroundType: 'dark'|'light';

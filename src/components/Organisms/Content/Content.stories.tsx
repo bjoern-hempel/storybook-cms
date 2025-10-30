@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react-vite';
 
-import {type TextChildItem} from "@/components/Organisms/TextImage/TextImage.tsx";
+import {type ChildItem} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {Content} from "@/components/Organisms/Content/Content.tsx";
@@ -14,13 +14,17 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
+        children: {
+            control: { type: 'object' },
+            table: { category: 'Content' },
+        },
         backgroundType: {
             control: { type: 'radio' },
             table: { category: 'Design' },
         },
-        textChildren: {
-            control: { type: 'object' },
-            table: { category: 'Content' },
+        classNames: {
+            control: { type: 'text' },
+            table: { category: 'Design' },
         },
     },
 } satisfies Meta<typeof Content>;
@@ -28,7 +32,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Content>;
 
-const textChildren: TextChildItem[] = [
+const children: ChildItem[] = [
     <Title title={`Warum ein Digitaler Zwilling?`} type={`h2`} classNames={``} alignment={`left`} />,
     <Paragraph text={`
         Energiewende und Stadtentwicklung brauchen innovative Technologien, Verständnis für diese, sowie Transparenz
@@ -51,14 +55,14 @@ const textChildren: TextChildItem[] = [
 
 export const ContentDark: Story = {
     args: {
+        children: children,
         backgroundType: 'dark',
-        textChildren: textChildren
     },
 };
 
 export const ContentLight: Story = {
     args: {
+        children: children,
         backgroundType: 'light',
-        textChildren: textChildren
     },
 };
