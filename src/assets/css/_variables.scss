@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $primary-color: rgb(2, 15, 65);
 
 $background-dark: rgba(0, 0, 0, 0) linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%) repeat 0 0 / auto padding-box border-box scroll;
@@ -9,11 +11,11 @@ $font-color-light: $primary-color;
 $button-primary-background-color: rgb(236, 195, 47);
 $button-primary-background-color-2: rgb(223, 183, 39);
 
-$button-primary-background-color-hover: mix(black, $button-primary-background-color, 20%);
-$button-primary-background-color-hover-2: mix(black, $button-primary-background-color-2, 20%);
+$button-primary-background-color-hover: color.mix(black, $button-primary-background-color, 20%);
+$button-primary-background-color-hover-2: color.mix(black, $button-primary-background-color-2, 20%);
 
 $button-secondary-background-color: rgb(255, 255, 255);
 
-$button-secondary-background-color-hover: mix(black, $button-secondary-background-color, 20%);
+$button-secondary-background-color-hover: color.mix(black, $button-secondary-background-color, 20%);
 
 $section-distance: 2rem !important;
