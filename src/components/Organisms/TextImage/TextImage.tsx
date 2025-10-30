@@ -14,6 +14,15 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 /* Import components. */
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 
+/* Import types. */
+import type {TypeClassNames} from "@/utils/classNames.ts";
+
+/* Import utils. */
+import {applyMarginClass} from "@/utils/classNames.ts";
+
+/* Import constants. */
+import {MARGIN_CLASS_TEXT_IMAGE} from "@/utils/margins.ts";
+
 export type ChildItem = ReactNode;
 
 export interface TextImageProps {
@@ -28,6 +37,9 @@ export interface TextImageProps {
 
     /** Which column layout? */
     columnLayout?: '66%:33%'|'50%:50%'|'33%:66%';
+
+    /** Additional class names */
+    classNames?: TypeClassNames;
 }
 
 /** `TextImage` organism (`ColumnLayout` alias) */
@@ -36,6 +48,7 @@ export const TextImage = ({
     backgroundType = 'dark',
     imageAlignment = 'right',
     columnLayout = '66%:33%',
+    classNames = null,
 }: TextImageProps) => {
     const isImageLeft = imageAlignment === 'left';
 
@@ -57,7 +70,7 @@ export const TextImage = ({
 
     if (isImageLeft) {
         return (
-            <ColumnLayout layout={columnLayout} backgroundType={backgroundType} isContained={true}>
+            <ColumnLayout layout={columnLayout} backgroundType={backgroundType} isContained={true} classNames={classNames}>
                 <Image />
                 <Text />
             </ColumnLayout>
@@ -65,7 +78,7 @@ export const TextImage = ({
     }
 
     return (
-        <ColumnLayout layout={columnLayout} backgroundType={backgroundType} isContained={true}>
+        <ColumnLayout layout={columnLayout} backgroundType={backgroundType} isContained={true} classNames={classNames}>
             <Text />
             <Image />
         </ColumnLayout>

@@ -31,6 +31,10 @@ const meta = {
             control: { type: 'radio' },
             table: { category: 'Design' },
         },
+        classNames: {
+            control: { type: 'text' },
+            table: { category: 'Design' },
+        },
     },
 } satisfies Meta<typeof TextImage>;
 

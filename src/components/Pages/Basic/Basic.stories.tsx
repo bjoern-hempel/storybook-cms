@@ -4,16 +4,16 @@ import {fn} from "storybook/test";
 
 /* Import components. */
 import {Basic} from '@/components/Pages/Basic/Basic.tsx';
-import {Title} from "@/components/Atoms/Title/Title.tsx";
-import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
+import {List} from "@/components/Atoms/List/List.tsx";
+import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 import {Table} from "@/components/Atoms/Table/Table.tsx";
+import {Title} from "@/components/Atoms/Title/Title.tsx";
 
 /* Import assets. */
 import DtImg from "@/assets/image/dt.jpg";
-import {List} from "@/components/Atoms/List/List.tsx";
 
 const meta = {
     title: 'Pages/Basic',
@@ -95,6 +95,7 @@ export const Default: Story = {
                 backgroundType: "dark",
                 columnLayout: "66%:33%",
                 imageAlignment: "right",
+                classNames: "mb-0",
             },
             content1: {
                 children: [

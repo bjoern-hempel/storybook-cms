@@ -39,10 +39,10 @@ export interface ColumnLayoutProps {
 
 /** `RowLayout` template */
 export const RowLayout: React.FC<ColumnLayoutProps> = ({
+    children,
     backgroundType = "none",
     isContained = false,
-    children,
-    classNames,
+    classNames = null,
 }) => {
     const childArray = React.Children.toArray(children);
     const marginClass = applyMarginClass(MARGIN_CLASS_ROW_LAYOUT, classNames);
