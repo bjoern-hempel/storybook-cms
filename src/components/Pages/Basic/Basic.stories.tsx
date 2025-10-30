@@ -223,6 +223,41 @@ export const Default: Story = {
                 ]}
                 backgroundType={`dark`}
                 classNames={`mb-0`}
+            />,
+            <Content
+                children={[
+                    <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:66%`}>
+                        <Image src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/istock-1442965509-1024x710.jpg`} alt={`Ein Werkzeug für Kommunikation und Beteiligung`} />
+                        <RowLayout backgroundType={`none`} isContained={false}>
+                            <Title
+                                title={`Ein Werkzeug für Kommunikation und Beteiligung`}
+                                type={`h2`}
+                                classNames={``}
+                                alignment={`left`}
+                            />
+                            <Paragraph
+                                text={`Der Digitale Zwilling ist nicht nur ein technisches Modell – er ist ein Werkzeug für Dialog, Bildung, Öffentlichkeitsarbeit sowie Energiesystemoptimierung.`}
+                            />
+                            <List
+                                items={
+                                    [
+                                        "<strong>Bürgerdialog & Veranstaltungen</strong>: interaktive Visualisierungen und Simulationen",
+                                        "<strong>Online-Kommunikation</strong>: Integration in Websites, Informationsportale oder Social Media",
+                                        "<strong>Marketing & Imagearbeit</strong>: moderne, datenbasierte Präsentation von Projekten",
+                                        "<strong>Bildung & Forschung</strong>: anschauliche Vermittlung komplexer Zusammenhänge",
+                                        "<strong>Energiesystemoptimierung & Szenarienberechnung</strong>: modellgestützte Betrachtung und Optimierung von Energiesystemen im Verbund"
+                                    ]
+                                }
+                            />
+                            <Paragraph
+                                text={`So wird der Digitale Zwilling zu einer Brücke zwischen Technik und Gesellschaft.`}
+                                classNames={`mb-0`}
+                            />
+                        </RowLayout>
+                    </ColumnLayout>
+                ]}
+                backgroundType={`light`}
+                classNames={`mb-0`}
             />
         ],
     }

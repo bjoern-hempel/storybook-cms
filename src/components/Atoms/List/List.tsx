@@ -45,7 +45,11 @@ export const List = ({
     return (
         <ul className={finalClasses} {...props}>
             {items.map((item, index) => (
-                <li key={index}>{item}</li>
+                typeof item === "string" ? (
+                    <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+                ) : (
+                    <li key={index}>{item}</li>
+                )
             ))}
         </ul>
     );
