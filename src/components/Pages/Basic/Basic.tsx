@@ -1,10 +1,5 @@
 import * as React from "react";
-
-/* Import components. */
-import {Header, type HeaderProps} from "@/components/Organisms/Header/Header";
-import {Hero, type HeroProps} from "@/components/Organisms/Hero/Hero.tsx";
-import {TextImage, type TextImageProps} from "@/components/Organisms/TextImage/TextImage.tsx";
-import {Content, type ContentProps} from "@/components/Organisms/Content/Content.tsx";
+import {ReactNode} from "react";
 
 /* Import assets. */
 import '@/components/Pages/Basic/Basic.scss';
@@ -15,26 +10,25 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export interface BasicProps {
-    content: {
-        header: HeaderProps,
-        hero: HeroProps,
-        textImage: TextImageProps,
-        content1: ContentProps,
-        content2: ContentProps,
-    };
+    /** Children */
+    children: ReactNode[];
 }
 
 /** `Basic` page */
 export const Basic: React.FC<BasicProps> = ({
-    content: { header, hero, textImage, content1, content2 },
+    children
 }) => {
+    const childArray = React.Children.toArray(children);
+
     return (
         <article>
-            <Header {...header} />
-            <Hero {...hero} />
-            <TextImage {...textImage} />
-            <Content {...content1} />
-            <Content {...content2} />
+            <>
+                {childArray.map((child, i) => (
+                    <React.Fragment key={`page-${i}`}>
+                        {child}
+                    </React.Fragment>
+                ))}
+            </>
         </article>
     );
 };

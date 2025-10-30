@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Clock } from '@/components/Atoms/Clock/Clock';
+import { Clock } from '@/components/Molecules/Clock/Clock.tsx';
 
 const meta: Meta<typeof Clock> = {
-    title: 'Atoms/Clock',
+    title: 'Molecules/Clock',
     component: Clock,
     parameters: {
         layout: 'padded',

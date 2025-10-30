@@ -6,10 +6,14 @@ import {fn} from "storybook/test";
 import {Basic} from '@/components/Pages/Basic/Basic.tsx';
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
+import {Content} from "@/components/Organisms/Content/Content.tsx";
+import {Header} from "@/components/Organisms/Header/Header.tsx";
+import {Hero} from "@/components/Organisms/Hero/Hero.tsx";
 import {List} from "@/components/Atoms/List/List.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 import {Table} from "@/components/Atoms/Table/Table.tsx";
+import {TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 
 /* Import assets. */
@@ -21,6 +25,12 @@ const meta = {
     parameters: {
         layout: 'fullscreen',
     },
+    argTypes: {
+        children: {
+            control: {type: 'object'},
+            table: {category: 'Content'},
+        },
+    }
 } satisfies Meta<typeof Basic>;
 
 export default meta;
@@ -36,21 +46,21 @@ const Image: React.FC = () => (
 
 export const Default: Story = {
     args: {
-        content: {
-            header: {
-                title: 'Digitaler Zwilling',
-                subtitle: 'Das virtuelle Gesicht der Energiewende',
-                menuItems: [
+        children: [
+            <Header
+                title={`Digitaler Zwilling`}
+                subtitle={`Das virtuelle Gesicht der Energiewende`}
+                menuItems={[
                     {label: "Use Cases", onClick: fn() },
                     {label: "Hosterwitz", onClick: fn() },
-                ]
-            },
-            hero: {
-                title: 'Digitaler Zwilling',
-                subtitle: 'Energie sichtbar machen. Zukunft verstehen. Gemeinsam gestalten.',
-            },
-            textImage: {
-                children: [
+                ]}
+            />,
+            <Hero
+                title={`Digitaler Zwilling`}
+                subtitle={`Energie sichtbar machen. Zukunft verstehen. Gemeinsam gestalten.`}
+            />,
+            <TextImage
+                children={[
                     <Title
                         title={`Was ist der Digitale Zwilling?`}
                         type={`h2`}
@@ -91,14 +101,14 @@ export const Default: Story = {
                         onClick={() => { fn() }}
                         primary={true}
                     />
-                ],
-                backgroundType: "dark",
-                columnLayout: "66%:33%",
-                imageAlignment: "right",
-                classNames: "mb-0",
-            },
-            content1: {
-                children: [
+                ]}
+                backgroundType={`dark`}
+                columnLayout={`66%:33%`}
+                imageAlignment={`right`}
+                classNames={`mb-0`}
+            />,
+            <Content
+                children={[
                     <Title
                         title={`Warum ein Digitaler Zwilling?`}
                         type={`h2`}
@@ -151,12 +161,12 @@ export const Default: Story = {
                             />
                         </RowLayout>
                     </ColumnLayout>
-                ],
-                backgroundType: "light",
-                classNames: `mb-0`
-            },
-            content2: {
-                children: [
+                ]}
+                backgroundType={`light`}
+                classNames={`mb-0`}
+            />,
+            <Content
+                children={[
                     <Title
                         title={`Anwendungsbeispiel: Digitaler Zwilling Hosterwitz`}
                         type={`h2`}
@@ -218,10 +228,10 @@ export const Default: Story = {
                             alignment={`left`}
                         />
                     </RowLayout>
-                ],
-                backgroundType: "dark",
-                classNames: `mb-0`
-            }
-        }
+                ]}
+                backgroundType={`dark`}
+                classNames={`mb-0`}
+            />
+        ],
     }
 };

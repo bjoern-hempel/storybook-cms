@@ -27,7 +27,7 @@ export type LayoutType =
  * Props for ColumnLayout
  */
 export interface ColumnLayoutProps {
-    /** Child columns — one ReactNode per column */
+    /** Children */
     children: ReactNode[];
 
     /** Which layout pattern to use */
