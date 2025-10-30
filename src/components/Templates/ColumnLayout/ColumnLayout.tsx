@@ -10,6 +10,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+/* Import types. */
+import type {TypeClassNames} from "@/utils/classNames.ts";
+import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
+import {MARGIN_CLASS_COL_LAYOUT} from "@/utils/margins.ts";
+
 export type LayoutType =
     | "100%"
     | "50%:50%"
@@ -22,6 +27,9 @@ export type LayoutType =
  * Props for ColumnLayout
  */
 export interface ColumnLayoutProps {
+    /** Child columns — one ReactNode per column */
+    children: ReactNode[];
+
     /** Which layout pattern to use */
     layout?: LayoutType;
 
@@ -31,8 +39,8 @@ export interface ColumnLayoutProps {
     /** Should the layout be wrapped in a centered container? */
     isContained: boolean;
 
-    /** Child columns — one ReactNode per column */
-    children: ReactNode[];
+    /** Additional class names */
+    classNames?: TypeClassNames;
 }
 
 /** Mapping between layout types and Bootstrap column classes */
@@ -52,15 +60,17 @@ const layoutMap: Record<LayoutType, string[]> = {
 
 /** `ColumnLayout` template */
 export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
+    children,
     layout = "50%:50%",
     backgroundType = "none",
     isContained = false,
-    children,
+    classNames,
 }) => {
     const cols = layoutMap[layout];
     const childArray = React.Children.toArray(children).slice(0, cols.length);
+    const marginClass = applyMarginClass(MARGIN_CLASS_COL_LAYOUT, classNames);
 
-    const SectionClasses = [
+    const sectionClasses = [
         "section-column-layout",
         backgroundType !== "none" && backgroundType
     ].filter(Boolean).join(" ");
@@ -75,12 +85,17 @@ export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
         </div>
     );
 
+    const finalClasses = [
+        marginClass,
+        ...normalizeClassNames(classNames),
+    ].filter(Boolean).join(" ");
+
     return (
-        <section className={SectionClasses}>
+        <section className={sectionClasses}>
             {isContained ? (
-                <div className="section container">{Content}</div>
+                <div className={`section container ${finalClasses}`}>{Content}</div>
             ) : (
-                <>{Content}</>
+                <div className={finalClasses}>{Content}</div>
             )}
         </section>
     );

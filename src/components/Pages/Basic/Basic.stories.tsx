@@ -50,7 +50,7 @@ export const Default: Story = {
                 subtitle: 'Energie sichtbar machen. Zukunft verstehen. Gemeinsam gestalten.',
             },
             textImage: {
-                textChildren: [
+                children: [
                     <Title
                         title={`Was ist der Digitale Zwilling?`}
                         type={`h2`}

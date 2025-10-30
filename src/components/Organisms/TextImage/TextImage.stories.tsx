@@ -15,9 +15,9 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
-        title: {
-            control: { type: 'text' },
-            table: { category: 'Input' },
+        children: {
+            control: { type: 'object' },
+            table: { category: 'Content' },
         },
         backgroundType: {
             control: { type: 'radio' },
@@ -64,7 +64,7 @@ export const Dark: Story = {
         backgroundType: 'dark',
         imageAlignment: 'right',
         columnLayout: '66%:33%',
-        textChildren: textChildren
+        children: textChildren
     },
 };
 
@@ -73,6 +73,6 @@ export const Light: Story = {
         backgroundType: 'light',
         imageAlignment: 'left',
         columnLayout: '66%:33%',
-        textChildren: textChildren
+        children: textChildren
     },
 };

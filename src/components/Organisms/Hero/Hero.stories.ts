@@ -12,11 +12,11 @@ const meta = {
     argTypes: {
         title: {
             control: { type: 'text' },
-            table: { category: 'Input' },
+            table: { category: 'Content' },
         },
         subtitle: {
             control: { type: 'text' },
-            table: { category: 'Input' },
+            table: { category: 'Content' },
         },
     },
 } satisfies Meta<typeof Hero>;

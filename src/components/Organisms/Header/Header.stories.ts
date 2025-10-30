@@ -15,15 +15,15 @@ const meta = {
     argTypes: {
         title: {
             control: { type: 'text' },
-            table: { category: 'Input' },
+            table: { category: 'Content' },
         },
         subtitle: {
             control: { type: 'text' },
-            table: { category: 'Input' },
+            table: { category: 'Content' },
         },
         menuItems: {
             control: { type: "object" },
-            table: { category: "Input" },
+            table: { category: "Content" },
         },
     },
 } satisfies Meta<typeof Header>;

@@ -18,7 +18,7 @@ export type ChildItem = ReactNode;
 
 export interface TextImageProps {
     /* Which content should be displayed? */
-    textChildren: ChildItem[];
+    children: ChildItem[];
 
     /** What background type to use? */
     backgroundType: 'dark'|'light';
@@ -32,7 +32,7 @@ export interface TextImageProps {
 
 /** `TextImage` organism (`ColumnLayout` alias) */
 export const TextImage = ({
-    textChildren,
+    children,
     backgroundType = 'dark',
     imageAlignment = 'right',
     columnLayout = '66%:33%',
@@ -49,7 +49,7 @@ export const TextImage = ({
 
     const Text: React.FC = () => (
         <>
-            {textChildren.map((child, index) => (
+            {children.map((child, index) => (
                 <React.Fragment key={index}>{child as ReactNode}</React.Fragment>
             ))}
         </>
