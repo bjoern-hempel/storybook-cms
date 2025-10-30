@@ -16,12 +16,6 @@ import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 /* Import types. */
 import type {TypeClassNames} from "@/utils/classNames.ts";
 
-/* Import utils. */
-import {applyMarginClass} from "@/utils/classNames.ts";
-
-/* Import constants. */
-import {MARGIN_CLASS_CONTENT} from "@/utils/margins.ts";
-
 export type ChildItem = ReactNode;
 
 export interface ContentProps {
@@ -41,8 +35,6 @@ export const Content = ({
     backgroundType = 'dark',
     classNames = null,
 }: ContentProps) => {
-    const marginClass = applyMarginClass(MARGIN_CLASS_CONTENT, classNames);
-
     const Content: React.FC = () => (
         <>
             {children.map((child, index) => (
@@ -52,7 +44,7 @@ export const Content = ({
     );
 
     return (
-        <RowLayout backgroundType={backgroundType} isContained={true} classNames={`${marginClass} ${classNames}`}>
+        <RowLayout backgroundType={backgroundType} isContained={true} classNames={classNames}>
             <Content />
         </RowLayout>
     );
