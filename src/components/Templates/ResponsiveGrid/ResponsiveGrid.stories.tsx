@@ -33,7 +33,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof ResponsiveGrid>;
 
-const divClassNames = ['p-3', 'border', 'text-center'];
+const divClassNames = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25'];
 const child = <div className={divClassNames.join(" ")}>test</div>;
 
 export const Default: Story = {

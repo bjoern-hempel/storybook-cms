@@ -48,7 +48,7 @@ const text = `
     sit amet.
 `;
 
-const divClassNamesBase = ['p-3', 'border', 'text-center'];
+const divClassNamesBase = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25'];
 
 const children = Array.from({ length: 4 }).map((_, index) => {
     const number = index + 1;

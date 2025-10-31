@@ -45,7 +45,7 @@ const text = `
     sit amet.
 `;
 
-let divClassNames = ['p-3', 'border', 'text-center'];
+let divClassNames = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25'];
 
 const child1: ReactNode = <div className={divClassNames.join(" ")}>
     <Title
