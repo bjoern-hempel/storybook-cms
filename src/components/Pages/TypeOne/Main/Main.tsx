@@ -21,7 +21,7 @@ export const Main: React.FC<MainProps> = ({
     const childArray = React.Children.toArray(children);
 
     return (
-        <article>
+        <article className="section-page-main">
             <>
                 {childArray.map((child, i) => (
                     <React.Fragment key={`page-${i}`}>
