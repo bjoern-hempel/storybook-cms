@@ -1,0 +1,15 @@
+@use "@/assets/css/variables" as *;
+
+.section-value-card {
+    background: $background-value-card-dark;
+
+    .icon {
+        img {
+            width: 80px;
+        }
+    }
+
+    p {
+        color: $font-color-dark;
+    }
+}

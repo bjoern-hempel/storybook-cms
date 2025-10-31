@@ -72,6 +72,7 @@ const updateShadow = (refObject: React.RefObject<HTMLDivElement>, angle: number)
 
 const shadowTemplate = '${offsetX}em ${offsetY}em 1.5em rgba(0, 0, 0, 0.5)';
 
+/** `Clock` molecule */
 export const Clock: React.FC<ClockProps> = ({
     color = 'default',
     size = 'medium',
