@@ -19,6 +19,7 @@ import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
 import {MARGIN_CLASS_VALUE_CARD} from "@/utils/margins.ts";
+import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 
 export interface ImageProps {
     /** Value card text */
@@ -53,10 +54,10 @@ export const ValueCard = ({
     return (
         <>
             <div className={`d-flex flex-column justify-content-center align-items-center p-4 text-center ${finalClasses}`} {...props}>
-                <div className="icon mb-3">
+                <div className={`icon ${MARGIN_CLASS_VALUE_CARD}`}>
                     <img src={src} alt={alt} title={text} />
                 </div>
-                <p>{text}</p>
+                <Paragraph text={text} alignment={`center`} classNames={`mb-0`} />
             </div>
         </>
     );

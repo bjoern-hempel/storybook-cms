@@ -22,7 +22,7 @@ import type {TypeClassNames} from "@/utils/classNames.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_VALUE_CARD_SET} from "@/utils/margins.ts";
+import {MARGIN_CLASS_VALUE_CARD_SET, MARGIN_CLASS_VALUE_CARD_SET_VALUE_CARD} from "@/utils/margins.ts";
 
 export interface ValueCardItem {
     text: string;
@@ -59,20 +59,27 @@ export const ValueCardSet = ({
     return (
         <div className={`${finalClasses}`} {...props}>
             <ResponsiveGrid
-                items={items.map((item) => ({
-                    child: (
-                        <ValueCard
-                            text={item.text}
-                            src={item.src}
-                            alt={item.alt}
-                            classNames={item.classNames ?? null}
-                        />
-                    ),
-                    ...(item.cols !== undefined && { cols: item.cols }),
-                    ...(item.colsSm !== undefined && { colsSm: item.colsSm }),
-                    ...(item.colsMd !== undefined && { colsMd: item.colsMd }),
-                    ...(item.classNames !== undefined && { classNames: item.classNames }),
-                }))}
+                items={items.map((item) => {
+                    const marginClass = applyMarginClass(MARGIN_CLASS_VALUE_CARD_SET_VALUE_CARD, item.classNames);
+                    const finalClasses = [
+                        marginClass,
+                        ...normalizeClassNames(item.classNames),
+                    ].filter(Boolean).join(" ");
+
+                    return {
+                        child: (
+                            <ValueCard
+                                text={item.text}
+                                src={item.src}
+                                alt={item.alt}
+                                classNames={finalClasses}
+                            />
+                        ),
+                        ...(item.cols !== undefined && { cols: item.cols }),
+                        ...(item.colsSm !== undefined && { colsSm: item.colsSm }),
+                        ...(item.colsMd !== undefined && { colsMd: item.colsMd }),
+                    };
+                })}
                 backgroundType={`none`}
                 isContained={false}
                 classNames={`mb-0`} /* Margin bottom managed by ResponsiveGrid component. */

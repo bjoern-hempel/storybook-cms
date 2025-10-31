@@ -3,25 +3,22 @@ import type {Meta, StoryObj} from '@storybook/react-vite';
 import {fn} from "storybook/test";
 
 /* Import components. */
-import {Main} from '@/components/Pages/TypeOne/Main/Main.tsx';
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 import {Content} from "@/components/Organisms/Content/Content.tsx";
 import {Header} from "@/components/Organisms/Header/Header.tsx";
 import {Hero} from "@/components/Organisms/Hero/Hero.tsx";
+import {Image} from "@/components/Atoms/Image/Image.tsx";
+import {InfoCard} from "@/components/Molecules/InfoCard/InfoCard.tsx";
 import {List} from "@/components/Atoms/List/List.tsx";
+import {Main} from '@/components/Pages/TypeOne/Main/Main.tsx';
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
+import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 import {Table} from "@/components/Atoms/Table/Table.tsx";
 import {TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
-
-/* Import assets. */
-import {Image} from "@/components/Atoms/Image/Image.tsx";
 import {ValueCardSet} from "@/components/Molecules/ValueCardSet/ValueCardSet.tsx";
-import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
-import {InfoCard} from "@/components/Molecules/InfoCard/InfoCard.tsx";
-import type {TypeClassNames} from "@/utils/classNames.ts";
 
 const meta = {
     title: 'Pages/TypeOne/Main',
@@ -46,6 +43,7 @@ export const Default: Story = {
             <Header
                 title={`Digitaler Zwilling`}
                 subtitle={`Das virtuelle Gesicht der Energiewende`}
+                logo={`https://digitaltwin.easd.cloud/easd-content/uploads/2023/12/unbenannt-768x959.png`}
                 menuItems={[
                     {label: "Use Cases", onClick: fn() },
                     {label: "Hosterwitz", onClick: fn() },
@@ -53,6 +51,7 @@ export const Default: Story = {
                 fixedTop={true}
             />,
             <Hero
+                src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/istock-1313125280-1-1024x619.jpg`}
                 title={`Digitaler Zwilling`}
                 subtitle={`Energie sichtbar machen. Zukunft verstehen. Gemeinsam gestalten.`}
             />,
@@ -91,12 +90,13 @@ export const Default: Story = {
                             Komplexe Energiezukunft, einfach erklärt.
                         `}
                         alignment={`left`}
-                        classNames={`mb-4 word-break text-hyphens`}
+                        classNames={`word-break text-hyphens`}
                     />,
                     <Button
                         label={`Kontaktieren Sie uns für mehr Informationen.`}
                         onClick={() => { fn() }}
                         primary={true}
+                        classNames={`mt-5`}
                     />
                 ]}
                 src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/dt-bild-nobg-1024x920.png`}
@@ -104,7 +104,6 @@ export const Default: Story = {
                 backgroundType={`dark`}
                 columnLayout={`66%:33%`}
                 imageAlignment={`right`}
-                classNames={`mb-0`}
             />,
             <Content
                 children={[
@@ -121,11 +120,11 @@ export const Default: Story = {
                             Netze und Technologien zusammenwirken – und wie aus Daten greifbare Entscheidungen werden.
                         `}
                         alignment={`left`}
-                        classNames={`mb-4 word-break text-hyphens`}
+                        classNames={`word-break text-hyphens`}
                     />,
                     <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:66%`}>
                         <Image src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/istock-636304660-2-1-2048x1536.jpg`} alt={`Digital Twin`} />
-                        <RowLayout backgroundType={`none`} isContained={false} classNames={`mb-0`}>
+                        <RowLayout backgroundType={`none`} isContained={false}>
                             <Table
                                 headers={
                                     [
@@ -154,7 +153,6 @@ export const Default: Story = {
                                     ]
                                 }
                                 bordered={"half"}
-                                classNames={`mb-0`}
                                 groupDivider={true}
                                 transparentBackground={true}
                             />
@@ -162,7 +160,6 @@ export const Default: Story = {
                     </ColumnLayout>
                 ]}
                 backgroundType={`light`}
-                classNames={`mb-0`}
             />,
             <Content
                 children={[
@@ -195,7 +192,6 @@ export const Default: Story = {
                                             "Wie wirkt sich das Nutzerverhalten auf den Energieverbrauch aus?",
                                         ]
                                     }
-                                    classNames={`mb-0`}
                                 />
                             </RowLayout>
                             <RowLayout backgroundType={`none`} isContained={false}>
@@ -216,7 +212,7 @@ export const Default: Story = {
                                     onClick={() => { fn() }}
                                     primary={true}
                                     alignment={`right`}
-                                    classNames={`mb-0`}
+                                    classNames={`mt-5`}
                                 />
                             </RowLayout>
                         </ColumnLayout>
@@ -229,7 +225,6 @@ export const Default: Story = {
                     </RowLayout>
                 ]}
                 backgroundType={`dark`}
-                classNames={`mb-0`}
             />,
             <Content
                 children={[
@@ -258,13 +253,11 @@ export const Default: Story = {
                             />
                             <Paragraph
                                 text={`So wird der Digitale Zwilling zu einer Brücke zwischen Technik und Gesellschaft.`}
-                                classNames={`mb-0`}
                             />
                         </RowLayout>
                     </ColumnLayout>
                 ]}
                 backgroundType={`light`}
-                classNames={`mb-0`}
             />,
             <Content
                 children={[
@@ -289,40 +282,34 @@ export const Default: Story = {
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 6,
-                            classNames: "mb-0"
                         },
                         {
                             text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 6,
-                            classNames: "mb-0"
                         },
                         {
                             text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 4,
-                            classNames: "mb-0"
                         },
                         {
                             text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 4,
-                            classNames: "mb-0"
                         },
                         {
                             text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 4,
-                            classNames: "mb-0"
                         }
                     ]} classNames={``} />
                 ]}
                 backgroundType={`dark`}
-                classNames={`mb-0`}
             />,
             <Content
                 children={[
@@ -418,7 +405,6 @@ export const Default: Story = {
                     />
                 ]}
                 backgroundType={`light`}
-                classNames={`mb-0`}
             />,
             <Content
                 children={[
@@ -430,7 +416,6 @@ export const Default: Story = {
                     />,
                 ]}
                 backgroundType={`dark`}
-                classNames={`mb-0`}
             />,
             <Content
                 children={[
@@ -442,7 +427,6 @@ export const Default: Story = {
                     />,
                 ]}
                 backgroundType={`light`}
-                classNames={`mb-0`}
             />,
         ],
     }

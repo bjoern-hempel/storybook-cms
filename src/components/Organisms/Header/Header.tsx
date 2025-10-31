@@ -1,15 +1,14 @@
+import {useEffect, useRef} from "react";
 import {Container, Nav, Navbar} from "react-bootstrap";
 
 /* Import assets. */
 import '@/assets/css/style.scss';
 import '@/components/Organisms/Header/Header.scss';
-import Logo from "@/assets/image/logo.png";
 
 /* Import bootstrap. */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import {useEffect, useRef} from "react";
 
 export interface MenuItem {
     /** Menu label */
@@ -26,6 +25,9 @@ export interface HeaderProps {
     /** Subtitle content */
     subtitle: string;
 
+    /** Logo */
+    logo: string;
+
     /** Menu items */
     menuItems: MenuItem[];
 
@@ -37,6 +39,7 @@ export interface HeaderProps {
 export const Header = ({
     title,
     subtitle,
+    logo,
     menuItems,
     fixedTop = false
 }: HeaderProps) => {
@@ -72,7 +75,7 @@ export const Header = ({
             >
                 <Container className="d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
-                        <img src={Logo as string} alt="Logo" className="logo me-3"/>
+                        <img src={logo} alt="Logo" className="logo me-3"/>
                         <div className="text-light">
                             <div className="fw-bold">{title}</div>
                             <small>{subtitle}</small>

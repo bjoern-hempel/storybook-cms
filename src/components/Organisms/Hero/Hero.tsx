@@ -1,7 +1,6 @@
 /* Import assets. */
 import '@/assets/css/style.scss';
 import '@/components/Organisms/Hero/Hero.scss';
-import HeroImage from "@/assets/image/hero.jpg";
 
 /* Import bootstrap. */
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,6 +11,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import {PADDING_CLASS_COL_LAYOUT} from "@/utils/paddings.ts";
 
 export interface HeroProps {
+    /** Image source */
+    src: string;
+
     /** Title contents */
     title: string;
 
@@ -20,12 +22,16 @@ export interface HeroProps {
 }
 
 /** `Hero` organism */
-export const Hero = ({title, subtitle}: HeroProps) => {
+export const Hero = ({
+    src,
+    title,
+    subtitle
+}: HeroProps) => {
     return (
         <section className="section-hero">
             <div
                 className={`hero position-relative d-flex align-items-end text-white ${PADDING_CLASS_COL_LAYOUT}`}
-                style={{backgroundImage: `url(${HeroImage})`}}
+                style={{backgroundImage: `url(${src})`}}
             >
                 <div className="hero-layer"></div>
 

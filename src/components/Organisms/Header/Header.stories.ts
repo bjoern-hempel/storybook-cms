@@ -13,6 +13,10 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
+        logo: {
+            control: { type: 'text' },
+            table: { category: 'Content' },
+        },
         title: {
             control: { type: 'text' },
             table: { category: 'Content' },
@@ -33,8 +37,9 @@ type Story = StoryObj<typeof Header>;
 
 export const Default: Story = {
     args: {
-        title: 'Digitaler Zwilling',
-        subtitle: 'Das virtuelle Gesicht der Energiewende',
+        logo: "https://digitaltwin.easd.cloud/easd-content/uploads/2023/12/unbenannt-768x959.png",
+        title: "Digitaler Zwilling",
+        subtitle: "Das virtuelle Gesicht der Energiewende",
         menuItems: [
             { label: "Use Cases", onClick: fn() },
             { label: "Hosterwitz", onClick: fn() },

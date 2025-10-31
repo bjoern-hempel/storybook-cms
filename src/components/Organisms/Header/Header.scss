@@ -18,5 +18,12 @@
             width: 55px;
             height: 68px;
         }
+
+        .navbar-nav {
+            margin-right: -0.5rem;
+            a {
+                margin-right: 0 !important;
+            }
+        }
     }
 }
