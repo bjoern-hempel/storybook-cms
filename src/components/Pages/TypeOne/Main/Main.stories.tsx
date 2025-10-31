@@ -47,6 +47,7 @@ export const Default: Story = {
                     {label: "Use Cases", onClick: fn() },
                     {label: "Hosterwitz", onClick: fn() },
                 ]}
+                fixedTop={true}
             />,
             <Hero
                 title={`Digitaler Zwilling`}

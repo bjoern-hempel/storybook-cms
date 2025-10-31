@@ -19,7 +19,7 @@ import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 import {MARGIN_CLASS_TITLE} from "@/utils/margins.ts";
 
 export interface TitleProps {
-    /** Title contents */
+    /** Title content */
     title: string;
 
     /** Which title type should be used? */
