@@ -32,35 +32,35 @@ export const Default: Story = {
                 text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                 src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                 alt: "Entscheidungen unterstützen",
-                cols: 6,
+                colsMd: 6,
                 classNames: "mb-0"
             },
             {
                 text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                 src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                 alt: "Entscheidungen unterstützen",
-                cols: 6,
+                colsMd: 6,
                 classNames: "mb-0"
             },
             {
                 text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                 src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                 alt: "Entscheidungen unterstützen",
-                cols: 4,
+                colsMd: 4,
                 classNames: "mb-0"
             },
             {
                 text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                 src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                 alt: "Entscheidungen unterstützen",
-                cols: 4,
+                colsMd: 4,
                 classNames: "mb-0"
             },
             {
                 text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                 src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                 alt: "Entscheidungen unterstützen",
-                cols: 4,
+                colsMd: 4,
                 classNames: "mb-0"
             }
         ],

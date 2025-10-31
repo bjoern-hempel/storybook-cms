@@ -26,6 +26,8 @@ export interface ValueCardItem {
     src: string;
     alt: string;
     cols?: number; // eg. 2, 4, 6, 12
+    colsSm?: number; // eg. 2, 4, 6, 12
+    colsMd?: number; // eg. 2, 4, 6, 12
     classNames?: TypeClassNames;
 }
 
@@ -35,6 +37,12 @@ export interface ValueCardSetProps {
 
     /** Additional class names */
     classNames?: TypeClassNames;
+}
+
+const colsDefault = {
+    cols: 12,
+    colsSm: 6,
+    colsMd: 4,
 }
 
 /** `ValueCardSet` molecule */
@@ -54,7 +62,7 @@ export const ValueCardSet = ({
     return (
         <div className={`row g-4 ${finalClasses}`} {...props}>
             {items.map((item, index) => (
-                <div key={index} className={`col-12 col-sm-6 col-md-${item.cols ?? 4}`}>
+                <div key={index} className={`col-${item.cols ?? colsDefault.cols} col-sm-${item.colsSm ?? colsDefault.colsSm} col-md-${item.colsMd ?? colsDefault.colsMd}`}>
                     <ValueCard
                         text={item.text}
                         src={item.src}
