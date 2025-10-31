@@ -3,7 +3,7 @@ import type {Meta, StoryObj} from '@storybook/react-vite';
 import {fn} from "storybook/test";
 
 /* Import components. */
-import {Basic} from '@/components/Pages/Basic/Basic.tsx';
+import {Main} from '@/components/Pages/TypeOne/Main/Main.tsx';
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 import {Content} from "@/components/Organisms/Content/Content.tsx";
@@ -20,8 +20,8 @@ import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Image} from "@/components/Atoms/Image/Image.tsx";
 
 const meta = {
-    title: 'Pages/Basic',
-    component: Basic,
+    title: 'Pages/TypeOne/Main',
+    component: Main,
     parameters: {
         layout: 'fullscreen',
     },
@@ -31,10 +31,10 @@ const meta = {
             table: {category: 'Content'},
         },
     }
-} satisfies Meta<typeof Basic>;
+} satisfies Meta<typeof Main>;
 
 export default meta;
-type Story = StoryObj<typeof Basic>;
+type Story = StoryObj<typeof Main>;
 
 export const Default: Story = {
     args: {

@@ -2,20 +2,20 @@ import * as React from "react";
 import {ReactNode} from "react";
 
 /* Import assets. */
-import '@/components/Pages/Basic/Basic.scss';
+import '@/components/Pages/TypeOne/Main/Main.scss';
 
 /* Import bootstrap. */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export interface BasicProps {
+export interface MainProps {
     /** Children */
     children: ReactNode[];
 }
 
-/** `Basic` page */
-export const Basic: React.FC<BasicProps> = ({
+/** `Main` page */
+export const Main: React.FC<MainProps> = ({
     children
 }) => {
     const childArray = React.Children.toArray(children);
