@@ -1,3 +1,4 @@
+import type {ReactNode} from "react";
 import type {Meta, StoryObj} from '@storybook/react-vite';
 
 /* Import components. */
@@ -44,16 +45,37 @@ const text = `
     sit amet.
 `;
 
-const children = [
+let divClassNames = ['p-3', 'border', 'text-center'];
+
+const child1: ReactNode = <div className={divClassNames.join(" ")}>
     <Title
         title={`Title 1`}
         type={`h3`}
         alignment={`left`}
-    />,
+        classNames={`mb-0`}
+    />
+</div>;
+
+divClassNames.push('mt-4');
+
+const child2: ReactNode = <div className={divClassNames.join(" ")}>
     <Paragraph
         text={`Text for paragraph 1. ${text}`}
         classNames={`mb-0 word-break text-hyphens`}
     />
+</div>;
+
+const child3: ReactNode = <div className={divClassNames.join(" ")}>
+    <Paragraph
+        text={`Text for paragraph 2. ${text}`}
+        classNames={`mb-0 word-break text-hyphens`}
+    />
+</div>;
+
+const children = [
+    child1,
+    child2,
+    child3
 ];
 
 export const Default: Story = {

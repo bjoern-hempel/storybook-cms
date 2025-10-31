@@ -48,24 +48,34 @@ const text = `
     sit amet.
 `;
 
-const children = [
-    <>
-        <Title title={`Title 1`} type={`h3`} alignment={`left`} />
-        <Paragraph text={`Text for paragraph 1. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
-    </>,
-    <>
-        <Title title={`Title 2`} type={`h3`} alignment={`left`} />
-        <Paragraph text={`Text for paragraph 2. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
-    </>,
-    <>
-        <Title title={`Title 3`} type={`h3`} alignment={`left`} />
-        <Paragraph text={`Text for paragraph 3. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
-    </>,
-    <>
-        <Title title={`Title 4`} type={`h3`} alignment={`left`} />
-        <Paragraph text={`Text for paragraph 4. ${text}`} classNames={`mb-0 word-break text-hyphens`} />
-    </>,
-];
+const divClassNamesBase = ['p-3', 'border', 'text-center'];
+
+const children = Array.from({ length: 4 }).map((_, index) => {
+    const number = index + 1;
+
+    const divClassNames = [...divClassNamesBase];
+
+    const child1 = (
+        <div className={divClassNames.join(" ")}>
+            <Title title={`Title ${number}`} type="h3" alignment="left" classNames="mb-0" />
+        </div>
+    );
+
+    divClassNames.push('mt-4');
+
+    const child2 = (
+        <div className={divClassNames.join(" ")}>
+            <Paragraph text={`Text for paragraph ${number}. ${text}`} classNames="mb-0 word-break text-hyphens" />
+        </div>
+    );
+
+    return (
+        <>
+            {child1}
+            {child2}
+        </>
+    );
+});
 
 export const OneColumn: Story = {
     args: {

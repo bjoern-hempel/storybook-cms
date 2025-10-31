@@ -34,6 +34,7 @@ export default meta;
 type Story = StoryObj<typeof ResponsiveGrid>;
 
 const divClassNames = ['p-3', 'border', 'text-center'];
+const child = <div className={divClassNames.join(" ")}>test</div>;
 
 export const Default: Story = {
     args: {
@@ -41,30 +42,64 @@ export const Default: Story = {
         isContained: true,
         items: [
             {
-                child: <div className={divClassNames.join(" ")}>test</div>,
+                child: child,
                 colsMd: 6,
                 classNames: "mb-0"
             },
             {
-                child: <div className={divClassNames.join(" ")}>test</div>,
+                child: child,
                 colsMd: 6,
                 classNames: "mb-0"
             },
             {
-                child: <div className={divClassNames.join(" ")}>test</div>,
+                child: child,
                 colsMd: 4,
                 classNames: "mb-0"
             },
             {
-                child: <div className={divClassNames.join(" ")}>test</div>,
+                child: child,
                 colsMd: 4,
                 classNames: "mb-0"
             },
             {
-                child: <div className={divClassNames.join(" ")}>test</div>,
+                child: child,
                 colsMd: 4,
                 classNames: "mb-0"
             },
+        ],
+        classNames: ''
+    },
+};
+
+export const Big: Story = {
+    args: {
+        backgroundType: "dark",
+        isContained: true,
+        items: [
+            {
+                child: child,
+                colsSm: 12,
+                colsMd: 6,
+                classNames: "mb-0"
+            },
+            {
+                child: child,
+                colsSm: 12,
+                colsMd: 6,
+                classNames: "mb-0"
+            },
+            {
+                child: child,
+                colsSm: 12,
+                colsMd: 6,
+                classNames: "mb-0"
+            },
+            {
+                child: child,
+                colsSm: 12,
+                colsMd: 6,
+                classNames: "mb-0"
+            }
         ],
         classNames: ''
     },
