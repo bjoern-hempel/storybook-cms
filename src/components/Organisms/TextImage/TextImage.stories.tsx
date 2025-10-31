@@ -1,8 +1,10 @@
+import type {ReactNode} from "react";
 import type {Meta, StoryObj} from '@storybook/react-vite';
 
 import {fn} from 'storybook/test';
 
-import {type ChildItem, TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
+/* Import components. */
+import {TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
@@ -18,6 +20,14 @@ const meta = {
         children: {
             control: { type: 'object' },
             table: { category: 'Content' },
+        },
+        src: {
+            control: { type: 'text' },
+            table: { category: 'Content' }
+        },
+        alt: {
+            control: { type: 'text' },
+            table: { category: 'Content' }
         },
         backgroundType: {
             control: { type: 'radio' },
@@ -41,42 +51,67 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof TextImage>;
 
-const textChildren: ChildItem[] = [
-    <Title title={`Was ist der Digitale Zwilling?`} type={`h2`} classNames={`fw-bold`} alignment={`left`} />,
-    <Paragraph text={`
-        Der <strong>Digitale Zwilling</strong> ist das virtuelle Abbild eines
-        realen Ortes – etwa eines Stadtteils, Gebäudes oder Energiesystems. Er
-        verbindet reale Daten, Modelle und Simulationen zu einem lebendigen,
-        interaktiven Erlebnis, das technische Zusammenhänge verständlich,
-        anschaulich und beteiligungsfähig macht.
-    `} alignment={`left`} classNames={`word-break text-hyphens`} />,
-    <Paragraph text={`
-        Hinter dem sichtbaren 3D-Modell steckt ein wissenschaftlich fundiertes
-        digitales Modell, das physikalische Gegebenheiten unter pseudo realen
-        Bedingungen abbildet. So lassen sich Energieflüsse, Verbrauch,
-        Steuerungsstrategien oder CO₂-Einsparpotenziale präzise simulieren –
-        und gleichzeitig verständlich kommunizieren.
-    `} alignment={`left`} classNames={`word-break text-hyphens`} />,
-    <Paragraph text={`
-        Komplexe Energiezukunft, einfach erklärt.
-    `} alignment={`left`} classNames={`mb-4 word-break text-hyphens`} />,
-    <Button label={`Kontaktieren Sie uns für mehr Informationen.`} onClick={() => { fn() }} primary={true} />
+const textChildren: ReactNode[] = [
+    <Title
+        title={`Was ist der Digitale Zwilling?`}
+        type={`h2`}
+        alignment={`left`}
+        classNames={`fw-bold`}
+    />,
+    <Paragraph
+        text={`
+            Der <strong>Digitale Zwilling</strong> ist das virtuelle Abbild eines
+            realen Ortes – etwa eines Stadtteils, Gebäudes oder Energiesystems. Er
+            verbindet reale Daten, Modelle und Simulationen zu einem lebendigen,
+            interaktiven Erlebnis, das technische Zusammenhänge verständlich,
+            anschaulich und beteiligungsfähig macht.
+        `}
+        alignment={`left`}
+        classNames={`word-break text-hyphens`}
+    />,
+    <Paragraph
+        text={`
+            Hinter dem sichtbaren 3D-Modell steckt ein wissenschaftlich fundiertes
+            digitales Modell, das physikalische Gegebenheiten unter pseudo realen
+            Bedingungen abbildet. So lassen sich Energieflüsse, Verbrauch,
+            Steuerungsstrategien oder CO₂-Einsparpotenziale präzise simulieren –
+            und gleichzeitig verständlich kommunizieren.
+        `}
+        alignment={`left`}
+        classNames={`word-break text-hyphens`}
+    />,
+    <Paragraph
+        text={`
+            Komplexe Energiezukunft, einfach erklärt.
+        `}
+        alignment={`left`}
+        classNames={`mb-4 word-break text-hyphens`}
+    />,
+    <Button
+        label={`Kontaktieren Sie uns für mehr Informationen.`}
+        onClick={() => { fn() }}
+        primary={true}
+    />
 ];
 
 export const Dark: Story = {
     args: {
+        children: textChildren,
+        src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/dt-bild-nobg-1024x920.png",
+        alt: "Was ist der Digitale Zwilling?",
         backgroundType: 'dark',
         imageAlignment: 'right',
         columnLayout: '66%:33%',
-        children: textChildren
     },
 };
 
 export const Light: Story = {
     args: {
+        children: textChildren,
+        src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/dt-bild-nobg-1024x920.png",
+        alt: "Was ist der Digitale Zwilling?",
         backgroundType: 'light',
         imageAlignment: 'left',
         columnLayout: '66%:33%',
-        children: textChildren
     },
 };

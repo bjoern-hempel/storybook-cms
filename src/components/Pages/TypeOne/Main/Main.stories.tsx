@@ -99,6 +99,8 @@ export const Default: Story = {
                         primary={true}
                     />
                 ]}
+                src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/dt-bild-nobg-1024x920.png`}
+                alt={`Was ist der Digitale Zwilling?`}
                 backgroundType={`dark`}
                 columnLayout={`66%:33%`}
                 imageAlignment={`right`}

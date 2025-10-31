@@ -4,7 +4,6 @@ import * as React from "react";
 /* Import assets. */
 import '@/assets/css/style.scss';
 import '@/components/Organisms/TextImage/TextImage.scss';
-import TextImageImg from "@/assets/image/text-image.png";
 
 /* Import bootstrap. */
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,15 +12,20 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import components. */
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
+import {Image} from "@/components/Atoms/Image/Image.tsx";
 
 /* Import types. */
 import type {TypeClassNames} from "@/utils/classNames.ts";
 
-export type ChildItem = ReactNode;
-
 export interface TextImageProps {
-    /* Which content should be displayed? */
-    children: ChildItem[];
+    /** Which content should be displayed? */
+    children: ReactNode[];
+
+    /** Image source */
+    src: string;
+
+    /** Image alternative text */
+    alt: string;
 
     /** What background type to use? */
     backgroundType: 'dark'|'light';
@@ -39,6 +43,8 @@ export interface TextImageProps {
 /** `TextImage` organism (`ColumnLayout` alias) */
 export const TextImage = ({
     children,
+    src,
+    alt,
     backgroundType = 'dark',
     imageAlignment = 'right',
     columnLayout = '66%:33%',
@@ -46,15 +52,7 @@ export const TextImage = ({
 }: TextImageProps) => {
     const isImageLeft = imageAlignment === 'left';
 
-    const Image: React.FC = () => (
-        <img
-            src={TextImageImg as string}
-            alt="Digitale Zwilling Illustration"
-            className="img-fluid feature-image"
-        />
-    );
-
-    const Text: React.FC = () => (
+    const Content: React.FC = () => (
         <>
             {children.map((child, index) => (
                 <React.Fragment key={index}>{child as ReactNode}</React.Fragment>
@@ -65,16 +63,22 @@ export const TextImage = ({
     if (isImageLeft) {
         return (
             <ColumnLayout layout={columnLayout} backgroundType={backgroundType} isContained={true} classNames={classNames}>
-                <Image />
-                <Text />
+                <Image
+                    src={src}
+                    alt={alt}
+                />
+                <Content />
             </ColumnLayout>
         );
     }
 
     return (
         <ColumnLayout layout={columnLayout} backgroundType={backgroundType} isContained={true} classNames={classNames}>
-            <Text />
-            <Image />
+            <Content />
+            <Image
+                src={src}
+                alt={alt}
+            />
         </ColumnLayout>
     );
 };
