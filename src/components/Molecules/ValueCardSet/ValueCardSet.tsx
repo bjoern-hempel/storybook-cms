@@ -11,6 +11,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 /* Import styles. */
 import '@/components/Molecules/ValueCard/ValueCard.scss';
 
+/* Import components. */
+import {ValueCard} from "@/components/Molecules/ValueCard/ValueCard.tsx";
+import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
+
 /* Import types. */
 import type {TypeClassNames} from "@/utils/classNames.ts";
 
@@ -19,7 +23,6 @@ import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
 import {MARGIN_CLASS_VALUE_CARD_SET} from "@/utils/margins.ts";
-import {ValueCard} from "@/components/Molecules/ValueCard/ValueCard.tsx";
 
 export interface ValueCardItem {
     text: string;
@@ -39,12 +42,6 @@ export interface ValueCardSetProps {
     classNames?: TypeClassNames;
 }
 
-const colsDefault = {
-    cols: 12,
-    colsSm: 6,
-    colsMd: 4,
-}
-
 /** `ValueCardSet` molecule */
 export const ValueCardSet = ({
     items,
@@ -60,17 +57,25 @@ export const ValueCardSet = ({
     ].filter(Boolean).join(" ");
 
     return (
-        <div className={`row g-4 ${finalClasses}`} {...props}>
-            {items.map((item, index) => (
-                <div key={index} className={`col-${item.cols ?? colsDefault.cols} col-sm-${item.colsSm ?? colsDefault.colsSm} col-md-${item.colsMd ?? colsDefault.colsMd}`}>
-                    <ValueCard
-                        text={item.text}
-                        src={item.src}
-                        alt={item.alt}
-                        classNames={item.classNames ?? null}
-                    />
-                </div>
-            ))}
+        <div className={`${finalClasses}`} {...props}>
+            <ResponsiveGrid
+                items={items.map((item) => ({
+                    child: (
+                        <ValueCard
+                            text={item.text}
+                            src={item.src}
+                            alt={item.alt}
+                            classNames={item.classNames ?? null}
+                        />
+                    ),
+                    ...(item.cols !== undefined && { cols: item.cols }),
+                    ...(item.colsSm !== undefined && { colsSm: item.colsSm }),
+                    ...(item.colsMd !== undefined && { colsMd: item.colsMd }),
+                    ...(item.classNames !== undefined && { classNames: item.classNames }),
+                }))}
+                backgroundType={`none`}
+                isContained={false}
+            />
         </div>
     );
 };

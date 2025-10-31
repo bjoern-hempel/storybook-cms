@@ -1,0 +1,13 @@
+@use "@/assets/css/variables" as *;
+
+.section-responsive-grid {
+    &.dark {
+        background: $background-dark;
+        color: $font-color-dark;
+    }
+
+    &.light {
+        background: $background-light;
+        color: $font-color-light;
+    }
+}
