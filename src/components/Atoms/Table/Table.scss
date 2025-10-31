@@ -1,6 +1,8 @@
 @use "@/assets/css/variables" as *;
+@use "@/assets/css/breakpoints" as *;
 
-.section-table {
+
+.section-table, .section-table-mobile {
     &.table-transparent {
         th, td {
             background-color: transparent;
@@ -27,5 +29,56 @@
                 }
             }
         }
+    }
+}
+
+.section-table-mobile {
+    display: none;
+
+    tr {
+        td {
+            padding-top: 0.125rem;
+            padding-bottom: 0.75rem;
+        }
+    }
+
+    tr.row-next {
+        td {
+            padding-top: 0.75rem;
+            padding-bottom: 0.125rem;
+        }
+    }
+
+    tbody {
+        border-top-width: 0;
+    }
+
+    &.table-bordered-none {
+
+    }
+
+    &.table-bordered-half {
+        tbody {
+            tr {
+                td {
+
+                }
+            }
+
+            tr.row-next {
+                td {
+                    border-bottom-width: 0;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .section-table {
+        display: none;
+    }
+    .section-table-mobile {
+        display: block;
     }
 }

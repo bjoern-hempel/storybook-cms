@@ -73,24 +73,50 @@ export const Table = ({
     ].filter(Boolean).join(" ");
 
     return (
-        <table className={`section-table table-responsive ${finalClasses}${groupDivider ? ` group-divider` : ``}`}>
-            <thead>
+        <>
+            <table className={`section-table ${finalClasses}${groupDivider ? ` group-divider` : ``}`}>
+                <thead>
                 <tr>
-                    {headers.map((h, i) => (
-                        <th key={i}>{h}</th>
+                    {headers.map((header, i) => (
+                        <th key={i}>{header}</th>
                     ))}
                 </tr>
-            </thead>
+                </thead>
 
-            <tbody className={`${groupDivider ? `table-group-divider` : ``}`}>
-                {rows.map((row, rIdx) => (
-                    <tr key={rIdx}>
-                        {row.map((cell, cIdx) => (
-                            <td key={cIdx}>{cell}</td>
-                        ))}
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+                <tbody className={`${groupDivider ? `table-group-divider` : ``}`}>
+                    {rows.map((row, rIdx) => (
+                        <tr key={rIdx}>
+                            {row.map((cell, cIdx) => {
+                                if (cIdx === 0) {
+                                    return (
+                                        <td key={cIdx}><strong>{cell}</strong></td>
+                                    );
+                                }
+
+                                return (
+                                    <td key={cIdx}>{cell}</td>
+                                );
+                            })}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
+            <table className={`section-table-mobile ${finalClasses}${groupDivider ? ` group-divider` : ``}`}>
+                <tbody>
+                    {rows.map((row, rIdx) => (
+                        row.map((cell, cIdx) => {
+                            return (
+                                <tr key={rIdx} className={`${cIdx === 0 ? "row-next" : ""}`}>
+                                    <td><strong>{headers[cIdx]}</strong></td>
+                                    <td key={cIdx} data-title={headers[cIdx]}>{cell}</td>
+                                </tr>
+                            );
+                        })
+                    ))}
+                </tbody>
+            </table>
+        </>
+
     );
 };

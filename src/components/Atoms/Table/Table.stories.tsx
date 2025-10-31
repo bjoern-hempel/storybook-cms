@@ -46,19 +46,19 @@ export const Default: Story = {
         headers: ["Zielgruppe", "Nutzen"],
         rows: [
             [
-                <strong>Kommunen & Stadtwerke</strong>,
+                "Kommunen & Stadtwerke",
                 "Anschauliche Darstellung von Energie- und Stadtentwicklungsprojekten."
             ],
             [
-                <strong>Wohnungsunternehmen</strong>,
+                "Wohnungsunternehmen",
                 "Visualisierung von Modernisierungsmaßnahmen."
             ],
             [
-                <strong>Bürgerinnen & Bürger</strong>,
+                "Bürgerinnen & Bürger",
                 "Verständnis lokaler Energieprojekte."
             ],
             [
-                <strong>Industrie & Forschung</strong>,
+                "Industrie & Forschung",
                 "Simulation, Analyse und Optimierung."
             ],
         ],
