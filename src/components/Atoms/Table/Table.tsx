@@ -73,7 +73,7 @@ export const Table = ({
     ].filter(Boolean).join(" ");
 
     return (
-        <>
+        <div className="last-content">
             <table className={`section-table ${finalClasses}${groupDivider ? ` group-divider` : ``}`}>
                 <thead>
                 <tr>
@@ -116,7 +116,7 @@ export const Table = ({
                     ))}
                 </tbody>
             </table>
-        </>
+        </div>
 
     );
 };

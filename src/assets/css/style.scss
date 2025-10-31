@@ -29,7 +29,7 @@ body {
                 .section-column {
                     //border: 1px solid red;
 
-                    >:last-child {
+                    >:last-child, >.last-content > * {
                         margin-bottom: 0 !important;
                         //background-color: rgba(255, 0, 0, 0.25);
                     }
@@ -40,7 +40,7 @@ body {
                 .section-row {
                     //border: 1px solid green;
 
-                    >:last-child {
+                    >:last-child, >.last-content > * {
                         margin-bottom: 0 !important;
                         //background-color: rgba(0, 255, 0, 0.25);
                     }
@@ -51,7 +51,7 @@ body {
                 .section-responsive {
                     //border: 1px solid blue;
 
-                    >:last-child {
+                    >:last-child, >.last-content > * {
                         margin-bottom: 0 !important;
                         //background-color: rgba(0, 0, 255, 0.25);
                     }
@@ -60,7 +60,7 @@ body {
         }
 
         div.card-body {
-            >:last-child {
+            >:last-child, >.last-content > * {
                 margin-bottom: 0 !important;
             }
         }
