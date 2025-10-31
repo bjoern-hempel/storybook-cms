@@ -40,12 +40,6 @@ export interface TableProps {
     classNames?: TypeClassNames;
 }
 
-const classMap = {
-    full: "table-bordered",
-    half: null,
-    none: "table-borderless",
-} as const;
-
 /** `Table` atom */
 export const Table = ({
     headers,
@@ -61,6 +55,12 @@ export const Table = ({
         console.warn("⚠️ Table rows do not match header count.");
     }
 
+    const classMap = {
+        full: "table-bordered",
+        half: "table-bordered-half",
+        none: groupDivider ? "table-bordered-none" : "table-borderless",
+    } as const;
+
     const marginClass = applyMarginClass(MARGIN_CLASS_TABLE, classNames);
     const borderClass = classMap[bordered] ?? null;
 
@@ -73,17 +73,16 @@ export const Table = ({
     ].filter(Boolean).join(" ");
 
     return (
-        <div className="section-table table-responsive">
-            <table className={finalClasses}>
-                <thead>
+        <table className={`section-table table-responsive ${finalClasses}${groupDivider ? ` group-divider` : ``}`}>
+            <thead>
                 <tr>
                     {headers.map((h, i) => (
                         <th key={i}>{h}</th>
                     ))}
                 </tr>
-                </thead>
+            </thead>
 
-                <tbody className={`${groupDivider ? `table-group-divider` : ``}`}>
+            <tbody className={`${groupDivider ? `table-group-divider` : ``}`}>
                 {rows.map((row, rIdx) => (
                     <tr key={rIdx}>
                         {row.map((cell, cIdx) => (
@@ -91,8 +90,7 @@ export const Table = ({
                         ))}
                     </tr>
                 ))}
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
     );
 };
