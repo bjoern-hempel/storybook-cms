@@ -476,12 +476,42 @@ export const Default: Story = {
             />,
             <Content
                 children={[
-                    <Title
-                        title={`Zukunft gestalten. Verantwortung übernehmen`}
-                        type={`h2`}
-                        classNames={``}
-                        alignment={`left`}
-                    />,
+                    <ColumnLayout backgroundType={`none`} isContained={false} layout={`66%:33%`}>
+                        <RowLayout backgroundType={`none`} isContained={false}>
+                            <Title
+                                title={`Zukunft gestalten. Verantwortung übernehmen.`}
+                                type={`h2`}
+                                classNames={``}
+                                alignment={`left`}
+                            />
+                            <Paragraph
+                                text={`
+                                    Der <strong>Digitale Zwilling</strong> macht nachhaltige Energie- und Stadtentwicklung
+                                    sichtbar, berechenbar und erlebbar. Er verbindet Fachwelt und Öffentlichkeit – und
+                                    unterstützt Sie dabei, die Zukunft gemeinsam mit Kommunen, Industrie und Bürger zu
+                                    verstehen und optimal zu gestalten.
+                                `}
+                                alignment={`left`}
+                            />
+                            <Paragraph
+                                text={`
+                                    Erleben Sie Ihren eigenen Digitalen Zwilling.
+                                `}
+                                alignment={`left`}
+                            />
+                            <Button
+                                label={`Lassen Sie uns gemeinsam die Zukunft gestalten!`}
+                                onClick={() => { fn() }}
+                                primary={true}
+                                classNames={`mt-5`}
+                            />
+                        </RowLayout>
+                        <Image
+                            src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/test-768x512.jpg`}
+                            alt={`Zukunft gestalten. Verantwortung übernehmen.`}
+                        />
+                    </ColumnLayout>
+
                 ]}
                 backgroundType={`light`}
             />,
