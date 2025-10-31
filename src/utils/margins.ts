@@ -8,6 +8,7 @@ export const MARGIN_CLASS_TITLE = "mb-3";
 
 /* Molecules */
 export const MARGIN_CLASS_VALUE_CARD = "mb-3";
+export const MARGIN_CLASS_VALUE_CARD_SET = "mb-3";
 
 /* Templates */
 export const MARGIN_CLASS_COL_LAYOUT = "mb-3";

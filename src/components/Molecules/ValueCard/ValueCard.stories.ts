@@ -11,16 +11,8 @@ const meta = {
     },
     tags: ["autodocs"],
     argTypes: {
-        text: {
-            control: { type: "text" },
-            table: { category: "Content" }
-        },
-        src: {
-            control: { type: "text" },
-            table: { category: "Content" }
-        },
-        alt: {
-            control: { type: "text" },
+        items: {
+            control: { type: "object" },
             table: { category: "Content" }
         },
         classNames: {

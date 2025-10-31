@@ -18,6 +18,7 @@ import {Title} from "@/components/Atoms/Title/Title.tsx";
 
 /* Import assets. */
 import {Image} from "@/components/Atoms/Image/Image.tsx";
+import {ValueCardSet} from "@/components/Molecules/ValueCardSet/ValueCardSet.tsx";
 
 const meta = {
     title: 'Pages/TypeOne/Main',
@@ -275,9 +276,82 @@ export const Default: Story = {
                             Menschen aktiv in Veränderungsprozesse einbezogen und fundierte Entscheidungen auf Fachebene
                             ermöglicht.
                         `}
-                    />
+                    />,
+                    <ValueCardSet items={[
+                        {
+                            text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
+                            src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
+                            alt: "Entscheidungen unterstützen",
+                            cols: 6,
+                            classNames: "mb-0"
+                        },
+                        {
+                            text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
+                            src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
+                            alt: "Entscheidungen unterstützen",
+                            cols: 6,
+                            classNames: "mb-0"
+                        },
+                        {
+                            text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
+                            src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
+                            alt: "Entscheidungen unterstützen",
+                            cols: 4,
+                            classNames: "mb-0"
+                        },
+                        {
+                            text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
+                            src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
+                            alt: "Entscheidungen unterstützen",
+                            cols: 4,
+                            classNames: "mb-0"
+                        },
+                        {
+                            text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
+                            src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
+                            alt: "Entscheidungen unterstützen",
+                            cols: 4,
+                            classNames: "mb-0"
+                        }
+                    ]} classNames={`mb-0 mt-3`} />
                 ]}
                 backgroundType={`dark`}
+                classNames={`mb-0`}
+            />,
+            <Content
+                children={[
+                    <Title
+                        title={`Anwendungsfelder unserer Digitalen Zwillinge`}
+                        type={`h2`}
+                        classNames={``}
+                        alignment={`left`}
+                    />,
+                ]}
+                backgroundType={`light`}
+                classNames={`mb-0`}
+            />,
+            <Content
+                children={[
+                    <Title
+                        title={`Was macht unseren Digitalen Zwilling einzigartig?`}
+                        type={`h2`}
+                        classNames={``}
+                        alignment={`left`}
+                    />,
+                ]}
+                backgroundType={`dark`}
+                classNames={`mb-0`}
+            />,
+            <Content
+                children={[
+                    <Title
+                        title={`Zukunft gestalten. Verantwortung übernehmen`}
+                        type={`h2`}
+                        classNames={``}
+                        alignment={`left`}
+                    />,
+                ]}
+                backgroundType={`light`}
                 classNames={`mb-0`}
             />,
         ],
