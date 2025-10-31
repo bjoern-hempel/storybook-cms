@@ -53,7 +53,7 @@ export const ValueCard = ({
 
     return (
         <>
-            <div className={`d-flex flex-column justify-content-center align-items-center p-4 text-center ${finalClasses}`} {...props}>
+            <div className={`d-flex flex-column align-items-center p-4 text-center ${finalClasses}`} {...props}>
                 <div className={`icon ${MARGIN_CLASS_VALUE_CARD}`}>
                     <img src={src} alt={alt} title={text} />
                 </div>

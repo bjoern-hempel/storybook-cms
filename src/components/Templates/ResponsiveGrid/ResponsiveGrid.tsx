@@ -58,6 +58,7 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
     backgroundType = "none",
     isContained = false,
     classNames = null,
+    renderItem
 }) => {
     const marginClass = applyMarginClass(MARGIN_CLASS_RESPONSIVE_GRID, classNames);
 
@@ -70,16 +71,21 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
 
     const Content = (
         <div className={`row g-4 align-items-stretch`}>
-            {items.map((item, index) => (
-                <div
-                    key={index}
-                    className={`section-responsive col-${item.cols ?? colsDefault.cols} col-sm-${item.colsSm ?? colsDefault.colsSm} col-md-${item.colsMd ?? colsDefault.colsMd}`}
-                >
-                    <div className="h-100 d-flex flex-column">
-                        {item.child}
+            {items.map((item, index) => {
+
+                console.log(renderItem);
+
+                return (
+                    <div
+                        key={index}
+                        className={`col-${item.cols ?? colsDefault.cols} col-sm-${item.colsSm ?? colsDefault.colsSm} col-md-${item.colsMd ?? colsDefault.colsMd}`}
+                    >
+                        <div className="section-responsive h-100 d-flex flex-column">
+                            {item.child}
+                        </div>
                     </div>
-                </div>
-            ))}
+                );
+            })}
         </div>
     );
 

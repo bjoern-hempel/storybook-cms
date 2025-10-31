@@ -26,6 +26,8 @@ const meta = {
     parameters: {
         layout: 'fullscreen',
     },
+    /* "Disabled" autodocs tag means: Render element as page element */
+    // tags: ['autodocs'],
     argTypes: {
         children: {
             control: {type: 'object'},
@@ -282,32 +284,37 @@ export const Default: Story = {
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 6,
+                            classNames: "h-100",
                         },
                         {
                             text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 6,
+                            classNames: "h-100",
                         },
                         {
                             text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 4,
+                            classNames: "h-100",
                         },
                         {
                             text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 4,
+                            classNames: "h-100",
                         },
                         {
                             text: "Entscheidungen unterstützen – durch nachvollziehbare Simulationen",
                             src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/entscheidungen-150x150.png",
                             alt: "Entscheidungen unterstützen",
                             colsMd: 4,
+                            classNames: "h-100",
                         }
-                    ]} classNames={``} />
+                    ]} />
                 ]}
                 backgroundType={`dark`}
             />,
@@ -346,18 +353,16 @@ export const Default: Story = {
                                                 zu einem zentralen Baustein nachhaltiger Standort- und Technologieentwicklung.
                                             `}
                                             alignment={`left`}
-                                            classNames={`mb-0`}
                                         />
                                     ]}
                                     src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/art6-1024x611.jpg`}
                                     alt={`Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit`}
-                                    classNames={`h-100 mb-0`}
+                                    classNames={`h-100`}
                                     ratio={'16x9'}
                                 />,
                                 cols: 12,
                                 colsSm: 12,
                                 colsMd: 6,
-                                classNames: "mb-0"
                             },
                             {
                                 child: <InfoCard
@@ -386,18 +391,16 @@ export const Default: Story = {
                                                 des Energiesystems.
                                             `}
                                             alignment={`left`}
-                                            classNames={`mb-0`}
                                         />
                                     ]}
                                     src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/art4-1-1024x611.jpg`}
                                     alt={`Detailtiefe Energiesystemanalysen & Resilienzbetrachtungen`}
-                                    classNames={`h-100 mb-0`}
+                                    classNames={`h-100`}
                                     ratio={'16x9'}
                                 />,
                                 cols: 12,
                                 colsSm: 12,
                                 colsMd: 6,
-                                classNames: "mb-0"
                             }
                         ]).flat()}
                         backgroundType={`none`}
@@ -414,6 +417,60 @@ export const Default: Story = {
                         classNames={``}
                         alignment={`left`}
                     />,
+                    <Paragraph
+                        text={`
+                            Unsere <strong>digitalen Zwillinge</strong> vereinen Präzision, Flexibilität und
+                            Anpassungsfähigkeit – entwickelt für Forschung, Planung und Industrie.
+                        `}
+                        alignment={`left`}
+                    />,
+                    <Paragraph
+                        text={`
+                            Ob interdisziplinäre Systemanalyse oder detaillierte Simulation – sie lassen sich exakt
+                            auf die Anforderungen und Ziele ihrer Nutzer:innen abstimmen. Durch ihren modularen Aufbau
+                            sind sie skalierbar, flexibel und erweiterbar – von standardisierten Basismodellen bis zur
+                            kundenspezifischen Entwicklung individueller Systeme.
+                        `}
+                        alignment={`left`}
+                    />,
+                    <ValueCardSet items={[
+                        {
+                            text: "Interdisziplinär",
+                            src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/iStock-604353226_collaboration.png",
+                            alt: "Interdisziplinär",
+                            cols: 6,
+                            colsSm: 6,
+                            colsMd: 3,
+                            classNames: "h-100",
+                        },
+                        {
+                            text: "Skalierbar",
+                            src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/Practical-Orientation.png",
+                            alt: "Skalierbar",
+                            cols: 6,
+                            colsSm: 6,
+                            colsMd: 3,
+                            classNames: "h-100",
+                        },
+                        {
+                            text: "Kundenspezifisch",
+                            src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/kundenspez-300x300.png",
+                            alt: "Kundenspezifisch",
+                            cols: 6,
+                            colsSm: 6,
+                            colsMd: 3,
+                            classNames: "h-100",
+                        },
+                        {
+                            text: "Flexibel & Erweiterbar",
+                            src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/Flexible-and-Extensible.png",
+                            alt: "Flexibel & Erweiterbar",
+                            cols: 6,
+                            colsSm: 6,
+                            colsMd: 3,
+                            classNames: "h-100",
+                        }
+                    ]} />
                 ]}
                 backgroundType={`dark`}
             />,
