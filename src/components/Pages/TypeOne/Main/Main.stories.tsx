@@ -19,6 +19,9 @@ import {Title} from "@/components/Atoms/Title/Title.tsx";
 /* Import assets. */
 import {Image} from "@/components/Atoms/Image/Image.tsx";
 import {ValueCardSet} from "@/components/Molecules/ValueCardSet/ValueCardSet.tsx";
+import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
+import {InfoCard} from "@/components/Molecules/InfoCard/InfoCard.tsx";
+import type {TypeClassNames} from "@/utils/classNames.ts";
 
 const meta = {
     title: 'Pages/TypeOne/Main',
@@ -314,7 +317,7 @@ export const Default: Story = {
                             colsMd: 4,
                             classNames: "mb-0"
                         }
-                    ]} classNames={`mb-0 mt-3`} />
+                    ]} classNames={``} />
                 ]}
                 backgroundType={`dark`}
                 classNames={`mb-0`}
@@ -327,6 +330,90 @@ export const Default: Story = {
                         classNames={``}
                         alignment={`left`}
                     />,
+                    <ResponsiveGrid
+                        items={Array(2).fill([
+                            {
+                                child: <InfoCard
+                                    title={`Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit`}
+                                    children={[
+                                        <Paragraph
+                                            text={`
+                                                Der <strong>Digitale Zwilling</strong> fungiert als interaktive Plattform zur anschaulichen
+                                                Darstellung komplexer Energiethemen und zur Förderung des Dialogs zwischen Bürger:innen, Kommunen,
+                                                Forschungseinrichtungen und Industrie. Durch Visualisierungen, Simulationen und digitale
+                                                Beteiligungsformate werden technische Inhalte verständlich aufbereitet und transparente Einblicke
+                                                in Projekte und Prozesse ermöglicht.
+                                            `}
+                                            alignment={`left`}
+                                            classNames={null}
+                                        />,
+                                        <Paragraph
+                                            text={`
+                                                Damit wird der Digitale Zwilling zu einem wirkungsvollen Werkzeug der Öffentlichkeitsarbeit, das
+                                                Akzeptanz, Teilhabe und Vertrauen in die Transformation des Energiesystems stärkt. Gleichzeitig
+                                                eröffnet er im Bereich Bildung und Forschung eine praxisnahe Umgebung, in der Lernende und
+                                                Forschende Energiesysteme simulieren, Szenarien analysieren und innovative Lösungen entwickeln
+                                                können. So verbindet der Digitale Zwilling Kommunikation, Wissenstransfer und angewandte Forschung
+                                                zu einem zentralen Baustein nachhaltiger Standort- und Technologieentwicklung.
+                                            `}
+                                            alignment={`left`}
+                                            classNames={`mb-0`}
+                                        />
+                                    ]}
+                                    src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/art6-1024x611.jpg`}
+                                    alt={`Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit`}
+                                    classNames={`h-100 mb-0`}
+                                    ratio={'16x9'}
+                                />,
+                                cols: 12,
+                                colsSm: 12,
+                                colsMd: 6,
+                                classNames: "mb-0"
+                            },
+                            {
+                                child: <InfoCard
+                                    title={`Detailtiefe Energiesystemanalysen & Resilienzbetrachtungen`}
+                                    children={[
+                                        <Paragraph
+                                            text={`
+                                                Der <strong>Digitale Zwilling</strong> ermöglicht umfassende Analysen
+                                                und Bewertungen komplexer Energiesysteme unter realitätsnahen
+                                                Bedingungen. Mithilfe von Varianten- und Szenarienuntersuchungen
+                                                können unterschiedliche Technologien, Betriebskonzepte und
+                                                Infrastrukturoptionen im Hinblick auf Effizienz, Nachhaltigkeit,
+                                                Wirtschaftlichkeit und Machbarkeit verglichen werden.
+                                            `}
+                                            alignment={`left`}
+                                            classNames={null}
+                                        />,
+                                        <Paragraph
+                                            text={`
+                                                Ergänzend liefern Resilienzanalysen wertvolle Erkenntnisse über die
+                                                Robustheit und Anpassungsfähigkeit von Energiesystemen gegenüber
+                                                äußeren Einflüssen wie Lastspitzen, Störungen oder klimatischen
+                                                Veränderungen. Auf dieser Basis entstehen fundierte
+                                                Entscheidungsgrundlagen für die strategische Planung,
+                                                Investitionsbewertung und Systemoptimierung in Transformationsprozessen
+                                                des Energiesystems.
+                                            `}
+                                            alignment={`left`}
+                                            classNames={`mb-0`}
+                                        />
+                                    ]}
+                                    src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/art4-1-1024x611.jpg`}
+                                    alt={`Detailtiefe Energiesystemanalysen & Resilienzbetrachtungen`}
+                                    classNames={`h-100 mb-0`}
+                                    ratio={'16x9'}
+                                />,
+                                cols: 12,
+                                colsSm: 12,
+                                colsMd: 6,
+                                classNames: "mb-0"
+                            }
+                        ]).flat()}
+                        backgroundType={`none`}
+                        isContained={false}
+                    />
                 ]}
                 backgroundType={`light`}
                 classNames={`mb-0`}

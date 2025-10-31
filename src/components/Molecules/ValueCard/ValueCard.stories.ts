@@ -11,13 +11,21 @@ const meta = {
     },
     tags: ["autodocs"],
     argTypes: {
-        items: {
-            control: { type: "object" },
+        text: {
+            control: { type: "text" },
             table: { category: "Content" }
         },
-        classNames: {
+        src: {
             control: { type: "text" },
-            table: { category: "Design" },
+            table: { category: "Content" }
+        },
+        alt: {
+            control: { type: "text" },
+            table: { category: "Content" },
+        },
+        classNames: {
+            control: { type: 'text' },
+            table: { category: 'Design' },
         },
     },
 } satisfies Meta<typeof ValueCard>;

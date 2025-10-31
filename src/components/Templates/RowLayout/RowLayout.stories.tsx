@@ -6,6 +6,9 @@ import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 
+/* Import constants. */
+import {MARGIN_CLASS_ROW_LAYOUT} from "@/utils/margins.ts";
+
 const meta = {
     title: 'Templates/RowLayout',
     component: RowLayout,
@@ -45,7 +48,7 @@ const text = `
     sit amet.
 `;
 
-let divClassNames = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25'];
+const divClassNames = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25', MARGIN_CLASS_ROW_LAYOUT];
 
 const child1: ReactNode = <div className={divClassNames.join(" ")}>
     <Title
@@ -55,8 +58,6 @@ const child1: ReactNode = <div className={divClassNames.join(" ")}>
         classNames={`mb-0`}
     />
 </div>;
-
-divClassNames.push('mt-4');
 
 const child2: ReactNode = <div className={divClassNames.join(" ")}>
     <Paragraph

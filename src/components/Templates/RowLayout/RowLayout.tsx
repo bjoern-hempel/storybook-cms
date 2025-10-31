@@ -17,6 +17,7 @@ import type {TypeClassNames} from "@/utils/classNames.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
+import {PADDING_CLASS_ROW_LAYOUT} from "@/utils/paddings.ts";
 import {MARGIN_CLASS_ROW_LAYOUT} from "@/utils/margins.ts";
 
 /**
@@ -47,32 +48,33 @@ export const RowLayout: React.FC<ColumnLayoutProps> = ({
     const childArray = React.Children.toArray(children);
     const marginClass = applyMarginClass(MARGIN_CLASS_ROW_LAYOUT, classNames);
 
-    const sectionClasses = [
-        "section-row-layout",
-        backgroundType !== "none" && backgroundType
-    ].filter(Boolean).join(" ");
-
-    const Content = (
-        <>
-            {childArray.map((child, i) => (
-                <div key={i}>
-                    {child}
-                </div>
-            ))}
-        </>
-    );
-
     const finalClasses = [
+        "section-row-layout",
         marginClass,
+        backgroundType !== "none" && backgroundType,
         ...normalizeClassNames(classNames),
     ].filter(Boolean).join(" ");
 
+    const Content = (
+        <div className={`section-row`}>
+            {childArray.map((child, i) => (
+                <React.Fragment key={i}>
+                    {child}
+                </React.Fragment>
+            ))}
+        </div>
+    );
+
     return (
-        <section className={sectionClasses}>
+        <section className={`${finalClasses}`}>
             {isContained ? (
-                <div className={`section container ${finalClasses}`}>{Content}</div>
+                <div className={`container ${PADDING_CLASS_ROW_LAYOUT}`}>
+                    {Content}
+                </div>
             ) : (
-                <div className={finalClasses}>{Content}</div>
+                <React.Fragment>
+                    {Content}
+                </React.Fragment>
             )}
         </section>
     );

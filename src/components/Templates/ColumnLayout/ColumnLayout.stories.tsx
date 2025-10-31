@@ -5,6 +5,9 @@ import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 
+/* Import constants. */
+import {MARGIN_CLASS_COL_LAYOUT} from "@/utils/margins.ts";
+
 const meta = {
     title: 'Templates/ColumnLayout',
     component: ColumnLayout,
@@ -48,20 +51,16 @@ const text = `
     sit amet.
 `;
 
-const divClassNamesBase = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25'];
+const divClassNames = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25', MARGIN_CLASS_COL_LAYOUT];
 
 const children = Array.from({ length: 4 }).map((_, index) => {
     const number = index + 1;
-
-    const divClassNames = [...divClassNamesBase];
 
     const child1 = (
         <div className={divClassNames.join(" ")}>
             <Title title={`Title ${number}`} type="h3" alignment="left" classNames="mb-0" />
         </div>
     );
-
-    divClassNames.push('mt-4');
 
     const child2 = (
         <div className={divClassNames.join(" ")}>

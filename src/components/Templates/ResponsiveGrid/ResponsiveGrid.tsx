@@ -17,7 +17,8 @@ import type {TypeClassNames} from "@/utils/classNames.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_ROW_LAYOUT} from "@/utils/margins.ts";
+import {MARGIN_CLASS_RESPONSIVE_GRID} from "@/utils/margins.ts";
+import {PADDING_CLASS_RESPONSIVE_GRID} from "@/utils/paddings.ts";
 
 export interface ResponsiveGridItem {
     child: ReactNode;
@@ -58,34 +59,40 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
     isContained = false,
     classNames = null,
 }) => {
-    const marginClass = applyMarginClass(MARGIN_CLASS_ROW_LAYOUT, classNames);
-
-    const sectionClasses = [
-        "section-responsive-grid",
-        backgroundType !== "none" && backgroundType
-    ].filter(Boolean).join(" ");
+    const marginClass = applyMarginClass(MARGIN_CLASS_RESPONSIVE_GRID, classNames);
 
     const finalClasses = [
+        "section-responsive-grid",
         marginClass,
+        backgroundType !== "none" && backgroundType,
         ...normalizeClassNames(classNames),
     ].filter(Boolean).join(" ");
 
     const Content = (
-        <div className={`row g-4`}>
+        <div className={`row g-4 align-items-stretch`}>
             {items.map((item, index) => (
-                <div key={index} className={`col-${item.cols ?? colsDefault.cols} col-sm-${item.colsSm ?? colsDefault.colsSm} col-md-${item.colsMd ?? colsDefault.colsMd}`}>
-                    {item.child}
+                <div
+                    key={index}
+                    className={`section-responsive col-${item.cols ?? colsDefault.cols} col-sm-${item.colsSm ?? colsDefault.colsSm} col-md-${item.colsMd ?? colsDefault.colsMd}`}
+                >
+                    <div className="h-100 d-flex flex-column">
+                        {item.child}
+                    </div>
                 </div>
             ))}
         </div>
     );
 
     return (
-        <section className={sectionClasses}>
+        <section className={finalClasses}>
             {isContained ? (
-                <div className={`section container ${finalClasses}`}>{Content}</div>
+                <div className={`container ${PADDING_CLASS_RESPONSIVE_GRID}`}>
+                    {Content}
+                </div>
             ) : (
-                <div className={finalClasses}>{Content}</div>
+                <React.Fragment>
+                    {Content}
+                </React.Fragment>
             )}
         </section>
     );

@@ -12,7 +12,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import types. */
 import type {TypeClassNames} from "@/utils/classNames.ts";
+
+/* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
+
+/* Import constants. */
+import {PADDING_CLASS_COL_LAYOUT} from "@/utils/paddings.ts";
 import {MARGIN_CLASS_COL_LAYOUT} from "@/utils/margins.ts";
 
 export type LayoutType =
@@ -70,32 +75,33 @@ export const ColumnLayout: React.FC<ColumnLayoutProps> = ({
     const childArray = React.Children.toArray(children).slice(0, cols.length);
     const marginClass = applyMarginClass(MARGIN_CLASS_COL_LAYOUT, classNames);
 
-    const sectionClasses = [
+    const finalClasses = [
         "section-column-layout",
-        backgroundType !== "none" && backgroundType
+        marginClass,
+        backgroundType !== "none" && backgroundType,
+        ...normalizeClassNames(classNames),
     ].filter(Boolean).join(" ");
 
     const Content = (
-        <div className="row g-4">
+        <div className={`row g-4`}>
             {childArray.map((child, i) => (
-                <div key={i} className={cols[i] ?? "col-12"}>
+                <div key={i} className={`section-column ${cols[i] ?? "col-12"}`}>
                     {child}
                 </div>
             ))}
         </div>
     );
 
-    const finalClasses = [
-        marginClass,
-        ...normalizeClassNames(classNames),
-    ].filter(Boolean).join(" ");
-
     return (
-        <section className={sectionClasses}>
+        <section className={finalClasses}>
             {isContained ? (
-                <div className={`section container ${finalClasses}`}>{Content}</div>
+                <div className={`container ${PADDING_CLASS_COL_LAYOUT}`}>
+                    {Content}
+                </div>
             ) : (
-                <div className={finalClasses}>{Content}</div>
+                <React.Fragment>
+                    {Content}
+                </React.Fragment>
             )}
         </section>
     );

@@ -8,6 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+/* Import constants. */
+import {PADDING_CLASS_COL_LAYOUT} from "@/utils/paddings.ts";
+
 export interface HeroProps {
     /** Title contents */
     title: string;
@@ -21,7 +24,7 @@ export const Hero = ({title, subtitle}: HeroProps) => {
     return (
         <section className="section-hero">
             <div
-                className="hero section position-relative d-flex align-items-end text-white"
+                className={`hero position-relative d-flex align-items-end text-white ${PADDING_CLASS_COL_LAYOUT}`}
                 style={{backgroundImage: `url(${HeroImage})`}}
             >
                 <div className="hero-layer"></div>

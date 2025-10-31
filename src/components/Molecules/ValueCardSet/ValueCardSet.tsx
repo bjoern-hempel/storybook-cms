@@ -75,6 +75,7 @@ export const ValueCardSet = ({
                 }))}
                 backgroundType={`none`}
                 isContained={false}
+                classNames={`mb-0`} /* Margin bottom managed by ResponsiveGrid component. */
             />
         </div>
     );

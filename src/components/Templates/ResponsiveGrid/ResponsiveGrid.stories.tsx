@@ -33,10 +33,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof ResponsiveGrid>;
 
-const divClassNames = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25'];
+const divClassNames = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25', 'h-100'];
 const child = <div className={divClassNames.join(" ")}>test</div>;
+const child2 = <div className={divClassNames.join(" ")}>test<br />test</div>;
 
-export const Default: Story = {
+export const Small: Story = {
     args: {
         backgroundType: "dark",
         isContained: true,
@@ -47,7 +48,7 @@ export const Default: Story = {
                 classNames: "mb-0"
             },
             {
-                child: child,
+                child: child2,
                 colsMd: 6,
                 classNames: "mb-0"
             },
