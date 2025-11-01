@@ -81,11 +81,11 @@ export const Footer = ({
         <footer className="section-footer">
             <Container className={PADDING_CLASS_FOOTER}>
                 <div className="row gy-4">
-                    <div className="col-lg-2 text-md-start">
+                    <div className="col-lg-2 col-md-4 text-md-start">
                         <Image src={logoApp} alt={`App logo`} classNames={`logo-app mb-0`} />
                     </div>
 
-                    <div className="col-lg-4 text-md-start">
+                    <div className="col-lg-4 col-md-8 text-md-start">
                         <Title title={`Kontakt`} type={`h4`} alignment={`left`} classNames={`fw-bold`} />
                         <address className="mb-0">
                             <Paragraph
@@ -109,7 +109,7 @@ export const Footer = ({
                         </address>
                     </div>
 
-                    <div className="col-lg-4 text-md-start">
+                    <div className="col-lg-4 col-md-8 text-md-start">
                         <Title title={`Information`} type={`h4`} alignment={`left`} classNames={`fw-bold`} />
                         <List
                             items={linkItems.map((item, index) => (
@@ -134,7 +134,7 @@ export const Footer = ({
                         />
                     </div>
 
-                    <div className="col-lg-2 text-md-start">
+                    <div className="col-lg-2 col-md-4 text-md-start">
                         <a href={`${homepage}`} className="" target="_blank" rel="noopener noreferrer">
                             <img src={logo} alt="Logo" className="img-fluid logo-main" />
                         </a>
