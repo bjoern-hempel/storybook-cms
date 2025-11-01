@@ -1,3 +1,12 @@
+/*
+ * This file is part of the https://github.com/bjoern-hempel/storybook-cms project.
+ *
+ * (c) 2025 Björn Hempel <bjoern@hempel.li>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 import {useEffect, useRef, useState} from 'react';
 import '@/components/Molecules/Clock/Clock.scss';
 import * as React from "react";
@@ -12,7 +21,7 @@ export interface ClockProps {
     /** Show border? */
     showBorder?: boolean;
 
-    /** Use 24 hour format? true for 24h, false for AM/PM */
+    /** Use 24-hour format? true for 24h, false for AM/PM */
     use24HourFormat?: boolean;
 
     /** Show tenth of a second? */

@@ -1,6 +1,18 @@
+/*
+ * This file is part of the https://github.com/bjoern-hempel/storybook-cms project.
+ *
+ * (c) 2025 Björn Hempel <bjoern@hempel.li>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 import type {Meta, StoryObj} from '@storybook/react-vite';
 
-import {type ChildItem} from "@/components/Organisms/TextImage/TextImage.tsx";
+/* Import types. */
+import {type ChildItem} from "@/components/Organisms/Content/Content.tsx";
+
+/* Import components. */
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {Content} from "@/components/Organisms/Content/Content.tsx";
