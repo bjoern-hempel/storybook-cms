@@ -11,14 +11,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import components. */
-import {Title} from "@/components/Atoms/Title/Title.tsx";
-import {List} from "@/components/Atoms/List/List.tsx";
+import {Image} from "@/components/Atoms/Image/Image.tsx";
 import {Link} from "@/components/Atoms/Link/Link.tsx";
+import {List} from "@/components/Atoms/List/List.tsx";
+import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
+import {Title} from "@/components/Atoms/Title/Title.tsx";
 
 /* Import constants. */
 import {PADDING_CLASS_FOOTER} from "@/utils/paddings.ts";
-import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
-import {Image} from "@/components/Atoms/Image/Image.tsx";
 
 export interface LinkItem {
     /** Menu label */
@@ -80,12 +80,12 @@ export const Footer = ({
     return (
         <footer className="section-footer">
             <Container className={PADDING_CLASS_FOOTER}>
-                <div className="row gy-4">
-                    <div className="col-lg-2 col-md-4 text-md-start">
+                <div className="row gy-5 gx-4">
+                    <div className="text-md-start col-12 col-md-4 col-lg-2 order-1">
                         <Image src={logoApp} alt={`App logo`} classNames={`logo-app mb-0`} />
                     </div>
 
-                    <div className="col-lg-4 col-md-8 text-md-start">
+                    <div className="text-md-start col-12 col-md-8 col-lg-4 order-2">
                         <Title title={`Kontakt`} type={`h4`} alignment={`left`} classNames={`fw-bold`} />
                         <address className="mb-0">
                             <Paragraph
@@ -109,7 +109,7 @@ export const Footer = ({
                         </address>
                     </div>
 
-                    <div className="col-lg-4 col-md-8 text-md-start">
+                    <div className="text-md-start col-12 col-md-8 col-lg-4 order-3 order-md-4 order-lg-3">
                         <Title title={`Information`} type={`h4`} alignment={`left`} classNames={`fw-bold`} />
                         <List
                             items={linkItems.map((item, index) => (
@@ -134,9 +134,9 @@ export const Footer = ({
                         />
                     </div>
 
-                    <div className="col-lg-2 col-md-4 text-md-start">
+                    <div className="text-md-start col-12 col-md-4 col-lg-2 order-4 order-md-3 order-lg-4">
                         <a href={`${homepage}`} className="" target="_blank" rel="noopener noreferrer">
-                            <img src={logo} alt="Logo" className="img-fluid logo-main" />
+                            <Image src={logo} alt={`Main logo`} classNames={`logo-main mb-0`} />
                         </a>
                     </div>
                 </div>
