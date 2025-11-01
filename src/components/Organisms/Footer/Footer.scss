@@ -6,12 +6,28 @@
     .container {
         color: $font-color-dark;
 
-        .logo-1 {
+        .logo-app {
             padding-right: 3rem;
+            max-width: 10rem;
+            width: 100%;
         }
 
-        .logo-2 {
+        .logo-main {
+            max-width: 10rem;
+            width: 100%;
+        }
 
+        address {
+            .address {
+
+            }
+
+            .contact {
+                .caption {
+                    display: inline-block;
+                    width: 5rem;
+                }
+            }
         }
     }
 }

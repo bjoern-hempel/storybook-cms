@@ -1,3 +1,5 @@
+import {fn} from "storybook/test";
+
 /* Import assets. */
 import '@/assets/css/style.scss';
 
@@ -60,19 +62,21 @@ export const Button = ({
 
     const finalClasses = [
         alignmentClass,
+        "button",
+        `button--${size}`,
+        mode,
         marginClass,
         ...normalizeClassNames(classNames),
     ].filter(Boolean).join(" ");
 
     return (
-        <div className={finalClasses}>
-            <button
-                type="button"
-                className={["button", `button--${size}`, mode].join(" ")}
-                {...props}
-            >
-                {label}
-            </button>
-        </div>
+        <button
+            type="button"
+            className={finalClasses}
+            onClick={onClick ? onClick : fn}
+            {...props}
+        >
+            {label}
+        </button>
     );
 };

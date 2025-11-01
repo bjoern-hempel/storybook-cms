@@ -1,5 +1,6 @@
 /* Atoms */
-export const MARGIN_CLASS_BUTTON = "mb-4";
+export const MARGIN_CLASS_BUTTON = "mb-0";
+export const MARGIN_CLASS_LINK = "mb-0";
 export const MARGIN_CLASS_IMAGE = "mb-4";
 export const MARGIN_CLASS_LIST = "mb-4";
 export const MARGIN_CLASS_PARAGRAPH = "mb-4";

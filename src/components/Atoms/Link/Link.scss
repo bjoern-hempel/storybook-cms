@@ -1,0 +1,11 @@
+@use "@/assets/css/variables" as *;
+
+.section-link {
+    &.dark {
+        color: $light-color;
+    }
+
+    &.light {
+        color: $primary-color;
+    }
+}
