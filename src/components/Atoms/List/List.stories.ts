@@ -11,9 +11,13 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
-        title: {
-            control: { type: 'text' },
+        items: {
+            control: { type: 'object' },
             table: { category: 'Content' }
+        },
+        style: {
+            control: { type: 'select' },
+            table: { category: 'Design' }
         },
         classNames: {
             control: { type: 'text' },
@@ -32,5 +36,6 @@ export const Default: Story = {
             "Wann arbeitet die Wärmepumpe am effizientesten?",
             "Wie wirkt sich das Nutzerverhalten auf den Energieverbrauch aus?",
         ],
+        style: "list-standard"
     },
 };

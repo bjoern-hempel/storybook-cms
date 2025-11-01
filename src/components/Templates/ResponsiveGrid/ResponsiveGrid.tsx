@@ -57,8 +57,7 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
     items,
     backgroundType = "none",
     isContained = false,
-    classNames = null,
-    renderItem
+    classNames = null
 }) => {
     const marginClass = applyMarginClass(MARGIN_CLASS_RESPONSIVE_GRID, classNames);
 
@@ -72,9 +71,6 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
     const Content = (
         <div className={`row g-4 align-items-stretch`}>
             {items.map((item, index) => {
-
-                console.log(renderItem);
-
                 return (
                     <div
                         key={index}

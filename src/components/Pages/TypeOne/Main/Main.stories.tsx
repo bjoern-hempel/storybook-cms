@@ -19,6 +19,7 @@ import {Table} from "@/components/Atoms/Table/Table.tsx";
 import {TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {ValueCardSet} from "@/components/Molecules/ValueCardSet/ValueCardSet.tsx";
+import {Footer} from "@/components/Organisms/Footer/Footer.tsx";
 
 const meta = {
     title: 'Pages/TypeOne/Main',
@@ -511,10 +512,24 @@ export const Default: Story = {
                             alt={`Zukunft gestalten. Verantwortung übernehmen.`}
                         />
                     </ColumnLayout>
-
                 ]}
                 backgroundType={`light`}
             />,
+            <Footer
+                name={`EA Systems Dresden GmbH`}
+                streetHouseNumber={`Würzburger Str. 14`}
+                zipCodeCity={`01187 Dresden`}
+                country={`Deutschland`}
+                telephone={`+49 351 467136 55`}
+                email={`info@ea-energie.de`}
+                homepage={`https://www.ea-energie.de/`}
+                logo={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/logo_vektor_white.png`}
+                logoApp={`https://digitaltwin.easd.cloud/easd-content/uploads/2023/12/unbenannt-768x959.png`}
+                linkItems={[
+                    { label: "Impressum", href: "https://www.ea-energie.de/de/unternehmen/impressum/" },
+                    { label: "Datenschutz", href: "https://www.ea-energie.de/de/datenschutzerklaerung/" },
+                ]}
+            />
         ],
     }
 };

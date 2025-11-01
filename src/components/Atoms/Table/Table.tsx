@@ -85,16 +85,16 @@ export const Table = ({
 
                 <tbody className={`${groupDivider ? `table-group-divider` : ``}`}>
                     {rows.map((row, rIdx) => (
-                        <tr key={rIdx}>
+                        <tr key={`tr-${rIdx}`}>
                             {row.map((cell, cIdx) => {
                                 if (cIdx === 0) {
                                     return (
-                                        <td key={cIdx}><strong>{cell}</strong></td>
+                                        <td key={`td-${cIdx}`}><strong>{cell}</strong></td>
                                     );
                                 }
 
                                 return (
-                                    <td key={cIdx}>{cell}</td>
+                                    <td key={`td-${cIdx}`}>{cell}</td>
                                 );
                             })}
                         </tr>
@@ -107,9 +107,9 @@ export const Table = ({
                     {rows.map((row, rIdx) => (
                         row.map((cell, cIdx) => {
                             return (
-                                <tr key={rIdx} className={`${cIdx === 0 ? "row-next" : ""}`}>
+                                <tr key={`tr-${rIdx}-${cIdx}`} className={`${cIdx === 0 ? "row-next" : ""}`}>
                                     <td><strong>{headers[cIdx]}</strong></td>
-                                    <td key={cIdx} data-title={headers[cIdx]}>{cell}</td>
+                                    <td>{cell}</td>
                                 </tr>
                             );
                         })

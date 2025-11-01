@@ -24,6 +24,9 @@ export interface ListProps {
     /** List entries */
     items: (string | React.ReactNode)[];
 
+    /** List style */
+    style?: "list-standard"|"list-unstyled"|"list-inline";
+
     /** Additional class names */
     classNames?: TypeClassNames;
 }
@@ -31,6 +34,7 @@ export interface ListProps {
 /** `List` atom */
 export const List = ({
     items,
+    style = "list-standard",
     classNames = null,
     ...props
 }: ListProps) => {
@@ -38,17 +42,20 @@ export const List = ({
 
     const finalClasses = [
         "section-list",
+        style,
         marginClass,
         ...normalizeClassNames(classNames),
     ].filter(Boolean).join(" ");
+
+    const itemClass = style === "list-inline" ? "list-inline-item" : null;
 
     return (
         <ul className={finalClasses} {...props}>
             {items.map((item, index) => (
                 typeof item === "string" ? (
-                    <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+                    <li key={index} className={`${itemClass ? ` ${itemClass}` : ""}`} dangerouslySetInnerHTML={{ __html: item }} />
                 ) : (
-                    <li key={index}>{item}</li>
+                    <li key={index} className={`${itemClass ? ` ${itemClass}` : ""}`}>{item}</li>
                 )
             ))}
         </ul>

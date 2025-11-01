@@ -1,6 +1,7 @@
 @use "sass:color";
 
 $primary-color: rgb(2, 15, 65);
+$white-color: rgb(255, 255, 255);
 
 $background-dark: rgba(0, 0, 0, 0) linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%) repeat 0 0 / auto padding-box border-box scroll;
 $background-light: rgb(234, 244, 249);
@@ -10,6 +11,8 @@ $background-value-card-light: rgb(234, 244, 249);
 
 $background-info-card-dark: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%);
 $background-info-card-light: rgb(234, 244, 249);
+
+$background-footer: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%);
 
 $font-color-dark: rgb(255, 255, 255);
 $font-color-light: $primary-color;

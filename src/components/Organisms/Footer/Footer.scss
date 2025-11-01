@@ -1,0 +1,17 @@
+@use "@/assets/css/variables" as *;
+
+.section-footer {
+    background: $background-footer;
+
+    .container {
+        color: $font-color-dark;
+
+        .logo-1 {
+            padding-right: 3rem;
+        }
+
+        .logo-2 {
+
+        }
+    }
+}
