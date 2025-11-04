@@ -84,26 +84,30 @@ export const Header = ({
             >
                 <Container className="d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
-                        <img src={logo} alt="Logo" className="logo me-3"/>
-                        <div className="text-light">
-                            <div className="fw-bold">{title}</div>
+                        <img src={logo} alt="Logo" className="logo me-2" />
+                        <div className="text-light d-none d-lg-flex flex-column">
+                            <span className="fw-bold">{title}</span>
                             <small>{subtitle}</small>
                         </div>
                     </div>
+                    <Navbar.Toggle aria-controls="main-nav" />
+                    <Navbar.Collapse id="main-nav" className="justify-content-end">
+                        <Nav>
+                            {menuItems.map((item) => (
+                                <Nav.Link
+                                    key={`nav-${item.label}`}
+                                    onClick={item.onClick}
+                                    className="text-white fw-semibold me-lg-3"
+                                >
+                                    {item.label}
+                                </Nav.Link>
+                            ))}
+                        </Nav>
+                    </Navbar.Collapse>
 
-                    <Nav className="ms-auto">
-                        {menuItems.map((item) => (
-                            <Nav.Link
-                                key={`nav-${item.label}`}
-                                onClick={item.onClick}
-                                className="text-white fw-semibold me-3"
-                            >
-                                {item.label}
-                            </Nav.Link>
-                        ))}
-                    </Nav>
                 </Container>
             </Navbar>
         </header>
+
     );
 };
