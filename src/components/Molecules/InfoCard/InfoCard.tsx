@@ -75,7 +75,7 @@ export const InfoCard = ({
 
     return (
         <>
-            <div className={`card border-0 shadow-none rounded-0 overflow-hidden ${finalClasses}`} {...props}>
+            <div className={`card border-0 rounded-0 overflow-hidden ${finalClasses}`} {...props}>
                 <figure className={`mb-0`}>
                     <Image src={src} alt={alt} classNames={`card-img-top rounded-0 img-fluid object-fit-cover w-100 mb-0${ratio === 'none' ? '' : ` ratio ratio-${ratio}`}`} />
                 </figure>

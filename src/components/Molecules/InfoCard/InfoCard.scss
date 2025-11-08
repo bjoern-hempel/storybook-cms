@@ -10,6 +10,8 @@
 @use "@/assets/css/variables" as *;
 
 .section-info-card {
+    background: var(--background-info-card-dark);
+    box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.4);
 
     .card-img-top {
         &.ratio {
@@ -29,7 +31,6 @@
     }
 
     .card-body {
-        background: var(--background-info-card-dark);
     }
 
     p {

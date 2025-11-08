@@ -29,7 +29,7 @@ $colors: (
 $backgrounds: (
     layout-dark: (
         theme-blue: rgba(0, 0, 0, 0) linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%) repeat 0 0 / auto padding-box border-box scroll,
-        theme-green: rgba(0, 0, 0, 0) linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%) repeat 0 0 / auto padding-box border-box scroll,
+        theme-green: linear-gradient(135deg, rgb(5, 57, 23) 52%, rgb(7, 98, 39) 100%),
     ),
     layout-light: (
         theme-blue: rgb(234, 244, 249),
@@ -37,7 +37,7 @@ $backgrounds: (
     ),
     value-card-dark: (
         theme-blue: radial-gradient(rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
-        theme-green: radial-gradient(rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+        theme-green: linear-gradient(135deg, rgb(4, 90, 36) 52%, rgba(6, 112, 43, 0) 100%),
     ),
     value-card-light: (
         theme-blue: rgb(234, 244, 249),
@@ -45,7 +45,7 @@ $backgrounds: (
     ),
     info-card-dark: (
         theme-blue: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
-        theme-green: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+        theme-green:  linear-gradient(135deg, rgb(5, 57, 23) 52%, rgb(7, 98, 39) 100%),
     ),
     info-card-light: (
         theme-blue: rgb(234, 244, 249),
@@ -53,11 +53,11 @@ $backgrounds: (
     ),
     header: (
         theme-blue: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
-        theme-green: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+        theme-green: linear-gradient(135deg, rgb(5, 57, 23) 52%, rgb(7, 98, 39) 100%),
     ),
     footer: (
         theme-blue: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
-        theme-green: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+        theme-green: linear-gradient(135deg, rgb(5, 57, 23) 52%, rgb(7, 98, 39) 100%),
     ),
 );
 

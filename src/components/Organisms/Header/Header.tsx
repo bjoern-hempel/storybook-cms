@@ -79,7 +79,7 @@ export const Header = ({
             >
                 <Container className="d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
-                        <img src={logo} alt="Logo" className="logo me-2" />
+                        <img src={logo} alt="Logo" className="logo me-4" />
                         <div className="text-light d-none d-lg-flex flex-column">
                             <span className="fw-bold">{title}</span>
                             <small>{subtitle}</small>
