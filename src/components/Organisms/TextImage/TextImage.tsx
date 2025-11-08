@@ -24,11 +24,17 @@ import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx
 import {Image} from "@/components/Atoms/Image/Image.tsx";
 
 /* Import types. */
-import type {TypeClassNames} from "@/types/common-types.ts";
+import type {
+    TypeAlignmentTextImage,
+    TypeBackground,
+    TypeClassNames,
+    TypeLayoutChildren,
+    TypeLayoutTextImage
+} from "@/types/common-types.ts";
 
 export interface TextImageProps {
     /** Which content should be displayed? */
-    children: ReactNode[];
+    children: TypeLayoutChildren;
 
     /** Image source */
     src: string;
@@ -37,13 +43,13 @@ export interface TextImageProps {
     alt: string;
 
     /** What background type to use? */
-    backgroundType: 'dark'|'light';
+    backgroundType: TypeBackground;
 
     /** What is the direction of the image? */
-    imageAlignment?: 'right'|'left';
+    imageAlignment?: TypeAlignmentTextImage;
 
     /** Which column layout? */
-    columnLayout?: '66%:33%'|'50%:50%'|'33%:66%';
+    columnLayout?: TypeLayoutTextImage;
 
     /** Additional class names */
     classNames?: TypeClassNames;

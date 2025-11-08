@@ -18,7 +18,7 @@ import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {MARGIN_CLASS_COL_LAYOUT} from "@/constants/margins.ts";
 
 /* Import types. */
-import {typeBackgroundOptions} from "@/types/common-types.ts";
+import {typeBackgroundOptions, typeLayoutOptions} from "@/types/common-types.ts";
 
 const meta = {
     title: 'Templates/ColumnLayout',
@@ -34,6 +34,7 @@ const meta = {
         },
         layout: {
             control: { type: 'radio' },
+            options: typeLayoutOptions,
             table: { category: 'Design' },
         },
         backgroundType: {
@@ -59,9 +60,7 @@ const text = `
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
     gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-    et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-    sit amet.
+    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
 `;
 
 const divClassNames = ['p-3', 'border', 'text-center', 'bg-light', 'bg-opacity-25', MARGIN_CLASS_COL_LAYOUT];

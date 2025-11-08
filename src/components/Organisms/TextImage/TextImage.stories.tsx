@@ -19,7 +19,11 @@ import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 
 /* Import types. */
-import {typeBackgroundOptions} from "@/types/common-types.ts";
+import {
+    typeAlignmentTextImageOptions,
+    typeBackgroundOptions,
+    typeLayoutTextImageOptions
+} from "@/types/common-types.ts";
 
 const meta = {
     title: 'Organisms/TextImage',
@@ -48,10 +52,12 @@ const meta = {
         },
         imageAlignment: {
             control: { type: 'radio' },
+            options: typeAlignmentTextImageOptions,
             table: { category: 'Design' },
         },
         columnLayout: {
             control: { type: 'radio' },
+            options: typeLayoutTextImageOptions,
             table: { category: 'Design' },
         },
         classNames: {
