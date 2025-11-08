@@ -8,6 +8,7 @@
  */
 
 import * as React from "react";
+import type {ReactNode} from "react";
 
 /* Import assets. */
 import '@/assets/css/style.scss';
@@ -34,7 +35,7 @@ export interface TableProps {
     headers: string[];
 
     /** Table contents. */
-    rows: (string | React.ReactNode)[][];
+    rows: (string | ReactNode)[][];
 
     /** Show border? */
     bordered: "full" | "half" | "none";

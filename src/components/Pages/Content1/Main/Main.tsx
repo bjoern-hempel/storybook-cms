@@ -11,7 +11,7 @@ import * as React from "react";
 import {ReactNode} from "react";
 
 /* Import assets. */
-import '@/components/Pages/TypeOne/Main/Main.scss';
+import '@/components/Pages/Content1/Main/Main.scss';
 
 /* Import bootstrap. */
 import 'bootstrap/dist/css/bootstrap.min.css';

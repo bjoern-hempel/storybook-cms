@@ -15,12 +15,13 @@ import {fn} from "storybook/test";
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 import {Content} from "@/components/Organisms/Content/Content.tsx";
+import {Footer} from "@/components/Organisms/Footer/Footer.tsx";
 import {Header} from "@/components/Organisms/Header/Header.tsx";
 import {Hero} from "@/components/Organisms/Hero/Hero.tsx";
 import {Image} from "@/components/Atoms/Image/Image.tsx";
 import {InfoCard} from "@/components/Molecules/InfoCard/InfoCard.tsx";
 import {List} from "@/components/Atoms/List/List.tsx";
-import {Main} from '@/components/Pages/TypeOne/Main/Main.tsx';
+import {Main} from '@/components/Pages/Content1/Main/Main.tsx';
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
@@ -28,10 +29,9 @@ import {Table} from "@/components/Atoms/Table/Table.tsx";
 import {TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {ValueCardSet} from "@/components/Molecules/ValueCardSet/ValueCardSet.tsx";
-import {Footer} from "@/components/Organisms/Footer/Footer.tsx";
 
 const meta = {
-    title: 'Pages/TypeOne/Main',
+    title: 'Pages/Content1/Main',
     component: Main,
     parameters: {
         layout: 'fullscreen',

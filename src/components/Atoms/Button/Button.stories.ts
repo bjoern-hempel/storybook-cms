@@ -31,6 +31,7 @@ const meta = {
         },
         primary: {
             control: { type: 'radio' },
+            options: [true, false],
             table: { category: 'Design' },
         },
         size: {
