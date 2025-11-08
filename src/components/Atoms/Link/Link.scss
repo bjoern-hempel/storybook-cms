@@ -11,10 +11,10 @@
 
 .section-link {
     &.dark {
-        color: $light-color;
+        color: var(--color-background-dark);
     }
 
     &.light {
-        color: $primary-color;
+        color: var(--color-background-light);
     }
 }

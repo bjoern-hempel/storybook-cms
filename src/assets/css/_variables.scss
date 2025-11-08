@@ -9,31 +9,161 @@
 
 @use "sass:color";
 
-$primary-color: rgb(2, 15, 65);
-$light-color: rgb(255, 255, 255);
+$themes: (
+    theme-blue,
+    theme-green,
+);
 
-$background-dark: rgba(0, 0, 0, 0) linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%) repeat 0 0 / auto padding-box border-box scroll;
-$background-light: rgb(234, 244, 249);
+@function require($value, $message) {
+    @if $value == null {
+        @error $message;
+    }
+    @return $value;
+}
 
-$background-value-card-dark: radial-gradient(rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%);
-$background-value-card-light: rgb(234, 244, 249);
+@function theme-color($style, $theme) {
+    @return require(map-get(map-get($colors, $style), $theme), "Missing theme-color(#{$style}, #{$theme})");
+}
 
-$background-info-card-dark: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%);
-$background-info-card-light: rgb(234, 244, 249);
+@function theme-background($style, $theme) {
+    @return require(map-get(map-get($backgrounds, $style), $theme), "Missing theme-background(#{$style}, #{$theme})");
+}
 
-$background-footer: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%);
+@function theme-button($type, $style, $theme) {
+    @return require(map-get(map-get(map-get($buttons, $type), $style), $theme), "Missing theme-button(#{$type}, #{$style}, #{$theme})");
+}
 
-$font-color-dark: $light-color;
-$font-color-light: $primary-color;
+$colors: (
+    primary: (
+        theme-blue: rgb(2, 15, 65),
+        theme-green: rgb(17, 17, 17),
+    ),
+    white: (
+        theme-blue: rgb(255, 255, 255),
+        theme-green: rgb(255, 255, 255),
+    ),
+);
 
-$button-primary-background-color: rgb(236, 195, 47);
-$button-primary-background-color-2: rgb(223, 183, 39);
+$backgrounds: (
+    layout-dark: (
+        theme-blue: rgba(0, 0, 0, 0) linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%) repeat 0 0 / auto padding-box border-box scroll,
+        theme-green: rgba(0, 0, 0, 0) linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%) repeat 0 0 / auto padding-box border-box scroll,
+    ),
+    layout-light: (
+        theme-blue: rgb(234, 244, 249),
+        theme-green: rgb(234, 244, 249),
+    ),
+    value-card-dark: (
+        theme-blue: radial-gradient(rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+        theme-green: radial-gradient(rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+    ),
+    value-card-light: (
+        theme-blue: rgb(234, 244, 249),
+        theme-green: rgb(234, 244, 249),
+    ),
+    info-card-dark: (
+        theme-blue: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+        theme-green: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+    ),
+    info-card-light: (
+        theme-blue: rgb(234, 244, 249),
+        theme-green: rgb(234, 244, 249),
+    ),
+    header: (
+        theme-blue: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+        theme-green: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+    ),
+    footer: (
+        theme-blue: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+        theme-green: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
+    ),
+);
 
-$button-primary-background-color-hover: color.mix(black, $button-primary-background-color, 20%);
-$button-primary-background-color-hover-2: color.mix(black, $button-primary-background-color-2, 20%);
+$buttons: (
+    primary: (
+        color: (
+            theme-blue: theme-color(primary, theme-blue),
+            theme-green: theme-color(white, theme-green),
+        ),
+        border-color: (
+            theme-blue: transparent,
+            theme-green: transparent,
+        ),
+        background: (
+            theme-blue: linear-gradient(135deg, rgb(236, 195, 47) 0%, rgb(223, 183, 39) 100%),
+            theme-green: rgb(254, 65, 2),
+        ),
+        background-hover: (
+            theme-blue: linear-gradient(135deg, color.mix(rgb(127, 127, 127), rgb(236, 195, 47), 20%) 0%, color.mix(rgb(127, 127, 127), rgb(223, 183, 39), 20%) 100%),
+            theme-green: color.mix(rgb(127, 127, 127), rgb(254, 65, 2), 20%),
+        ),
+    ),
+    secondary: (
+        color: (
+            theme-blue: theme-color(primary, theme-blue),
+            theme-green: theme-color(primary, theme-green),
+        ),
+        border-color: (
+            theme-blue: rgba(theme-color(primary, theme-blue), 0.2),
+            theme-green: rgba(theme-color(primary, theme-green), 0.2),
+        ),
+        background: (
+            theme-blue: rgba(theme-color(primary, theme-blue), 0.1),
+            theme-green: rgba(theme-color(primary, theme-green), 0.1),
+        ),
+        background-hover: (
+            theme-blue: rgba(theme-color(primary, theme-blue), 0.2),
+            theme-green: rgba(theme-color(primary, theme-green), 0.2),
+        ),
+    ),
+);
 
-$button-secondary-background-color: $light-color;
+@mixin generate-theme($theme) {
 
-$button-secondary-background-color-hover: color.mix(black, $button-secondary-background-color, 20%);
+    /* Colors general */
+    --color-primary: #{theme-color(primary, $theme)};
+    --color-white: #{theme-color(white, $theme)};
 
-$section-distance: 2rem !important;
+    /* Colors for different background colors */
+    --color-background-dark: #{theme-color(white, $theme)};
+    --color-background-light: #{theme-color(primary, $theme)};
+
+    /* Background layout */
+    --background-layout-dark: #{theme-background(layout-dark, $theme)};
+    --background-layout-light: #{theme-background(layout-light, $theme)};
+
+    /* Background value card */
+    --background-value-card-dark: #{theme-background(value-card-dark, $theme)};
+    --background-value-card-light: #{theme-background(value-card-light, $theme)};
+
+    /* Background info card */
+    --background-info-card-dark: #{theme-background(info-card-dark, $theme)};
+    --background-info-card-light: #{theme-background(info-card-light, $theme)};
+
+    /* Background header */
+    --background-header: #{theme-background(header, $theme)};
+
+    /* Background footer */
+    --background-footer: #{theme-background(footer, $theme)};
+
+    /* Buttons primary */
+    $button-primary: primary;
+    --color-button-primary: #{theme-button($button-primary, color, $theme)};
+    --border-color-button-primary: #{theme-button($button-primary, border-color, $theme)};
+    --background-button-primary: #{theme-button($button-primary, background, $theme)};
+    --background-button-hover-primary: #{theme-button($button-primary, background-hover, $theme)};
+
+    /* Buttons secondary */
+    $button-secondary: secondary;
+    --color-button-secondary: #{theme-button($button-secondary, color, $theme)};
+    --border-color-button-secondary: #{theme-button($button-secondary, border-color, $theme)};
+    --background-button-secondary: #{theme-button($button-secondary, background, $theme)};
+    --background-button-hover-secondary: #{theme-button($button-secondary, background-hover, $theme)};
+}
+
+/* Build theme styles */
+@each $theme in $themes {
+    :root.#{$theme} {
+        @include generate-theme($theme);
+    }
+}

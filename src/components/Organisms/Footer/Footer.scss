@@ -10,10 +10,10 @@
 @use "@/assets/css/variables" as *;
 
 .section-footer {
-    background: $background-footer;
+    background: var(--background-footer);
 
     .container {
-        color: $font-color-dark;
+        color: var(--color-background-dark);
 
         .logo-app {
             padding-right: 3rem;

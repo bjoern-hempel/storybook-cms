@@ -29,10 +29,10 @@
     }
 
     .card-body {
-        background: $background-info-card-dark;
+        background: var(--background-info-card-dark);
     }
 
     p {
-        color: $font-color-dark;
+        color: var(--color-background-dark);
     }
 }

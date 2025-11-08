@@ -11,17 +11,8 @@
 
 .section-header {
     .navbar {
-        background-attachment: scroll;
-        background-clip: border-box;
-        background-color: rgba(0, 0, 0, 0);
-        background-image: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%);
-        background-origin: padding-box;
-        background-position-x: 0;
-        background-position-y: 0;
-        background-repeat: repeat;
-        background-size: auto;
-
-        color: white;
+        background: var(--background-header);
+        color: var(--color-background-dark);
 
         .logo {
             width: 55px;

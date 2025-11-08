@@ -10,7 +10,7 @@
 @use "@/assets/css/variables" as *;
 
 .section-value-card {
-    background: $background-value-card-dark;
+    background: var(--background-value-card-dark);
 
     .icon {
         img {
@@ -19,6 +19,6 @@
     }
 
     p {
-        color: $font-color-dark;
+        color: var(--color-background-dark);
     }
 }

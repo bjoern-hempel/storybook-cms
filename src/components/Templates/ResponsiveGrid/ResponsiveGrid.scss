@@ -11,12 +11,12 @@
 
 .section-responsive-grid {
     &.dark {
-        background: $background-dark;
-        color: $font-color-dark;
+        background: var(--background-layout-dark);
+        color: var(--color-background-dark);
     }
 
     &.light {
-        background: $background-light;
-        color: $font-color-light;
+        background: var(--background-layout-light);
+        color: var(--color-background-light);
     }
 }
