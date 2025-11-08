@@ -8,30 +8,12 @@
  */
 
 @use "sass:color";
+@use "functions" as *;
 
 $themes: (
     theme-blue,
     theme-green,
 );
-
-@function require($value, $message) {
-    @if $value == null {
-        @error $message;
-    }
-    @return $value;
-}
-
-@function theme-color($style, $theme) {
-    @return require(map-get(map-get($colors, $style), $theme), "Missing theme-color(#{$style}, #{$theme})");
-}
-
-@function theme-background($style, $theme) {
-    @return require(map-get(map-get($backgrounds, $style), $theme), "Missing theme-background(#{$style}, #{$theme})");
-}
-
-@function theme-button($type, $style, $theme) {
-    @return require(map-get(map-get(map-get($buttons, $type), $style), $theme), "Missing theme-button(#{$type}, #{$style}, #{$theme})");
-}
 
 $colors: (
     primary: (
@@ -82,8 +64,8 @@ $backgrounds: (
 $buttons: (
     primary: (
         color: (
-            theme-blue: theme-color(primary, theme-blue),
-            theme-green: theme-color(white, theme-green),
+            theme-blue: get-theme($colors, primary, theme-blue),
+            theme-green: get-theme($colors, white, theme-green),
         ),
         border-color: (
             theme-blue: transparent,
@@ -100,20 +82,20 @@ $buttons: (
     ),
     secondary: (
         color: (
-            theme-blue: theme-color(primary, theme-blue),
-            theme-green: theme-color(primary, theme-green),
+            theme-blue: get-theme($colors, primary, theme-blue),
+            theme-green: get-theme($colors, primary, theme-green),
         ),
         border-color: (
-            theme-blue: rgba(theme-color(primary, theme-blue), 0.2),
-            theme-green: rgba(theme-color(primary, theme-green), 0.2),
+            theme-blue: rgba(get-theme($colors, primary, theme-blue), 0.2),
+            theme-green: rgba(get-theme($colors, primary, theme-green), 0.2),
         ),
         background: (
-            theme-blue: rgba(theme-color(primary, theme-blue), 0.1),
-            theme-green: rgba(theme-color(primary, theme-green), 0.1),
+            theme-blue: rgba(get-theme($colors, primary, theme-blue), 0.1),
+            theme-green: rgba(get-theme($colors, primary, theme-green), 0.1),
         ),
         background-hover: (
-            theme-blue: rgba(theme-color(primary, theme-blue), 0.2),
-            theme-green: rgba(theme-color(primary, theme-green), 0.2),
+            theme-blue: rgba(get-theme($colors, primary, theme-blue), 0.2),
+            theme-green: rgba(get-theme($colors, primary, theme-green), 0.2),
         ),
     ),
 );
@@ -121,44 +103,44 @@ $buttons: (
 @mixin generate-theme($theme) {
 
     /* Colors general */
-    --color-primary: #{theme-color(primary, $theme)};
-    --color-white: #{theme-color(white, $theme)};
+    --color-primary: #{get-theme($colors, primary, $theme)};
+    --color-white: #{get-theme($colors, white, $theme)};
 
     /* Colors for different background colors */
-    --color-background-dark: #{theme-color(white, $theme)};
-    --color-background-light: #{theme-color(primary, $theme)};
+    --color-background-dark: #{get-theme($colors, white, $theme)};
+    --color-background-light: #{get-theme($colors, primary, $theme)};
 
     /* Background layout */
-    --background-layout-dark: #{theme-background(layout-dark, $theme)};
-    --background-layout-light: #{theme-background(layout-light, $theme)};
+    --background-layout-dark: #{get-theme($backgrounds, layout-dark, $theme)};
+    --background-layout-light: #{get-theme($backgrounds, layout-light, $theme)};
 
     /* Background value card */
-    --background-value-card-dark: #{theme-background(value-card-dark, $theme)};
-    --background-value-card-light: #{theme-background(value-card-light, $theme)};
+    --background-value-card-dark: #{get-theme($backgrounds, value-card-dark, $theme)};
+    --background-value-card-light: #{get-theme($backgrounds, value-card-light, $theme)};
 
     /* Background info card */
-    --background-info-card-dark: #{theme-background(info-card-dark, $theme)};
-    --background-info-card-light: #{theme-background(info-card-light, $theme)};
+    --background-info-card-dark: #{get-theme($backgrounds, info-card-dark, $theme)};
+    --background-info-card-light: #{get-theme($backgrounds, info-card-light, $theme)};
 
     /* Background header */
-    --background-header: #{theme-background(header, $theme)};
+    --background-header: #{get-theme($backgrounds, header, $theme)};
 
     /* Background footer */
-    --background-footer: #{theme-background(footer, $theme)};
+    --background-footer: #{get-theme($backgrounds, footer, $theme)};
 
     /* Buttons primary */
     $button-primary: primary;
-    --color-button-primary: #{theme-button($button-primary, color, $theme)};
-    --border-color-button-primary: #{theme-button($button-primary, border-color, $theme)};
-    --background-button-primary: #{theme-button($button-primary, background, $theme)};
-    --background-button-hover-primary: #{theme-button($button-primary, background-hover, $theme)};
+    --color-button-primary: #{get-theme-type($buttons, $button-primary, color, $theme)};
+    --border-color-button-primary: #{get-theme-type($buttons, $button-primary, border-color, $theme)};
+    --background-button-primary: #{get-theme-type($buttons, $button-primary, background, $theme)};
+    --background-button-hover-primary: #{get-theme-type($buttons, $button-primary, background-hover, $theme)};
 
     /* Buttons secondary */
     $button-secondary: secondary;
-    --color-button-secondary: #{theme-button($button-secondary, color, $theme)};
-    --border-color-button-secondary: #{theme-button($button-secondary, border-color, $theme)};
-    --background-button-secondary: #{theme-button($button-secondary, background, $theme)};
-    --background-button-hover-secondary: #{theme-button($button-secondary, background-hover, $theme)};
+    --color-button-secondary: #{get-theme-type($buttons, $button-secondary, color, $theme)};
+    --border-color-button-secondary: #{get-theme-type($buttons, $button-secondary, border-color, $theme)};
+    --background-button-secondary: #{get-theme-type($buttons, $button-secondary, background, $theme)};
+    --background-button-hover-secondary: #{get-theme-type($buttons, $button-secondary, background-hover, $theme)};
 }
 
 /* Build theme styles */

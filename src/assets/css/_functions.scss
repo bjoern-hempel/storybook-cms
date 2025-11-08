@@ -1,0 +1,23 @@
+/*
+ * This file is part of the https://github.com/bjoern-hempel/storybook-cms project.
+ *
+ * (c) 2025 Björn Hempel <bjoern@hempel.li>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
+@function require($value, $message) {
+    @if $value == null {
+        @error $message;
+    }
+    @return $value;
+}
+
+@function get-theme($vars, $style, $theme) {
+    @return require(map-get(map-get($vars, $style), $theme), "Missing theme variable: #{$style}, #{$theme}");
+}
+
+@function get-theme-type($vars, $type, $style, $theme) {
+    @return require(map-get(map-get(map-get($vars, $type), $style), $theme), "Missing theme variable: #{$type}, #{$style}, #{$theme}");
+}
