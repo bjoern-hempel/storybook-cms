@@ -24,7 +24,7 @@ import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx
 import {Image} from "@/components/Atoms/Image/Image.tsx";
 
 /* Import types. */
-import type {TypeClassNames} from "@/utils/classNames.ts";
+import type {TypeClassNames} from "@/types/common-types.ts";
 
 export interface TextImageProps {
     /** Which content should be displayed? */

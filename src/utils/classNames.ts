@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
-export const MARGIN_REGEX = /^(m|mx|my|mt|mb|ms|me)-\d+$/;
+/* Import types. */
+import type {TypeClassNames} from "@/types/common-types.ts";
 
-export type TypeClassNames = string | string[] | null;
+export const MARGIN_REGEX = /^(m|mx|my|mt|mb|ms|me)-\d+$/;
 
 /**
  * Returns the desired margin class if the existing className set does not yet contain a margin class.

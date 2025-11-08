@@ -25,7 +25,7 @@ import '@/components/Molecules/InfoCard/InfoCard.scss';
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 
 /* Import types. */
-import type {TypeClassNames} from "@/utils/classNames.ts";
+import type {TypeClassNames} from "@/types/common-types.ts";
 
 /* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";

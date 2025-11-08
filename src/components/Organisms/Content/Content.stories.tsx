@@ -7,10 +7,8 @@
  * file that was distributed with this source code.
  */
 
+import {ReactNode} from "react";
 import type {Meta, StoryObj} from '@storybook/react-vite';
-
-/* Import types. */
-import {type ChildItem} from "@/components/Organisms/Content/Content.tsx";
 
 /* Import components. */
 import {Title} from "@/components/Atoms/Title/Title.tsx";
@@ -44,7 +42,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Content>;
 
-const children: ChildItem[] = [
+const children: ReactNode[] = [
     <Title title={`Warum ein Digitaler Zwilling?`} type={`h2`} classNames={``} alignment={`left`} />,
     <Paragraph text={`
         Energiewende und Stadtentwicklung brauchen innovative Technologien, Verständnis für diese, sowie Transparenz

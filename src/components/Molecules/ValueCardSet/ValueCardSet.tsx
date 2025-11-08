@@ -25,7 +25,7 @@ import {ValueCard} from "@/components/Molecules/ValueCard/ValueCard.tsx";
 import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
 
 /* Import types. */
-import type {TypeClassNames} from "@/utils/classNames.ts";
+import type {TypeClassNames} from "@/types/common-types.ts";
 
 /* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";

@@ -23,38 +23,32 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 
 /* Import types. */
-import type {TypeClassNames} from "@/utils/classNames.ts";
-
-export type ChildItem = ReactNode;
+import type {TypeClassNames} from "@/types/common-types.ts";
 
 export interface ContentProps {
     /* Which content should be displayed? */
-    children: ChildItem[];
+    children: ReactNode[];
 
     /** What background type to use? */
-    backgroundType: 'dark'|'light';
+    backgroundType: "dark"|"light"|"none";
 
     /** Additional class names */
     classNames?: TypeClassNames;
 }
 
-/** `Content` organism (`RowLayout` alias) */
+/** `Content` organism (`RowLayout` alias, but always with `contained` = `true`) */
 export const Content = ({
     children,
     backgroundType = 'dark',
     classNames = null,
 }: ContentProps) => {
-    const Content: React.FC = () => (
-        <>
-            {children.map((child, index) => (
-                <React.Fragment key={index}>{child as ReactNode}</React.Fragment>
-            ))}
-        </>
-    );
-
     return (
         <RowLayout backgroundType={backgroundType} isContained={true} classNames={classNames}>
-            <Content />
+            <>
+                {children.map((child, index) => (
+                    <React.Fragment key={index}>{child as ReactNode}</React.Fragment>
+                ))}
+            </>
         </RowLayout>
     );
 };

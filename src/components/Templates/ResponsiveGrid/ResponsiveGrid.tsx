@@ -20,7 +20,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import types. */
-import type {TypeClassNames} from "@/utils/classNames.ts";
+import type {TypeClassNames} from "@/types/common-types.ts";
 
 /* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";

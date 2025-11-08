@@ -21,7 +21,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import '@/components/Atoms/Button/Button.scss';
 
 /* Import types. */
-import type {TypeClassNames} from "@/utils/classNames.ts";
+import type {TypeClassNames} from "@/types/common-types.ts";
 
 /* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
