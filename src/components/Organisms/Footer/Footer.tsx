@@ -27,7 +27,7 @@ import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 
 /* Import constants. */
-import {PADDING_CLASS_FOOTER} from "@/utils/paddings.ts";
+import {PADDING_CLASS_FOOTER} from "@/constants/paddings.ts";
 
 export interface LinkItem {
     /** Menu label */

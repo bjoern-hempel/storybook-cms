@@ -8,7 +8,6 @@
  */
 
 import * as React from "react";
-import { ReactNode } from "react";
 
 /* Import assets. */
 import '@/assets/css/style.scss';
@@ -20,45 +19,43 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import types. */
-import type {TypeClassNames} from "@/types/common-types.ts";
+import type {
+    TypeBackground,
+    TypeClassNames,
+    TypeIsContained,
+    TypeLayout,
+    TypeLayoutChildren
+} from "@/types/common-types.ts";
 
 /* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {PADDING_CLASS_COL_LAYOUT} from "@/utils/paddings.ts";
-import {MARGIN_CLASS_COL_LAYOUT} from "@/utils/margins.ts";
-
-export type LayoutType =
-    | "100%"
-    | "50%:50%"
-    | "66%:33%"
-    | "33%:66%"
-    | "33%:33%:33%"
-    | "25%:25%:25%:25%";
+import {PADDING_CLASS_COL_LAYOUT} from "@/constants/paddings.ts";
+import {MARGIN_CLASS_COL_LAYOUT} from "@/constants/margins.ts";
 
 /**
  * Props for ColumnLayout
  */
 export interface ColumnLayoutProps {
     /** Children */
-    children: ReactNode[];
+    children: TypeLayoutChildren;
 
     /** Which layout pattern to use */
-    layout?: LayoutType;
+    layout?: TypeLayout;
 
     /** Which background style? */
-    backgroundType: "light"|"dark"|"none";
+    backgroundType: TypeBackground;
 
     /** Should the layout be wrapped in a centered container? */
-    isContained: boolean;
+    isContained: TypeIsContained;
 
     /** Additional class names */
     classNames?: TypeClassNames;
 }
 
 /** Mapping between layout types and Bootstrap column classes */
-const layoutMap: Record<LayoutType, string[]> = {
+const layoutMap: Record<TypeLayout, string[]> = {
     "100%": ["col-12"],
     "50%:50%": ["col-12 col-lg-6", "col-12 col-lg-6"],
     "66%:33%": ["col-12 col-lg-8", "col-12 col-lg-4"],

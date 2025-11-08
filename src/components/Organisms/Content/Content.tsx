@@ -23,14 +23,14 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 
 /* Import types. */
-import type {TypeClassNames} from "@/types/common-types.ts";
+import type {TypeBackground, TypeClassNames} from "@/types/common-types.ts";
 
 export interface ContentProps {
     /* Which content should be displayed? */
     children: ReactNode[];
 
     /** What background type to use? */
-    backgroundType: "dark"|"light"|"none";
+    backgroundType: TypeBackground;
 
     /** Additional class names */
     classNames?: TypeClassNames;

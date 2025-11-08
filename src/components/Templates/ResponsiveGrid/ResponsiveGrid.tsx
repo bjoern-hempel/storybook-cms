@@ -20,22 +20,18 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import types. */
-import type {TypeClassNames} from "@/types/common-types.ts";
+import type {TypeBackground, TypeClassNames, TypeIsContained} from "@/types/common-types.ts";
+import type {TypeResponsiveGridChildren} from "@/types/ui-types.ts";
 
 /* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_RESPONSIVE_GRID} from "@/utils/margins.ts";
-import {PADDING_CLASS_RESPONSIVE_GRID} from "@/utils/paddings.ts";
+import {MARGIN_CLASS_RESPONSIVE_GRID} from "@/constants/margins.ts";
+import {PADDING_CLASS_RESPONSIVE_GRID} from "@/constants/paddings.ts";
 
-export interface ResponsiveGridItem {
-    child: ReactNode;
-    cols?: number; // eg. 2, 4, 6, 12
-    colsSm?: number; // eg. 2, 4, 6, 12
-    colsMd?: number; // eg. 2, 4, 6, 12
-    classNames?: TypeClassNames;
-}
+/* Import defaults. */
+import {defaultCols} from "@/defaults/common-defaults.ts";
 
 /**
  * Props for ResponsiveGrid
@@ -43,22 +39,16 @@ export interface ResponsiveGridItem {
 export interface ResponsiveGridProps {
 
     /** Child items */
-    items: ResponsiveGridItem[];
+    items: TypeResponsiveGridChildren;
 
     /** Which background style? */
-    backgroundType: "light"|"dark"|"none";
+    backgroundType: TypeBackground;
 
     /** Should the layout be wrapped in a centered container? */
-    isContained: boolean;
+    isContained: TypeIsContained;
 
     /** Additional class names */
     classNames?: TypeClassNames;
-}
-
-export const colsDefault = {
-    cols: 12,
-    colsSm: 6,
-    colsMd: 4,
 }
 
 /** `RowLayout` template */
@@ -83,7 +73,7 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
                 return (
                     <div
                         key={index}
-                        className={`col-${item.cols ?? colsDefault.cols} col-sm-${item.colsSm ?? colsDefault.colsSm} col-md-${item.colsMd ?? colsDefault.colsMd}`}
+                        className={`col-${item.cols ?? defaultCols.cols} col-sm-${item.colsSm ?? defaultCols.colsSm} col-md-${item.colsMd ?? defaultCols.colsMd}`}
                     >
                         <div className="section-responsive h-100 d-flex flex-column">
                             {item.child}

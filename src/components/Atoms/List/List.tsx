@@ -27,7 +27,7 @@ import type {TypeClassNames} from "@/types/common-types.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_LIST} from "@/utils/margins.ts";
+import {MARGIN_CLASS_LIST} from "@/constants/margins.ts";
 
 export interface ListProps {
     /** List entries */

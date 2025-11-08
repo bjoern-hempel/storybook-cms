@@ -25,7 +25,7 @@ import type {TypeClassNames} from "@/types/common-types.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_PARAGRAPH} from "@/utils/margins.ts";
+import {MARGIN_CLASS_PARAGRAPH} from "@/constants/margins.ts";
 
 export interface ParagraphProps {
     /** Text contents */

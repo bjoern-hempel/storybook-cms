@@ -12,6 +12,9 @@ import type {Meta, StoryObj} from '@storybook/react-vite';
 /* Import components. */
 import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
 
+/* Import types. */
+import {typeBackgroundOptions} from "@/types/common-types.ts";
+
 const meta = {
     title: 'Templates/ResponsiveGrid',
     component: ResponsiveGrid,
@@ -26,6 +29,7 @@ const meta = {
         },
         backgroundType: {
             control: { type: 'radio' },
+            options: typeBackgroundOptions,
             table: { category: 'Design' },
         },
         isContained: {

@@ -27,7 +27,7 @@ import type {TypeClassNames} from "@/types/common-types.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_BUTTON} from "@/utils/margins.ts";
+import {MARGIN_CLASS_BUTTON} from "@/constants/margins.ts";
 
 export interface ButtonProps {
     /** Button contents */

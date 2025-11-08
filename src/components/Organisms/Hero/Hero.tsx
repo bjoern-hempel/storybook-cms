@@ -17,7 +17,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import constants. */
-import {PADDING_CLASS_COL_LAYOUT} from "@/utils/paddings.ts";
+import {PADDING_CLASS_COL_LAYOUT} from "@/constants/paddings.ts";
 
 export interface HeroProps {
     /** Image source */

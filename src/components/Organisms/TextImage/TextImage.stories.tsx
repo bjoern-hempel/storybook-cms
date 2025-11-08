@@ -18,6 +18,9 @@ import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 
+/* Import types. */
+import {typeBackgroundOptions} from "@/types/common-types.ts";
+
 const meta = {
     title: 'Organisms/TextImage',
     component: TextImage,
@@ -40,6 +43,7 @@ const meta = {
         },
         backgroundType: {
             control: { type: 'radio' },
+            options: typeBackgroundOptions,
             table: { category: 'Design' },
         },
         imageAlignment: {

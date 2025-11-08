@@ -20,14 +20,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* Import types. */
-import type {TypeClassNames} from "@/types/common-types.ts";
+import type {TypeBackground, TypeClassNames, TypeIsContained, TypeLayoutChildren} from "@/types/common-types.ts";
 
 /* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {PADDING_CLASS_ROW_LAYOUT} from "@/utils/paddings.ts";
-import {MARGIN_CLASS_ROW_LAYOUT} from "@/utils/margins.ts";
+import {PADDING_CLASS_ROW_LAYOUT} from "@/constants/paddings.ts";
+import {MARGIN_CLASS_ROW_LAYOUT} from "@/constants/margins.ts";
 
 /**
  * Props for ColumnLayout
@@ -35,13 +35,13 @@ import {MARGIN_CLASS_ROW_LAYOUT} from "@/utils/margins.ts";
 export interface ColumnLayoutProps {
 
     /** Child columns — one ReactNode per column */
-    children: ReactNode[];
+    children: TypeLayoutChildren;
 
     /** Which background style? */
-    backgroundType: "light"|"dark"|"none";
+    backgroundType: TypeBackground;
 
     /** Should the layout be wrapped in a centered container? */
-    isContained: boolean;
+    isContained: TypeIsContained;
 
     /** Additional class names */
     classNames?: TypeClassNames;

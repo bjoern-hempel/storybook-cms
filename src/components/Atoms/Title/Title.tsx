@@ -25,7 +25,7 @@ import type {TypeClassNames} from "@/types/common-types.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_TITLE} from "@/utils/margins.ts";
+import {MARGIN_CLASS_TITLE} from "@/constants/margins.ts";
 
 export interface TitleProps {
     /** Title content */

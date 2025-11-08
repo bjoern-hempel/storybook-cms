@@ -31,7 +31,7 @@ import type {TypeClassNames} from "@/types/common-types.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_VALUE_CARD_SET, MARGIN_CLASS_VALUE_CARD_SET_VALUE_CARD} from "@/utils/margins.ts";
+import {MARGIN_CLASS_VALUE_CARD_SET, MARGIN_CLASS_VALUE_CARD_SET_VALUE_CARD} from "@/constants/margins.ts";
 
 export interface ValueCardItem {
     text: string;

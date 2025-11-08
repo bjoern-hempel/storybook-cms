@@ -31,7 +31,7 @@ import type {TypeClassNames} from "@/types/common-types.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_INFO_CARD} from "@/utils/margins.ts";
+import {MARGIN_CLASS_INFO_CARD} from "@/constants/margins.ts";
 import {Image} from "@/components/Atoms/Image/Image.tsx";
 
 export interface ImageProps {

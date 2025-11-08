@@ -16,7 +16,10 @@ import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 
 /* Import constants. */
-import {MARGIN_CLASS_ROW_LAYOUT} from "@/utils/margins.ts";
+import {MARGIN_CLASS_ROW_LAYOUT} from "@/constants/margins.ts";
+
+/* Import types. */
+import {typeBackgroundOptions} from "@/types/common-types.ts";
 
 const meta = {
     title: 'Templates/RowLayout',
@@ -32,6 +35,7 @@ const meta = {
         },
         backgroundType: {
             control: { type: 'radio' },
+            options: typeBackgroundOptions,
             table: { category: 'Design' },
         },
         isContained: {

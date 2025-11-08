@@ -15,7 +15,10 @@ import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 
 /* Import constants. */
-import {MARGIN_CLASS_COL_LAYOUT} from "@/utils/margins.ts";
+import {MARGIN_CLASS_COL_LAYOUT} from "@/constants/margins.ts";
+
+/* Import types. */
+import {typeBackgroundOptions} from "@/types/common-types.ts";
 
 const meta = {
     title: 'Templates/ColumnLayout',
@@ -35,6 +38,7 @@ const meta = {
         },
         backgroundType: {
             control: { type: 'radio' },
+            options: typeBackgroundOptions,
             table: { category: 'Design' },
         },
         isContained: {

@@ -27,7 +27,7 @@ import type {TypeClassNames} from "@/types/common-types.ts";
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
-import {MARGIN_CLASS_TABLE} from "@/utils/margins.ts";
+import {MARGIN_CLASS_TABLE} from "@/constants/margins.ts";
 
 export interface TableProps {
     /** Header contents. */

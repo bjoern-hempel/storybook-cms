@@ -19,13 +19,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export interface MenuItem {
-    /** Menu label */
-    label: string;
-
-    /** Click handler */
-    onClick: () => void;
-}
+/* Import types. */
+import type {TypeMenuItems} from "@/types/ui-types.ts";
 
 export interface HeaderProps {
     /** Title content */
@@ -38,7 +33,7 @@ export interface HeaderProps {
     logo: string;
 
     /** Menu items */
-    menuItems: MenuItem[];
+    menuItems: TypeMenuItems;
 
     /** Fixed navbar? */
     fixedTop?: boolean;

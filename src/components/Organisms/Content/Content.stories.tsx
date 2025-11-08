@@ -16,6 +16,9 @@ import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {Content} from "@/components/Organisms/Content/Content.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 
+/* Import types. */
+import {typeBackgroundOptions} from "@/types/common-types.ts";
+
 const meta = {
     title: 'Organisms/Content',
     component: Content,
@@ -30,6 +33,7 @@ const meta = {
         },
         backgroundType: {
             control: { type: 'radio' },
+            options: typeBackgroundOptions,
             table: { category: 'Design' },
         },
         classNames: {
