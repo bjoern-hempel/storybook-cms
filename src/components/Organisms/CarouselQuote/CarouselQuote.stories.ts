@@ -41,9 +41,9 @@ type Story = StoryObj<typeof CarouselQuote>;
 export const Dark: Story = {
     args: {
         quotes: [
-            '„Ich sage dir nicht, dass es leicht wird. Ich sage dir, dass es sich lohnen wird.“',
-            '„Egal wie du dich fühlst. Steh auf, zieh dich an und gib niemals auf.“',
-            '„Hör nicht auf wenn es weh tut. Hör auf wenn du fertig bist.“',
+            'Ich sage dir nicht, dass es leicht wird. Ich sage dir, dass es sich lohnen wird.',
+            'Egal wie du dich fühlst. Steh auf, zieh dich an und gib niemals auf.',
+            'Hör nicht auf wenn es weh tut. Hör auf wenn du fertig bist.',
         ],
         backgroundType: 'dark',
     },
@@ -52,9 +52,9 @@ export const Dark: Story = {
 export const Light: Story = {
     args: {
         quotes: [
-            '„Ich sage dir nicht, dass es leicht wird. Ich sage dir, dass es sich lohnen wird.“',
-            '„Egal wie du dich fühlst. Steh auf, zieh dich an und gib niemals auf.“',
-            '„Hör nicht auf wenn es weh tut. Hör auf wenn du fertig bist.“',
+            'Ich sage dir nicht, dass es leicht wird. Ich sage dir, dass es sich lohnen wird.',
+            'Egal wie du dich fühlst. Steh auf, zieh dich an und gib niemals auf.',
+            'Hör nicht auf wenn es weh tut. Hör auf wenn du fertig bist.',
         ],
         backgroundType: 'light',
     },

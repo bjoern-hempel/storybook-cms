@@ -52,9 +52,11 @@ export const CarouselQuote = ({
                     {quotes.map((quote, index) => (
                         <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                             <div className="carousel-item-inner d-flex justify-content-center align-items-center h-100">
-                                <blockquote className="blockquote text-center mb-0">
-                                    <p className={`mb-0`}>{quote}</p>
-                                </blockquote>
+                                <p className={`mb-0`}>
+                                    <q className="blockquote text-center mb-0">
+                                        {quote}
+                                    </q>
+                                </p>
                             </div>
                         </div>
                     ))}

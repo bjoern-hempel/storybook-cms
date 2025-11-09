@@ -29,10 +29,18 @@
                     width: 100%;
                     text-align: center;
 
-                    .blockquote {
-                        p {
+                    p {
+                        q {
                             font-size: 1.5rem;
                             font-style: italic;
+
+                            &::before {
+                                content: open-quote;
+                            }
+
+                            &::after {
+                                content: close-quote;
+                            }
                         }
                     }
                 }

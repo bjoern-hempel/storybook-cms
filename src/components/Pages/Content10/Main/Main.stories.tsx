@@ -16,15 +16,21 @@ import {Content} from "@/components/Organisms/Content/Content.tsx";
 import {Header} from "@/components/Organisms/Header/Header.tsx";
 import {Hero} from "@/components/Organisms/Hero/Hero.tsx";
 import {Main} from '@/components/Pages/Content10/Main/Main.tsx';
-
-/* Import assets. */
-import HeroImage from "@/assets/image/avocadi.png";
 import {TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 import {CarouselQuote} from "@/components/Organisms/CarouselQuote/CarouselQuote.tsx";
+import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
+import {InfoCard} from "@/components/Molecules/InfoCard/InfoCard.tsx";
+
+/* Import assets. */
+import HeroImage from "@/assets/image/avocadi.png";
+import WhySportImage from "@/assets/image/why-sport.jpg";
+import NutritionImage from "@/assets/image/nutrition.jpg";
+import MotivationImage from "@/assets/image/motivation.jpg";
+import EquipmentImage from "@/assets/image/equipment.jpg";
 
 const meta = {
     title: 'Pages/Content10/Main',
@@ -130,12 +136,142 @@ export const Default: Story = {
             </TextImage>,
             <CarouselQuote
                 quotes={[
-                    '„Ich sage dir nicht, dass es leicht wird. Ich sage dir, dass es sich lohnen wird.“',
-                    '„Egal wie du dich fühlst. Steh auf, zieh dich an und gib niemals auf.“',
-                    '„Hör nicht auf wenn es weh tut. Hör auf wenn du fertig bist.“',
+                    'Ich sage dir nicht, dass es leicht wird. Ich sage dir, dass es sich lohnen wird.',
+                    'Egal wie du dich fühlst. Steh auf, zieh dich an und gib niemals auf.',
+                    'Hör nicht auf wenn es weh tut. Hör auf wenn du fertig bist.',
                 ]}
                 backgroundType={`light`}
-            />
+            />,
+            <Content backgroundType={`dark`}>
+                <Title
+                    title={`Dein Weg zu mehr Fitness, Energie und Wohlbefinden`}
+                    type={`h2`}
+                    classNames={``}
+                    alignment={`left`}
+                />
+                <Paragraph
+                    text={`
+                        Sport ist weit mehr als Training für den Körper. Er stärkt auch deine mentale Widerstandskraft,
+                        steigert dein Selbstvertrauen und bringt Struktur in deinen Alltag. Viele starten motiviert –
+                        und verlieren dann unterwegs den Fokus. Genau hier setzen wir an. Gemeinsam finden wir heraus,
+                        was dich antreibt, wie du Motivation langfristig hältst, welche Ernährung zu deinen Zielen
+                        passt und welche Ausrüstung sinnvoll ist. Schritt für Schritt. Klar. Verständlich. Nachhaltig.
+                    `}
+                />
+            {/*</Content>,*/}
+            {/*<Content backgroundType={`light`}>*/}
+                <ResponsiveGrid
+                    items={[
+                        {
+                            child: <InfoCard
+                                title={`Warum Sport?`}
+                                src={WhySportImage as string}
+                                alt={`Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit`}
+                                classNames={`h-100`}
+                                ratio={'16x9'}
+                            >
+                                <Paragraph
+                                    text={`
+                                        Sport wirkt nicht nur auf deinen Körper, sondern auch auf deine mentale Stärke.
+                                        Regelmäßige Bewegung kann Stress reduzieren, deine Stimmung heben und dein
+                                        Selbstbewusstsein stärken. Gleichzeitig hilft sie dir, Ziele zu setzen und
+                                        dranzubleiben. Vielleicht willst du fitter werden, leistungsfähiger sein oder
+                                        dich einfach wohler fühlen – entscheidend ist, dass du verstehst, wie Bewegung,
+                                        Motivation und persönliches Wachstum zusammenhängen. Ich begleite dich dabei
+                                        und zeige dir, wie du Sport zu einem festen, positiven Teil deines Lebens machst.
+                                    `}
+                                    alignment={`left`}
+                                    classNames={null}
+                                />
+                            </InfoCard>,
+                            cols: 12,
+                            colsSm: 12,
+                            colsMd: 6,
+                        },
+                        {
+                            child: <InfoCard
+                                title={`Ernährung`}
+                                src={NutritionImage as string}
+                                alt={`Detailtiefe Energiesystemanalysen & Resilienzbetrachtungen`}
+                                classNames={`h-100`}
+                                ratio={'16x9'}
+                            >
+                                <Paragraph
+                                    text={`
+                                            Welche Nährstoffe braucht unser Körper, wenn wir Sport treiben?
+                                            Grundsätzlich hängt das von deinem Ziel ab. Möchtest du abnehmen, ist vor
+                                            allem deine Kalorienbilanz entscheidend. Willst du Muskeln aufbauen,
+                                            braucht dein Körper ausreichend Eiweiß, Kohlenhydrate und gesunde Fette
+                                            in der richtigen Zusammensetzung. Und wenn du einfach nur dein aktuelles
+                                            Level halten möchtest, geht es um Balance und Kontinuität. Ich zeige dir,
+                                            worauf es wirklich ankommt. Wichtig ist am Ende immer die Qualität und die
+                                            richtige Mischung der Nährstoffe.
+                                        `}
+                                    alignment={`left`}
+                                    classNames={null}
+                                />
+                            </InfoCard>,
+                            cols: 12,
+                            colsSm: 12,
+                            colsMd: 6,
+                        },
+                        {
+                            child: <InfoCard
+                                title={`Wie motiviert man sich?`}
+                                src={MotivationImage as string}
+                                alt={`Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit`}
+                                classNames={`h-100`}
+                                ratio={'16x9'}
+                            >
+                                <Paragraph
+                                    text={`
+                                        Mehr Sport zu machen, nehmen sich viele fest vor. Doch oft hält die
+                                        Anfangseuphorie nicht lange an. Der Alltag holt einen ein, die Motivation
+                                        sinkt, und am Ende bleibt nur das schlechte Gewissen. Vielleicht kennst du das:
+                                        Du startest hochmotiviert und brichst nach kurzer Zeit wieder ab. Genau hier
+                                        setzen wir an. Gemeinsam finden wir heraus, was dich wirklich antreibt, wie du
+                                        dranbleibst und Sport zu einem festen Bestandteil deines Alltags wird. Ich
+                                        zeige dir, wie das gelingt.
+                                    `}
+                                    alignment={`left`}
+                                    classNames={null}
+                                />
+                            </InfoCard>,
+                            cols: 12,
+                            colsSm: 12,
+                            colsMd: 6,
+                        },
+                        {
+                            child: <InfoCard
+                                title={`Fitnessausrüstung`}
+                                src={EquipmentImage as string}
+                                alt={`Detailtiefe Energiesystemanalysen & Resilienzbetrachtungen`}
+                                classNames={`h-100`}
+                                ratio={'16x9'}
+                            >
+                                <Paragraph
+                                    text={`
+                                            Welche Fitnessausrüstung für dich sinnvoll ist, hängt vor allem von deinem
+                                            Alltag und deinem Platz zu Hause ab. Hast du Raum, um Geräte dauerhaft
+                                            aufzustellen und zu verstauen? Oder soll dein Wohnzimmer trainingsfrei
+                                            bleiben und du möchtest lieber draußen oder im Studio aktiv sein? Ob
+                                            Hanteln, Resistance Bands, eine Matte oder doch das Fitnessstudio –
+                                            entscheidend ist, was zu dir, deinem Ziel und deinem Lebensstil passt.
+                                            Wir schauen uns gemeinsam an, welche Ausstattung wirklich Sinn ergibt.
+                                        `}
+                                    alignment={`left`}
+                                    classNames={null}
+                                />
+                            </InfoCard>,
+                            cols: 12,
+                            colsSm: 12,
+                            colsMd: 6,
+                        }
+                    ]}
+                    backgroundType={`none`}
+                    isContained={false}
+                />
+            </Content>
         ],
     }
 };
