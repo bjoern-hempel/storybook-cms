@@ -13,6 +13,9 @@ import type {Meta, StoryObj} from '@storybook/react-vite';
 import {InfoCard} from "@/components/Molecules/InfoCard/InfoCard.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 
+/* Import types. */
+import {typeBackgroundOptions, typeRatioOptions} from "@/types/common-types.ts";
+
 const meta = {
     title: "Molecules/InfoCard",
     component: InfoCard,
@@ -36,6 +39,16 @@ const meta = {
         alt: {
             control: { type: "text" },
             table: { category: "Content" },
+        },
+        ratio: {
+            control: { type: 'radio' },
+            options: typeRatioOptions,
+            table: { category: 'Design' },
+        },
+        backgroundType: {
+            control: { type: 'radio' },
+            options: typeBackgroundOptions,
+            table: { category: 'Design' },
         },
         classNames: {
             control: { type: 'text' },
@@ -77,6 +90,8 @@ export const Default: Story = {
         ],
         src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/art6-1024x611.jpg",
         alt: "Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit",
+        ratio: "16x9",
+        backgroundType: "dark",
         classNames: "mb-0"
     },
 };

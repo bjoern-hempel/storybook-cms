@@ -195,6 +195,7 @@ export const Default: Story = {
                                 alt={`Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit`}
                                 classNames={`h-100`}
                                 ratio={'16x9'}
+                                backgroundType={`light`}
                             >
                                 <Paragraph
                                     text={`
@@ -221,6 +222,7 @@ export const Default: Story = {
                                 alt={`Detailtiefe Energiesystemanalysen & Resilienzbetrachtungen`}
                                 classNames={`h-100`}
                                 ratio={'16x9'}
+                                backgroundType={`light`}
                             >
                                 <Paragraph
                                     text={`
@@ -248,6 +250,7 @@ export const Default: Story = {
                                 alt={`Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit`}
                                 classNames={`h-100`}
                                 ratio={'16x9'}
+                                backgroundType={`light`}
                             >
                                 <Paragraph
                                     text={`
@@ -274,6 +277,7 @@ export const Default: Story = {
                                 alt={`Detailtiefe Energiesystemanalysen & Resilienzbetrachtungen`}
                                 classNames={`h-100`}
                                 ratio={'16x9'}
+                                backgroundType={`light`}
                             >
                                 <Paragraph
                                     text={`

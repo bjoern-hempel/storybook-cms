@@ -25,7 +25,7 @@ import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Image} from "@/components/Atoms/Image/Image.tsx";
 
 /* Import types. */
-import type {TypeClassNames, TypeLayoutChildren} from "@/types/common-types.ts";
+import type {TypeBackground, TypeClassNames, TypeLayoutChildren, TypeRatio} from "@/types/common-types.ts";
 
 /* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
@@ -49,7 +49,10 @@ export interface ImageProps {
     alt: string;
 
     /** Image ratio */
-    ratio?: 'none'|'1x1'|'4x3'|'16x9'|'21x9';
+    ratio?: TypeRatio;
+
+    /** Which background style? */
+    backgroundType?: TypeBackground;
 
     /** Additional class names */
     classNames?: TypeClassNames;
@@ -62,6 +65,7 @@ export const InfoCard = ({
     src,
     alt,
     ratio = "none",
+    backgroundType = "dark",
     classNames = null,
     ...props
 }: ImageProps) => {
@@ -71,6 +75,7 @@ export const InfoCard = ({
     const finalClasses = [
         "section-info-card",
         marginClass,
+        backgroundType,
         ...normalizeClassNames(classNames),
     ].filter(Boolean).join(" ");
 

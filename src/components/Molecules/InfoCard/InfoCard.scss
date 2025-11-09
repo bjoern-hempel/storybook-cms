@@ -10,8 +10,29 @@
 @use "@/assets/css/variables" as *;
 
 .section-info-card {
-    background: var(--background-info-card-dark);
     box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.4);
+
+    &.none {
+        p, .section-title {
+            color: var(--color-background-light);
+        }
+    }
+
+    &.dark {
+        background: var(--background-info-card-dark);
+
+        p, .section-title {
+            color: var(--color-background-dark);
+        }
+    }
+
+    &.light {
+        background: var(--background-info-card-light);
+
+        p, .section-title {
+            color: var(--color-background-light);
+        }
+    }
 
     .card-img-top {
         &.ratio {
@@ -30,10 +51,5 @@
         }
     }
 
-    .card-body {
-    }
-
-    p {
-        color: var(--color-background-dark);
-    }
+    .card-body {}
 }

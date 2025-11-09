@@ -14,6 +14,9 @@ export type TypeClassNames = string | string[] | null;
 export const typeBackgroundOptions = ["dark", "light", "none"] as const;
 export type TypeBackground = "dark" | "light" | "none";
 
+export const typeRatioOptions = ["none", "1x1", "4x3", "16x9", "21x9"] as const;
+export type TypeRatio = "none" | "1x1" | "4x3" | "16x9" | "21x9";
+
 export type TypeIsContained = boolean;
 
 export const typeLayoutOptions = ["100%", "50%:50%", "66%:33%", "33%:66%", "33%:33%:33%", "25%:25%:25%:25%"] as const;
