@@ -38,13 +38,21 @@ const preview: Preview = {
             toolbar: {
                 title: 'Theme',
                 icon: 'structure',
-                items: ['theme-blue', 'theme-green'],
+                items: [
+                    'theme-darkblue',
+                    'theme-blue',
+                    'theme-lightblue',
+                    'theme-green',
+                    'theme-cyan',
+                    'theme-purple',
+                    'theme-orange',
+                ],
                 dynamicTitle: true,
             },
         },
     },
     initialGlobals: {
-        theme: 'theme-blue',
+        theme: 'theme-darkblue',
     },
 
     decorators: [withTheme],
