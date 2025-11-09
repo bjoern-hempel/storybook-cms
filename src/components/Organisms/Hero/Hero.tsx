@@ -28,21 +28,25 @@ export interface HeroProps {
 
     /** Subtitle contents */
     subtitle: string;
+
+    /** Has darken overlay? */
+    hasDarkOverlay?: boolean;
 }
 
 /** `Hero` organism */
 export const Hero = ({
     src,
     title,
-    subtitle
+    subtitle,
+    hasDarkOverlay = false,
 }: HeroProps) => {
     return (
-        <section className="section-hero">
+        <section className={`section-hero`}>
             <div
                 className={`hero position-relative d-flex align-items-end text-white ${PADDING_CLASS_COL_LAYOUT}`}
                 style={{backgroundImage: `url(${src})`}}
             >
-                <div className="hero-layer"></div>
+                <div className={`hero-layer${hasDarkOverlay ? ' has-dark-overlay' : ''}`}></div>
 
                 <div className="container position-relative">
                     <div className="hero-text">

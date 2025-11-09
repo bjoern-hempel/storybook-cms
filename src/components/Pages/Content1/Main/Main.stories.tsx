@@ -66,6 +66,7 @@ export const Default: Story = {
                 src={`https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/istock-1313125280-1-1024x619.jpg`}
                 title={`Digitaler Zwilling`}
                 subtitle={`Energie sichtbar machen. Zukunft verstehen. Gemeinsam gestalten.`}
+                hasDarkOverlay={true}
             />,
             <TextImage
                 children={[
