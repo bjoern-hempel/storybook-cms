@@ -12,18 +12,19 @@ import type {Meta, StoryObj} from '@storybook/react-vite';
 import {fn} from "storybook/test";
 
 /* Import components. */
+import {Button} from "@/components/Atoms/Button/Button.tsx";
+import {CarouselQuote} from "@/components/Organisms/CarouselQuote/CarouselQuote.tsx";
+import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
 import {Content} from "@/components/Organisms/Content/Content.tsx";
 import {Header} from "@/components/Organisms/Header/Header.tsx";
 import {Hero} from "@/components/Organisms/Hero/Hero.tsx";
+import {InfoCard} from "@/components/Molecules/InfoCard/InfoCard.tsx";
+import {List} from "@/components/Atoms/List/List.tsx";
 import {Main} from '@/components/Pages/Content10/Main/Main.tsx';
+import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
+import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
 import {TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
-import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
-import {Button} from "@/components/Atoms/Button/Button.tsx";
-import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
-import {CarouselQuote} from "@/components/Organisms/CarouselQuote/CarouselQuote.tsx";
-import {ResponsiveGrid} from "@/components/Templates/ResponsiveGrid/ResponsiveGrid.tsx";
-import {InfoCard} from "@/components/Molecules/InfoCard/InfoCard.tsx";
 
 /* Import assets. */
 import HeroImage from "@/assets/image/avocadi.png";
@@ -31,7 +32,7 @@ import WhySportImage from "@/assets/image/why-sport.jpg";
 import NutritionImage from "@/assets/image/nutrition.jpg";
 import MotivationImage from "@/assets/image/motivation.jpg";
 import EquipmentImage from "@/assets/image/equipment.jpg";
-import {List} from "@/components/Atoms/List/List.tsx";
+import PortraitImage from "@/assets/image/portrait.jpg";
 
 const meta = {
     title: 'Pages/Content10/Main',
@@ -71,9 +72,52 @@ export const Default: Story = {
                 subtitle={`Dein neues Leben beginnt. Hier!`}
             />,
             <TextImage
-                src={`https://benkert.life/user/themes/own/img/ipadBG2.png`}
+                src={PortraitImage as string}
                 alt={`Was ist der Digitale Zwilling?`}
                 backgroundType={`dark`}
+                columnLayout={`33%:66%`}
+                imageAlignment={`left`}
+            >
+                <Title
+                    title={`Hi, ich bin Isa`}
+                    type={`h2`}
+                    classNames={``}
+                    alignment={`left`}
+                />
+                <Paragraph
+                    text={`
+                        Ausgebildete Fitnesstrainerin. Mit dem Willen dich zum Sport zu motivieren. Ich habe eine
+                        Fitnesstrainer B Lizenz und möchte dir zeigen wie einfach es ist unseren inneren Schweinehund
+                        zu überwinden. Denn Sport macht Spaß und fühlt sich gut an.
+                    `}
+                    alignment={`left`}
+                    classNames={`word-break text-hyphens`}
+                />
+                <Paragraph
+                    text={`
+                        Du suchst Jemanden, der dich motiviert und dich so gut es geht zu Höchstleistungen treibt?
+                        Dann bist du bei mir genau richtig.
+                    `}
+                    alignment={`left`}
+                    classNames={`word-break text-hyphens`}
+                />
+                <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:33%:33%`} classNames={`mt-5`}>
+                    <Button
+                        label={`Erzähl mir mehr`}
+                        onClick={() => { fn() }}
+                        primary={true}
+                    />
+                    <Button
+                        label={`Finde mich auf Instagram`}
+                        onClick={() => { fn() }}
+                        primary={true}
+                    />
+                </ColumnLayout>
+            </TextImage>,
+            <TextImage
+                src={`https://benkert.life/user/themes/own/img/ipadBG2.png`}
+                alt={`Was ist der Digitale Zwilling?`}
+                backgroundType={`light`}
                 columnLayout={`66%:33%`}
                 imageAlignment={`right`}
             >
@@ -166,9 +210,9 @@ export const Default: Story = {
                     'Egal wie du dich fühlst. Steh auf, zieh dich an und gib niemals auf.',
                     'Hör nicht auf wenn es weh tut. Hör auf wenn du fertig bist.',
                 ]}
-                backgroundType={`light`}
+                backgroundType={`dark`}
             />,
-            <Content backgroundType={`dark`}>
+            <Content backgroundType={`light`}>
                 <Title
                     title={`Dein Weg zu mehr Fitness, Energie und Wohlbefinden`}
                     type={`h2`}
@@ -184,8 +228,6 @@ export const Default: Story = {
                         passt und welche Ausrüstung sinnvoll ist. Schritt für Schritt. Klar. Verständlich. Nachhaltig.
                     `}
                 />
-            {/*</Content>,*/}
-            {/*<Content backgroundType={`light`}>*/}
                 <ResponsiveGrid
                     items={[
                         {
@@ -195,7 +237,7 @@ export const Default: Story = {
                                 alt={`Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit`}
                                 classNames={`h-100`}
                                 ratio={'16x9'}
-                                backgroundType={`light`}
+                                backgroundType={`dark`}
                             >
                                 <Paragraph
                                     text={`
@@ -222,7 +264,7 @@ export const Default: Story = {
                                 alt={`Detailtiefe Energiesystemanalysen & Resilienzbetrachtungen`}
                                 classNames={`h-100`}
                                 ratio={'16x9'}
-                                backgroundType={`light`}
+                                backgroundType={`dark`}
                             >
                                 <Paragraph
                                     text={`
@@ -250,7 +292,7 @@ export const Default: Story = {
                                 alt={`Kommunikation, Beteiligung, Bildung & Öffentlichkeitsarbeit`}
                                 classNames={`h-100`}
                                 ratio={'16x9'}
-                                backgroundType={`light`}
+                                backgroundType={`dark`}
                             >
                                 <Paragraph
                                     text={`
@@ -277,7 +319,7 @@ export const Default: Story = {
                                 alt={`Detailtiefe Energiesystemanalysen & Resilienzbetrachtungen`}
                                 classNames={`h-100`}
                                 ratio={'16x9'}
-                                backgroundType={`light`}
+                                backgroundType={`dark`}
                             >
                                 <Paragraph
                                     text={`
