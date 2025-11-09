@@ -7,7 +7,6 @@
  * file that was distributed with this source code.
  */
 
-import {ReactNode} from "react";
 import type {Meta, StoryObj} from '@storybook/react-vite';
 
 /* Import components. */
@@ -18,6 +17,7 @@ import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx
 
 /* Import types. */
 import {typeBackgroundOptions} from "@/types/common-types.ts";
+import type {TypeLayoutChildren} from "@/types/common-types.ts";
 
 const meta = {
     title: 'Organisms/Content',
@@ -46,7 +46,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Content>;
 
-const children: ReactNode[] = [
+const children: TypeLayoutChildren = [
     <Title title={`Warum ein Digitaler Zwilling?`} type={`h2`} classNames={``} alignment={`left`} />,
     <Paragraph text={`
         Energiewende und Stadtentwicklung brauchen innovative Technologien, Verständnis für diese, sowie Transparenz

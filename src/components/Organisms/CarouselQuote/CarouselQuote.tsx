@@ -27,6 +27,7 @@ import type {TypeBackground} from "@/types/common-types.ts";
 /* Import components. */
 import {Content} from "@/components/Organisms/Content/Content.tsx";
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
+import {useRef} from "react";
 
 export interface CarouselQuoteProps {
     /** Quote strings */
@@ -41,10 +42,12 @@ export const CarouselQuote = ({
     quotes,
     backgroundType
 }: CarouselQuoteProps) => {
+    const carouselIdRef = useRef(`quoteCarousel-${Math.random().toString(36).substring(2, 9)}`);
+    const carouselId = carouselIdRef.current;
 
     const Quotes: React.FC = () => (
         <>
-            <div id="quoteCarousel" className="carousel slide" data-bs-ride="carousel">
+            <div id={carouselId} className={`carousel slide ${backgroundType}`} data-bs-ride="carousel">
                 <div className="carousel-inner">
                     {quotes.map((quote, index) => (
                         <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
@@ -62,7 +65,7 @@ export const CarouselQuote = ({
                         <button
                             key={index}
                             type="button"
-                            data-bs-target="#quoteCarousel"
+                            data-bs-target={`#${carouselId}`}
                             data-bs-slide-to={index}
                             className={index === 0 ? 'active' : ''}
                         />
@@ -73,10 +76,10 @@ export const CarouselQuote = ({
     );
 
     return (
-        <RowLayout backgroundType={backgroundType} isContained={true}>
+        <Content backgroundType={backgroundType}>
             <section className={`section-carousel-quote`}>
                 <Quotes />
             </section>
-        </RowLayout>
+        </Content>
     );
 };

@@ -64,71 +64,70 @@ export const Default: Story = {
                 subtitle={`Dein neues Leben beginnt. Hier!`}
             />,
             <TextImage
-                children={[
-                    <Title
-                        title={`Push life`}
-                        type={`h2`}
-                        classNames={``}
-                        alignment={`left`}
-                    />,
-                    <Paragraph
-                        text={`
-                            Es gibt tausende Apps, Programme und Anleitungen für <strong>Sport</strong>,
-                            <strong>Fitness</strong> und <strong>Ernährung</strong>.
-                            Sie sind gut für alle, die sich selbst motivieren und begeistern können. Ich liebe sie! :)
-                        `}
-                        alignment={`left`}
-                        classNames={`word-break text-hyphens`}
-                    />,
-                    <Paragraph
-                        text={`
-                            Nicht jeder ist in der Lage aus sich selbst heraus die Kraft und den Willen zur
-                            Selbstmotivation zu generieren. Der Wille ist da, aber es braucht oft noch einen kleinen
-                            Stubs. Eine Motivationshilfe. Für alle, die nicht die Kraft und den Willen dazu aufbringen
-                            können, biete ich meine Hilfe an. Mit vielen Tipps, Unterstützung und einem perfekten
-                            Einstieg ins Training. Dein Privattraining. Dabei ist es egal, ob du Anfänger bist oder
-                            dich in einem fortgeschrittenen Level befindest. Mit einem Privattraining biete ich dir
-                            Motivation, Spaß und helfe dir das Beste aus dir herauszuholen. Du glaubst es nicht?
-                            Probier es aus und mach ein Training mit mir. Zusammen bringe ich dir bei dich selbst
-                            motivieren zu können. Damit du zukünftig allein und für dich entscheiden kannst, wohin
-                            deine Reise gehen wird.
-                        `}
-                        alignment={`left`}
-                        classNames={`word-break text-hyphens`}
-                    />,
-                    <Paragraph
-                        text={`
-                            Ein Training hat viele Vorteile. Du wirst beweglicher und ausgeglichener. Um nur zwei
-                            zu nennen. Zusammen mit mir und meinen Fitnesserfahrungen zeige ich dir wie du dich
-                            motivierst. Du bekommst Ernährungstipps und wirst ein völlig neues Körpergefühl
-                            kennenlernen. Du wirst von mir motiviert von allein weiterzumachen. Trainingsabläufe
-                            und Zusammenhänge wirst du verstehen und lieben lernen! So wie ich. Mein Training ist
-                            für all jene, die keine Motivation haben, aber motiviert werden möchten. Von mir.
-                        `}
-                        alignment={`left`}
-                        classNames={`word-break text-hyphens`}
-                    />,
-                    <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:33%:33%`}>
-                        <Button
-                            label={`Erzähl mir mehr`}
-                            onClick={() => { fn() }}
-                            primary={true}
-                            classNames={`mt-3`}
-                        />
-                        <Button
-                            label={`Finde mich auf Instagram`}
-                            onClick={() => { fn() }}
-                            primary={true}
-                            classNames={`mt-3`}
-                        />
-                    </ColumnLayout>
-                ]}
                 src={`https://benkert.life/user/themes/own/img/ipadBG2.png`}
                 alt={`Was ist der Digitale Zwilling?`}
                 backgroundType={`dark`}
                 columnLayout={`66%:33%`}
                 imageAlignment={`right`}
-            />,
+            >
+                <Title
+                    title={`Push life`}
+                    type={`h2`}
+                    classNames={``}
+                    alignment={`left`}
+                />
+                <Paragraph
+                    text={`
+                        Es gibt tausende Apps, Programme und Anleitungen für <strong>Sport</strong>,
+                        <strong>Fitness</strong> und <strong>Ernährung</strong>.
+                        Sie sind gut für alle, die sich selbst motivieren und begeistern können. Ich liebe sie! :)
+                    `}
+                    alignment={`left`}
+                    classNames={`word-break text-hyphens`}
+                />
+                <Paragraph
+                    text={`
+                        Nicht jeder ist in der Lage aus sich selbst heraus die Kraft und den Willen zur
+                        Selbstmotivation zu generieren. Der Wille ist da, aber es braucht oft noch einen kleinen
+                        Stubs. Eine Motivationshilfe. Für alle, die nicht die Kraft und den Willen dazu aufbringen
+                        können, biete ich meine Hilfe an. Mit vielen Tipps, Unterstützung und einem perfekten
+                        Einstieg ins Training. Dein Privattraining. Dabei ist es egal, ob du Anfänger bist oder
+                        dich in einem fortgeschrittenen Level befindest. Mit einem Privattraining biete ich dir
+                        Motivation, Spaß und helfe dir das Beste aus dir herauszuholen. Du glaubst es nicht?
+                        Probier es aus und mach ein Training mit mir. Zusammen bringe ich dir bei dich selbst
+                        motivieren zu können. Damit du zukünftig allein und für dich entscheiden kannst, wohin
+                        deine Reise gehen wird.
+                    `}
+                    alignment={`left`}
+                    classNames={`word-break text-hyphens`}
+                />
+                <Paragraph
+                    text={`
+                        Ein Training hat viele Vorteile. Du wirst beweglicher und ausgeglichener. Um nur zwei
+                        zu nennen. Zusammen mit mir und meinen Fitnesserfahrungen zeige ich dir wie du dich
+                        motivierst. Du bekommst Ernährungstipps und wirst ein völlig neues Körpergefühl
+                        kennenlernen. Du wirst von mir motiviert von allein weiterzumachen. Trainingsabläufe
+                        und Zusammenhänge wirst du verstehen und lieben lernen! So wie ich. Mein Training ist
+                        für all jene, die keine Motivation haben, aber motiviert werden möchten. Von mir.
+                    `}
+                    alignment={`left`}
+                    classNames={`word-break text-hyphens`}
+                />
+                <ColumnLayout backgroundType={`none`} isContained={false} layout={`33%:33%:33%`}>
+                    <Button
+                        label={`Erzähl mir mehr`}
+                        onClick={() => { fn() }}
+                        primary={true}
+                        classNames={`mt-3`}
+                    />
+                    <Button
+                        label={`Finde mich auf Instagram`}
+                        onClick={() => { fn() }}
+                        primary={true}
+                        classNames={`mt-3`}
+                    />
+                </ColumnLayout>
+            </TextImage>,
             <CarouselQuote
                 quotes={[
                     '„Ich sage dir nicht, dass es leicht wird. Ich sage dir, dass es sich lohnen wird.“',

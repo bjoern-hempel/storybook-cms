@@ -66,10 +66,11 @@ export const TextImage = ({
     classNames = null,
 }: TextImageProps) => {
     const isImageLeft = imageAlignment === 'left';
+    const childArray = React.Children.toArray(children);
 
     const Content: React.FC = () => (
         <>
-            {children.map((child, index) => (
+            {childArray.map((child, index) => (
                 <React.Fragment key={index}>{child as ReactNode}</React.Fragment>
             ))}
         </>

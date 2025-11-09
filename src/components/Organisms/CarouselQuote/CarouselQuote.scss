@@ -50,6 +50,20 @@
                 }
             }
         }
+
+        &.dark {
+            .carousel-indicators {
+                button {
+                    background-color: var(--color-background-dark);
+                    opacity: 0.25;
+
+                    &.active {
+                        background-color: var(--color-background-dark);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
 }
 

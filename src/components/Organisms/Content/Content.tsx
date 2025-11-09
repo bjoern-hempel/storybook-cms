@@ -7,7 +7,6 @@
  * file that was distributed with this source code.
  */
 
-import {ReactNode} from "react";
 import * as React from "react";
 
 /* Import assets. */
@@ -23,11 +22,11 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 
 /* Import types. */
-import type {TypeBackground, TypeClassNames} from "@/types/common-types.ts";
+import type {TypeBackground, TypeClassNames, TypeLayoutChild, TypeLayoutChildren} from "@/types/common-types.ts";
 
 export interface ContentProps {
     /* Which content should be displayed? */
-    children: ReactNode[];
+    children: TypeLayoutChildren;
 
     /** What background type to use? */
     backgroundType: TypeBackground;
@@ -42,11 +41,13 @@ export const Content = ({
     backgroundType = 'dark',
     classNames = null,
 }: ContentProps) => {
+    const childArray = React.Children.toArray(children);
+
     return (
         <RowLayout backgroundType={backgroundType} isContained={true} classNames={classNames}>
             <>
-                {children.map((child, index) => (
-                    <React.Fragment key={index}>{child as ReactNode}</React.Fragment>
+                {childArray.map((child, index) => (
+                    <React.Fragment key={index}>{child as TypeLayoutChild}</React.Fragment>
                 ))}
             </>
         </RowLayout>

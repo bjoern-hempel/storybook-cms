@@ -8,7 +8,6 @@
  */
 
 import * as React from "react";
-import {ReactNode} from "react";
 
 /* Import assets. */
 import '@/assets/css/style.scss';
@@ -23,23 +22,25 @@ import '@/components/Molecules/InfoCard/InfoCard.scss';
 
 /* Import components. */
 import {Title} from "@/components/Atoms/Title/Title.tsx";
+import {Image} from "@/components/Atoms/Image/Image.tsx";
 
 /* Import types. */
-import type {TypeClassNames} from "@/types/common-types.ts";
+import type {TypeClassNames, TypeLayoutChildren} from "@/types/common-types.ts";
 
 /* Import utils. */
 import {applyMarginClass, normalizeClassNames} from "@/utils/classNames.ts";
 
 /* Import constants. */
 import {MARGIN_CLASS_INFO_CARD} from "@/constants/margins.ts";
-import {Image} from "@/components/Atoms/Image/Image.tsx";
+
+
 
 export interface ImageProps {
     /** Title content */
     title: string;
 
     /** Children */
-    children: ReactNode[];
+    children: TypeLayoutChildren;
 
     /** Image source */
     src: string;

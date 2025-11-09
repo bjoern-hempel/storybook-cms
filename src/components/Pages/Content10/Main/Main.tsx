@@ -8,7 +8,6 @@
  */
 
 import * as React from "react";
-import {ReactNode} from "react";
 
 /* Import assets. */
 import '@/components/Pages/Content1/Main/Main.scss';
@@ -18,9 +17,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+/* Import types. */
+import type {TypeLayoutChildren} from "@/types/common-types.ts";
+
 export interface MainProps {
     /** Children */
-    children: ReactNode[];
+    children: TypeLayoutChildren;
 }
 
 /** `Main` page */

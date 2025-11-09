@@ -24,6 +24,7 @@ import {
     typeBackgroundOptions,
     typeLayoutTextImageOptions
 } from "@/types/common-types.ts";
+import type { TypeLayoutChildren } from "@/types/common-types.ts";
 
 const meta = {
     title: 'Organisms/TextImage',
@@ -70,7 +71,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof TextImage>;
 
-const textChildren: ReactNode[] = [
+const textChildren: TypeLayoutChildren = [
     <Title
         title={`Was ist der Digitale Zwilling?`}
         type={`h2`}
