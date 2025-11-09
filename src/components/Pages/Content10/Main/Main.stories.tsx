@@ -27,12 +27,13 @@ import {TextImage} from "@/components/Organisms/TextImage/TextImage.tsx";
 import {Title} from "@/components/Atoms/Title/Title.tsx";
 
 /* Import assets. */
-import HeroImage from "@/assets/image/avocadi.png";
+import HeaderImage from "@/assets/image/avocadi.png";
 import WhySportImage from "@/assets/image/why-sport.jpg";
 import NutritionImage from "@/assets/image/nutrition.jpg";
 import MotivationImage from "@/assets/image/motivation.jpg";
 import EquipmentImage from "@/assets/image/equipment.jpg";
 import PortraitImage from "@/assets/image/portrait.jpg";
+import {Footer} from "@/components/Organisms/Footer/Footer.tsx";
 
 const meta = {
     title: 'Pages/Content10/Main',
@@ -59,7 +60,7 @@ export const Default: Story = {
             <Header
                 title={`Life, Lifestyle, Fitness`}
                 subtitle={`Dein Körper. Dein Leben. Deine Entscheidung.`}
-                logo={HeroImage as string}
+                logo={HeaderImage as string}
                 menuItems={[
                     {label: "Blog", onClick: fn() },
                     {label: "Instagram", onClick: fn() },
@@ -106,11 +107,13 @@ export const Default: Story = {
                         label={`Erzähl mir mehr`}
                         onClick={() => { fn() }}
                         primary={true}
+                        classNames={`mt-5`}
                     />
                     <Button
                         label={`Finde mich auf Instagram`}
                         onClick={() => { fn() }}
                         primary={true}
+                        classNames={`mt-5`}
                     />
                 </ColumnLayout>
             </TextImage>,
@@ -146,7 +149,7 @@ export const Default: Story = {
                 />
                 <Paragraph
                     text={`
-                        <strong>Ob Anfänger oder fortgeschritten</strong>: Mit einem individuellen Privattraining
+                        <strong>Ob Anfänger oder Fortgeschritten</strong>: Mit einem individuellen Privattraining
                         bekommst du Motivation, Struktur und einen klaren Einstieg – ohne Überforderung. Gemeinsam
                         finden wir heraus, was dich antreibt und wie du Sport zu einem festen, positiven Teil deines
                         Lebens machen kannst. Dabei geht es nicht um Perfektion, sondern um echte Entwicklung.
@@ -185,7 +188,7 @@ export const Default: Story = {
                     classNames={`word-break text-hyphens`}
                 />
                 <Paragraph
-                    text={`<strong>Dein</strong> Training. <strong>Dein</strong> Gefühl. <strong>Dein</strong> Momentum.`}
+                    text={`<strong>Dein</strong> Körper. <strong>Dein</strong> Leben. <strong>Deine</strong> Entscheidung.`}
                     alignment={`left`}
                     classNames={`word-break text-hyphens`}
                 />
@@ -343,7 +346,22 @@ export const Default: Story = {
                     backgroundType={`none`}
                     isContained={false}
                 />
-            </Content>
+            </Content>,
+            <Footer
+                name={`Fittnesstrainerin Isa`}
+                streetHouseNumber={`Mustermannstr. 1`}
+                zipCodeCity={`01234 Dresden`}
+                country={`Deutschland`}
+                telephone={`+49 351 123456 78`}
+                email={`info@benkert.life`}
+                homepage={`https://www.benkert.life/`}
+                logo={HeaderImage as string}
+                logoApp={HeaderImage as string}
+                linkItems={[
+                    { label: "Impressum", href: "https://benkert.life/de/impressum" },
+                    { label: "Datenschutz", href: "https://benkert.life/de/datenschutzerklaerung/" },
+                ]}
+            />
         ],
     }
 };
