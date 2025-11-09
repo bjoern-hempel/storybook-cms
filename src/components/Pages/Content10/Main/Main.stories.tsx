@@ -31,6 +31,7 @@ import WhySportImage from "@/assets/image/why-sport.jpg";
 import NutritionImage from "@/assets/image/nutrition.jpg";
 import MotivationImage from "@/assets/image/motivation.jpg";
 import EquipmentImage from "@/assets/image/equipment.jpg";
+import {List} from "@/components/Atoms/List/List.tsx";
 
 const meta = {
     title: 'Pages/Content10/Main',
@@ -77,45 +78,70 @@ export const Default: Story = {
                 imageAlignment={`right`}
             >
                 <Title
-                    title={`Push life`}
+                    title={`Dein Start in ein neues Körpergefühl`}
                     type={`h2`}
                     classNames={``}
                     alignment={`left`}
                 />
                 <Paragraph
                     text={`
-                        Es gibt tausende Apps, Programme und Anleitungen für <strong>Sport</strong>,
-                        <strong>Fitness</strong> und <strong>Ernährung</strong>.
-                        Sie sind gut für alle, die sich selbst motivieren und begeistern können. Ich liebe sie! :)
+                        Es gibt unzählige Apps, Programme und Pläne für Sport, Fitness und Ernährung. Und sie
+                        funktionieren – für Menschen, die sich selbst dauerhaft motivieren können. Wenn das bei
+                        dir (noch) nicht so ist, ist das völlig normal.
                     `}
                     alignment={`left`}
                     classNames={`word-break text-hyphens`}
                 />
                 <Paragraph
                     text={`
-                        Nicht jeder ist in der Lage aus sich selbst heraus die Kraft und den Willen zur
-                        Selbstmotivation zu generieren. Der Wille ist da, aber es braucht oft noch einen kleinen
-                        Stubs. Eine Motivationshilfe. Für alle, die nicht die Kraft und den Willen dazu aufbringen
-                        können, biete ich meine Hilfe an. Mit vielen Tipps, Unterstützung und einem perfekten
-                        Einstieg ins Training. Dein Privattraining. Dabei ist es egal, ob du Anfänger bist oder
-                        dich in einem fortgeschrittenen Level befindest. Mit einem Privattraining biete ich dir
-                        Motivation, Spaß und helfe dir das Beste aus dir herauszuholen. Du glaubst es nicht?
-                        Probier es aus und mach ein Training mit mir. Zusammen bringe ich dir bei dich selbst
-                        motivieren zu können. Damit du zukünftig allein und für dich entscheiden kannst, wohin
-                        deine Reise gehen wird.
+                        Nicht jeder schafft es, allein den ersten Schritt zu machen oder langfristig dranzubleiben.
+                        Oft fehlt nur ein kleiner Impuls von außen. Genau dabei unterstütze ich dich.
                     `}
                     alignment={`left`}
                     classNames={`word-break text-hyphens`}
                 />
                 <Paragraph
                     text={`
-                        Ein Training hat viele Vorteile. Du wirst beweglicher und ausgeglichener. Um nur zwei
-                        zu nennen. Zusammen mit mir und meinen Fitnesserfahrungen zeige ich dir wie du dich
-                        motivierst. Du bekommst Ernährungstipps und wirst ein völlig neues Körpergefühl
-                        kennenlernen. Du wirst von mir motiviert von allein weiterzumachen. Trainingsabläufe
-                        und Zusammenhänge wirst du verstehen und lieben lernen! So wie ich. Mein Training ist
-                        für all jene, die keine Motivation haben, aber motiviert werden möchten. Von mir.
+                        <strong>Ob Anfänger oder fortgeschritten</strong>: Mit einem individuellen Privattraining
+                        bekommst du Motivation, Struktur und einen klaren Einstieg – ohne Überforderung. Gemeinsam
+                        finden wir heraus, was dich antreibt und wie du Sport zu einem festen, positiven Teil deines
+                        Lebens machen kannst. Dabei geht es nicht um Perfektion, sondern um echte Entwicklung.
                     `}
+                    alignment={`left`}
+                    classNames={`word-break text-hyphens`}
+                />
+                <Paragraph
+                    text={`
+                        Du bekommst:
+                    `}
+                    alignment={`left`}
+                    classNames={`word-break text-hyphens`}
+                />
+                <List
+                    items={[
+                        'Motivation, die bleibt',
+                        'Bewegung, die zu dir passt',
+                        'Ernährungstipps, die alltagstauglich sind',
+                        'Ein neues Bewusstsein für deinen Körper',
+                    ]}
+                    style="list-standard"
+                />
+                <Paragraph
+                    text={`
+                        Ich zeige dir, wie du Fortschritte erkennst, Training verstehst und Spaß daran findest.
+                        So wirst du Schritt für Schritt selbstständig und kannst deinen Weg eigenständig weitergehen –
+                        mit Kraft und Selbstvertrauen.
+                    `}
+                    alignment={`left`}
+                    classNames={`word-break text-hyphens`}
+                />
+                <Paragraph
+                    text={`Wenn du bereit bist, etwas zu verändern: Lass uns starten.`}
+                    alignment={`left`}
+                    classNames={`word-break text-hyphens`}
+                />
+                <Paragraph
+                    text={`<strong>Dein</strong> Training. <strong>Dein</strong> Gefühl. <strong>Dein</strong> Momentum.`}
                     alignment={`left`}
                     classNames={`word-break text-hyphens`}
                 />

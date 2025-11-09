@@ -2,6 +2,7 @@ import type {Preview} from '@storybook/react-vite';
 
 /* Import themes. */
 import {withTheme} from "./theme/withTheme";
+import {colors, themes} from "./theme/ThemeProvider";
 
 const preview: Preview = {
     parameters: {
@@ -37,22 +38,26 @@ const preview: Preview = {
             description: 'Global theme for components',
             toolbar: {
                 title: 'Theme',
-                icon: 'structure',
-                items: [
-                    'theme-darkblue',
-                    'theme-blue',
-                    'theme-lightblue',
-                    'theme-green',
-                    'theme-cyan',
-                    'theme-purple',
-                    'theme-orange',
-                ],
+                // @see: https://main--64b56e737c0aeefed9d5e675.chromatic.com/?path=/docs/introduction--docs
+                icon: 'box',
+                items: themes,
+                dynamicTitle: true,
+            },
+        },
+        color: {
+            description: 'Secondary color for theme',
+            toolbar: {
+                title: 'Secondary color',
+                // @see: https://main--64b56e737c0aeefed9d5e675.chromatic.com/?path=/docs/introduction--docs
+                icon: 'button',
+                items: colors,
                 dynamicTitle: true,
             },
         },
     },
     initialGlobals: {
-        theme: 'theme-darkblue',
+        theme: 'darkblue',
+        color: 'darkblue',
     },
 
     decorators: [withTheme],

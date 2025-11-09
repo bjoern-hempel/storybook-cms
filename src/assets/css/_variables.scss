@@ -20,6 +20,14 @@ $themes: (
     theme-orange,
 );
 
+$theme-colors: (
+    color-yellow,
+    color-pink,
+    color-orange,
+    color-red,
+    color-blue
+);
+
 $colors: (
     primary: (
         theme-darkblue: rgb(2, 15, 65),
@@ -49,7 +57,7 @@ $backgrounds: (
         theme-green: linear-gradient(135deg, rgb(5, 57, 23) 52%, rgb(7, 98, 39) 100%),
         theme-cyan: linear-gradient(90deg, rgb(26, 0, 51) 0%, rgb(0, 80, 164) 47%, rgb(0, 175, 164) 100% 100%),
         theme-purple: linear-gradient(130deg, rgb(26, 14, 40) 0%, rgb(43, 17, 77) 62%, rgb(124, 58, 237) 100%),
-        theme-orange: linear-gradient(135deg, rgb(158, 113, 44) 52%, rgb(232 185 104) 100%),
+        theme-orange: linear-gradient(135deg, rgb(124, 88, 35) 52%, rgb(175, 139, 77) 100%),
     ),
     layout-light: (
         theme-darkblue: rgb(234, 244, 249),
@@ -103,7 +111,7 @@ $backgrounds: (
         theme-green: linear-gradient(135deg, rgb(5, 57, 23) 52%, rgb(7, 98, 39) 100%),
         theme-cyan: linear-gradient(90deg, rgb(26, 0, 51) 0%, rgb(0, 80, 164) 47%, rgb(0, 175, 164) 100% 100%),
         theme-purple: linear-gradient(130deg, rgb(26, 14, 40) 0%, rgb(43, 17, 77) 62%, rgb(124, 58, 237) 100%),
-        theme-orange: linear-gradient(145deg, rgb(1, 90, 154) 52%, rgb(0, 121, 207) 100%),
+        theme-orange: linear-gradient(135deg, rgb(124, 88, 35) 52%, rgb(175, 139, 77) 100%),
     ),
     footer: (
         theme-darkblue: linear-gradient(92deg, rgb(0, 0, 7) 0%, rgb(0, 38, 73) 72%, rgb(0, 61, 112) 100%),
@@ -112,85 +120,69 @@ $backgrounds: (
         theme-green: linear-gradient(135deg, rgb(5, 57, 23) 52%, rgb(7, 98, 39) 100%),
         theme-cyan: linear-gradient(90deg, rgb(26, 0, 51) 0%, rgb(0, 80, 164) 47%, rgb(0, 175, 164) 100% 100%),
         theme-purple: linear-gradient(130deg, rgb(26, 14, 40) 0%, rgb(43, 17, 77) 62%, rgb(124, 58, 237) 100%),
-        theme-orange: linear-gradient(145deg, rgb(1, 90, 154) 52%, rgb(0, 121, 207) 100%),
+        theme-orange: linear-gradient(135deg, rgb(124, 88, 35) 52%, rgb(175, 139, 77) 100%),
     ),
 );
 
 $buttons: (
     primary: (
         color: (
-            theme-darkblue: get-theme($colors, primary, theme-darkblue),
-            theme-blue: get-theme($colors, white, theme-blue),
-            theme-lightblue: get-theme($colors, white, theme-lightblue),
-            theme-green: get-theme($colors, white, theme-green),
-            theme-cyan: get-theme($colors, white, theme-cyan),
-            theme-purple: get-theme($colors, white, theme-purple),
-            theme-orange: get-theme($colors, white, theme-orange),
+            color-yellow: var(--color-background-light),
+            color-pink: var(--color-background-dark),
+            color-orange: var(--color-background-dark),
+            color-red: var(--color-background-dark),
+            color-blue: var(--color-background-dark),
         ),
         border-color: (
-            theme-darkblue: transparent,
-            theme-blue: transparent,
-            theme-lightblue: transparent,
-            theme-green: transparent,
-            theme-cyan: transparent,
-            theme-purple: transparent,
-            theme-orange: transparent,
+            color-yellow: transparent,
+            color-pink: transparent,
+            color-orange: transparent,
+            color-red: transparent,
+            color-blue: transparent,
         ),
         background: (
-            theme-darkblue: linear-gradient(135deg, rgb(236, 195, 47) 0%, rgb(223, 183, 39) 100%),
-            theme-blue: rgb(97 7 48),
-            theme-lightblue: rgb(254, 65, 2),
-            theme-green: rgb(254, 65, 2),
-            theme-cyan: rgb(242, 126, 18),
-            theme-purple: rgb(254, 65, 2),
-            theme-orange: linear-gradient(135deg, rgb(1, 90, 154), rgb(0, 121, 207)),
+            color-yellow: linear-gradient(135deg, rgb(236, 195, 47) 0%, rgb(223, 183, 39) 100%),
+            color-pink: rgb(97 7 48),
+            color-orange: rgb(242, 126, 18),
+            color-red: rgb(254, 65, 2),
+            color-blue: linear-gradient(135deg, rgb(1, 90, 154), rgb(0, 121, 207)),
         ),
         background-hover: (
-            theme-darkblue: linear-gradient(135deg, color.mix(rgb(127, 127, 127), rgb(236, 195, 47), 20%) 0%, color.mix(rgb(127, 127, 127), rgb(223, 183, 39), 20%) 100%),
-            theme-blue: color.mix(rgb(127, 127, 127), rgb(97 7 48), 20%),
-            theme-lightblue: color.mix(rgb(127, 127, 127), rgb(254, 65, 2), 20%),
-            theme-green: color.mix(rgb(127, 127, 127), rgb(254, 65, 2), 20%),
-            theme-cyan: color.mix(rgb(127, 127, 127), rgb(242, 126, 18), 20%),
-            theme-purple: color.mix(rgb(127, 127, 127), rgb(254, 65, 2), 20%),
-            theme-orange: linear-gradient(135deg, color.mix(rgb(0, 0, 0), rgb(1, 90, 154), 20%) 0%, color.mix(rgb(0, 0, 0), rgb(0, 121, 207), 20%) 100%),
+            color-yellow: linear-gradient(135deg, color.mix(rgb(127, 127, 127), rgb(236, 195, 47), 20%) 0%, color.mix(rgb(127, 127, 127), rgb(223, 183, 39), 20%) 100%),
+            color-pink: color.mix(rgb(127, 127, 127), rgb(97 7 48), 20%),
+            color-orange: color.mix(rgb(127, 127, 127), rgb(242, 126, 18), 20%),
+            color-red: color.mix(rgb(127, 127, 127), rgb(254, 65, 2), 20%),
+            color-blue: linear-gradient(135deg, color.mix(rgb(0, 0, 0), rgb(1, 90, 154), 20%) 0%, color.mix(rgb(0, 0, 0), rgb(0, 121, 207), 20%) 100%),
         ),
     ),
     secondary: (
         color: (
-            theme-darkblue: get-theme($colors, primary, theme-darkblue),
-            theme-blue: get-theme($colors, primary, theme-blue),
-            theme-lightblue: get-theme($colors, primary, theme-lightblue),
-            theme-green: get-theme($colors, primary, theme-green),
-            theme-cyan: get-theme($colors, primary, theme-cyan),
-            theme-purple: get-theme($colors, primary, theme-purple),
-            theme-orange: get-theme($colors, primary, theme-orange),
+            color-yellow: var(--color-background-light),
+            color-pink: var(--color-background-light),
+            color-orange: var(--color-background-light),
+            color-red: var(--color-background-light),
+            color-blue: var(--color-background-light),
         ),
         border-color: (
-            theme-darkblue: rgba(get-theme($colors, primary, theme-darkblue), 0.2),
-            theme-blue: rgba(get-theme($colors, primary, theme-blue), 0.2),
-            theme-lightblue: rgba(get-theme($colors, primary, theme-lightblue), 0.2),
-            theme-green: rgba(get-theme($colors, primary, theme-green), 0.2),
-            theme-cyan: rgba(get-theme($colors, primary, theme-cyan), 0.2),
-            theme-purple: rgba(get-theme($colors, primary, theme-purple), 0.2),
-            theme-orange: rgba(get-theme($colors, primary, theme-orange), 0.2),
+            color-yellow: rgba(0, 0, 0, 0.2),
+            color-pink: rgba(0, 0, 0, 0.2),
+            color-orange: rgba(0, 0, 0, 0.2),
+            color-red: rgba(0, 0, 0, 0.2),
+            color-blue: rgba(0, 0, 0, 0.2),
         ),
         background: (
-            theme-darkblue: rgba(get-theme($colors, primary, theme-darkblue), 0.1),
-            theme-blue: rgba(get-theme($colors, primary, theme-blue), 0.1),
-            theme-lightblue: rgba(get-theme($colors, primary, theme-lightblue), 0.1),
-            theme-green: rgba(get-theme($colors, primary, theme-green), 0.1),
-            theme-cyan: rgba(get-theme($colors, primary, theme-cyan), 0.1),
-            theme-purple: rgba(get-theme($colors, primary, theme-purple), 0.1),
-            theme-orange: rgba(get-theme($colors, primary, theme-orange), 0.1),
+            color-yellow: rgba(0, 0, 0, 0.1),
+            color-pink: rgba(0, 0, 0, 0.1),
+            color-orange: rgba(0, 0, 0, 0.1),
+            color-red: rgba(0, 0, 0, 0.1),
+            color-blue: rgba(0, 0, 0, 0.1),
         ),
         background-hover: (
-            theme-darkblue: rgba(get-theme($colors, primary, theme-darkblue), 0.2),
-            theme-blue: rgba(get-theme($colors, primary, theme-blue), 0.2),
-            theme-lightblue: rgba(get-theme($colors, primary, theme-lightblue), 0.2),
-            theme-green: rgba(get-theme($colors, primary, theme-green), 0.2),
-            theme-cyan: rgba(get-theme($colors, primary, theme-cyan), 0.2),
-            theme-purple: rgba(get-theme($colors, primary, theme-purple), 0.2),
-            theme-orange: rgba(get-theme($colors, primary, theme-orange), 0.2),
+            color-yellow: rgba(0, 0, 0, 0.2),
+            color-pink: rgba(0, 0, 0, 0.2),
+            color-orange: rgba(0, 0, 0, 0.2),
+            color-red: rgba(0, 0, 0, 0.2),
+            color-blue: rgba(0, 0, 0, 0.2),
         ),
     ),
 );
@@ -222,25 +214,35 @@ $buttons: (
 
     /* Background footer */
     --background-footer: #{get-theme($backgrounds, footer, $theme)};
+}
+
+@mixin generate-theme-color($color) {
 
     /* Buttons primary */
     $button-primary: primary;
-    --color-button-primary: #{get-theme-type($buttons, $button-primary, color, $theme)};
-    --border-color-button-primary: #{get-theme-type($buttons, $button-primary, border-color, $theme)};
-    --background-button-primary: #{get-theme-type($buttons, $button-primary, background, $theme)};
-    --background-button-hover-primary: #{get-theme-type($buttons, $button-primary, background-hover, $theme)};
+    --color-button-primary: #{get-theme-type($buttons, $button-primary, color, $color)};
+    --border-color-button-primary: #{get-theme-type($buttons, $button-primary, border-color, $color)};
+    --background-button-primary: #{get-theme-type($buttons, $button-primary, background, $color)};
+    --background-button-hover-primary: #{get-theme-type($buttons, $button-primary, background-hover, $color)};
 
     /* Buttons secondary */
     $button-secondary: secondary;
-    --color-button-secondary: #{get-theme-type($buttons, $button-secondary, color, $theme)};
-    --border-color-button-secondary: #{get-theme-type($buttons, $button-secondary, border-color, $theme)};
-    --background-button-secondary: #{get-theme-type($buttons, $button-secondary, background, $theme)};
-    --background-button-hover-secondary: #{get-theme-type($buttons, $button-secondary, background-hover, $theme)};
+    --color-button-secondary: #{get-theme-type($buttons, $button-secondary, color, $color)};
+    --border-color-button-secondary: #{get-theme-type($buttons, $button-secondary, border-color, $color)};
+    --background-button-secondary: #{get-theme-type($buttons, $button-secondary, background, $color)};
+    --background-button-hover-secondary: #{get-theme-type($buttons, $button-secondary, background-hover, $color)};
 }
 
-/* Build theme styles */
+/* Build themes */
 @each $theme in $themes {
     :root.#{$theme} {
         @include generate-theme($theme);
+    }
+}
+
+/* Build theme colors */
+@each $theme-color in $theme-colors {
+    :root.#{$theme-color} {
+        @include generate-theme-color($theme-color);
     }
 }

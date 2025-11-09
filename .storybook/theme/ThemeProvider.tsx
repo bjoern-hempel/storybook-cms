@@ -9,25 +9,31 @@
 
 import { ReactNode, useEffect } from "react";
 
+export const themes = ['darkblue', 'blue', 'lightblue', 'green', 'cyan', 'purple', 'orange'];
+export const colors = ['yellow', 'pink', 'orange', 'red', 'blue'];
+
+export interface ThemeProviderProps {
+    theme: string;
+    color: string;
+    children: ReactNode;
+}
+
 export const ThemeProvider = ({
     theme,
+    color,
     children,
-}: {
-    theme: string;
-    children: ReactNode;
-}) => {
+}: ThemeProviderProps) => {
     useEffect(() => {
-        document.documentElement.classList.remove(
-            'theme-darkblue',
-            'theme-blue',
-            'theme-lightblue',
-            'theme-green',
-            'theme-cyan',
-            'theme-purple',
-            'theme-orange',
-        );
-        document.documentElement.classList.add(theme);
-    }, [theme]);
+        themes.forEach((theme) => {
+            document.documentElement.classList.remove(`theme-${theme}`);
+        });
+        colors.forEach((color) => {
+            document.documentElement.classList.remove(`color-${color}`);
+        });
+
+        document.documentElement.classList.add(themes.includes(theme) ? `theme-${theme}` : `theme-${themes[0]}`);
+        document.documentElement.classList.add(colors.includes(color) ? `color-${color}` : `color-${colors[0]}`);
+    }, [theme, color]);
 
     return <>{children}</>;
 };

@@ -11,8 +11,10 @@ import { ThemeProvider } from "./ThemeProvider";
 
 export const withTheme = (Story, context) => {
     const theme = context.globals.theme;
+    const color = context.globals.color;
+
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme} color={color}>
             <Story />
         </ThemeProvider>
     );
