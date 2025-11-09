@@ -11,11 +11,12 @@
 
 .section-carousel-quote {
     .carousel {
-        padding: 5rem;
-        height: 20rem;
+        padding: 2rem;
+        min-height: 20rem;
 
         .carousel-inner {
-            height: 100%;
+            width: 100%;
+            display: flex;
 
             .carousel-item {
                 height: 100%;
@@ -32,7 +33,6 @@
                         p {
                             font-size: 1.5rem;
                             font-style: italic;
-                            margin: 0;
                         }
                     }
                 }

@@ -47,13 +47,13 @@ export const CarouselQuote = ({
 
     const Quotes: React.FC = () => (
         <>
-            <div id={carouselId} className={`carousel slide ${backgroundType}`} data-bs-ride="carousel">
-                <div className="carousel-inner">
+            <div id={carouselId} className={`carousel slide d-flex ${backgroundType}`} data-bs-ride="carousel">
+                <div className="carousel-inner flex-fill">
                     {quotes.map((quote, index) => (
                         <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                             <div className="carousel-item-inner d-flex justify-content-center align-items-center h-100">
-                                <blockquote className="blockquote text-center">
-                                    <p>{quote}</p>
+                                <blockquote className="blockquote text-center mb-0">
+                                    <p className={`mb-0`}>{quote}</p>
                                 </blockquote>
                             </div>
                         </div>

@@ -36,6 +36,10 @@ const meta = {
             options: typeBackgroundOptions,
             table: { category: 'Design' },
         },
+        isContained: {
+            control: { type: 'boolean' },
+            table: { category: 'Design' },
+        },
         classNames: {
             control: { type: 'text' },
             table: { category: 'Design' },

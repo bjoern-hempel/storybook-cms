@@ -22,7 +22,13 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import {RowLayout} from "@/components/Templates/RowLayout/RowLayout.tsx";
 
 /* Import types. */
-import type {TypeBackground, TypeClassNames, TypeLayoutChild, TypeLayoutChildren} from "@/types/common-types.ts";
+import type {
+    TypeBackground,
+    TypeClassNames,
+    TypeIsContained,
+    TypeLayoutChild,
+    TypeLayoutChildren
+} from "@/types/common-types.ts";
 
 export interface ContentProps {
     /* Which content should be displayed? */
@@ -31,20 +37,26 @@ export interface ContentProps {
     /** What background type to use? */
     backgroundType: TypeBackground;
 
+    /** Should the layout be wrapped in a centered container? */
+    isContained?: TypeIsContained;
+
     /** Additional class names */
     classNames?: TypeClassNames;
 }
 
-/** `Content` organism (`RowLayout` alias, but always with `contained` = `true`) */
+/** `Content` organism (`RowLayout` alias, but with `contained` = `true` as default) */
 export const Content = ({
     children,
-    backgroundType = 'dark',
+    backgroundType = 'none',
+    isContained = true,
     classNames = null,
 }: ContentProps) => {
     const childArray = React.Children.toArray(children);
 
+    isContained = isContained === undefined ? true : isContained;
+
     return (
-        <RowLayout backgroundType={backgroundType} isContained={true} classNames={classNames}>
+        <RowLayout backgroundType={backgroundType} isContained={isContained} classNames={classNames}>
             <>
                 {childArray.map((child, index) => (
                     <React.Fragment key={index}>{child as TypeLayoutChild}</React.Fragment>
