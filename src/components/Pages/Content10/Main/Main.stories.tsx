@@ -24,6 +24,7 @@ import {Title} from "@/components/Atoms/Title/Title.tsx";
 import {Paragraph} from "@/components/Atoms/Paragraph/Paragraph.tsx";
 import {Button} from "@/components/Atoms/Button/Button.tsx";
 import {ColumnLayout} from "@/components/Templates/ColumnLayout/ColumnLayout.tsx";
+import {CarouselQuote} from "@/components/Organisms/CarouselQuote/CarouselQuote.tsx";
 
 const meta = {
     title: 'Pages/Content10/Main',
@@ -128,6 +129,14 @@ export const Default: Story = {
                 columnLayout={`66%:33%`}
                 imageAlignment={`right`}
             />,
+            <CarouselQuote
+                quotes={[
+                    '„Ich sage dir nicht, dass es leicht wird. Ich sage dir, dass es sich lohnen wird.“',
+                    '„Egal wie du dich fühlst. Steh auf, zieh dich an und gib niemals auf.“',
+                    '„Hör nicht auf wenn es weh tut. Hör auf wenn du fertig bist.“',
+                ]}
+                backgroundType={`light`}
+            />
         ],
     }
 };

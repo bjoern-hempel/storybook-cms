@@ -1,0 +1,55 @@
+/*
+ * This file is part of the https://github.com/bjoern-hempel/storybook-cms project.
+ *
+ * (c) 2025 Björn Hempel <bjoern@hempel.li>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
+@use "@/assets/css/variables" as *;
+
+.section-carousel-quote {
+    .carousel {
+        padding: 5rem;
+        height: 20rem;
+
+        .carousel-inner {
+            height: 100%;
+
+            .carousel-item {
+                height: 100%;
+
+                .carousel-item-inner {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+
+                    .blockquote {
+                        p {
+                            font-size: 1.5rem;
+                            font-style: italic;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .carousel-indicators {
+            button {
+                background-color: var(--color-background-light);
+                opacity: 0.25;
+
+                &.active {
+                    background-color: var(--color-background-light);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
