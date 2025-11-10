@@ -7,6 +7,8 @@
  * file that was distributed with this source code.
  */
 
+@use "sass:map";
+
 @function require($value, $message) {
     @if $value == null {
         @error $message;
@@ -15,9 +17,9 @@
 }
 
 @function get-theme($vars, $style, $theme) {
-    @return require(map-get(map-get($vars, $style), $theme), "Missing theme variable: #{$style}, #{$theme}");
+    @return require(map.get(map.get($vars, $style), $theme), "Missing theme variable: #{$style}, #{$theme}");
 }
 
 @function get-theme-type($vars, $type, $style, $theme) {
-    @return require(map-get(map-get(map-get($vars, $type), $style), $theme), "Missing theme variable: #{$type}, #{$style}, #{$theme}");
+    @return require(map.get(map.get(map.get($vars, $type), $style), $theme), "Missing theme variable: #{$type}, #{$style}, #{$theme}");
 }
