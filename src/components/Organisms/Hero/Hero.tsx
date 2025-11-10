@@ -31,6 +31,9 @@ export interface HeroProps {
 
     /** Has darken overlay? */
     hasDarkOverlay?: boolean;
+
+    /** Has a title background? */
+    hasTitleBackground?: boolean;
 }
 
 /** `Hero` organism */
@@ -39,15 +42,24 @@ export const Hero = ({
     title,
     subtitle,
     hasDarkOverlay = false,
+    hasTitleBackground = false,
 }: HeroProps) => {
+
+    const heroClasses = [
+        'hero',
+        'position-relative',
+        'd-flex',
+        'align-items-end',
+        'text-white',
+        PADDING_CLASS_COL_LAYOUT,
+        hasTitleBackground && 'has-title-background',
+        hasDarkOverlay && 'has-dark-overlay',
+    ].filter(Boolean);
+
     return (
         <section className={`section-hero`}>
-            <div
-                className={`hero position-relative d-flex align-items-end text-white ${PADDING_CLASS_COL_LAYOUT}`}
-                style={{backgroundImage: `url(${src})`}}
-            >
-                <div className={`hero-layer${hasDarkOverlay ? ' has-dark-overlay' : ''}`}></div>
-
+            <div className={heroClasses.join(' ')} style={{backgroundImage: `url(${src})`}}>
+                <div className="hero-layer"></div>
                 <div className="container position-relative">
                     <div className="hero-text">
                         <h1 className="fw-bold">{title}</h1>

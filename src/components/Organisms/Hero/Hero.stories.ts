@@ -31,6 +31,10 @@ const meta = {
             control: { type: 'text' },
             table: { category: 'Content' },
         },
+        hasTitleBackground: {
+            control: { type: 'boolean' },
+            table: { category: 'Design' },
+        },
         hasDarkOverlay: {
             control: { type: 'boolean' },
             table: { category: 'Design' },
@@ -41,11 +45,22 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Hero>;
 
-export const Default: Story = {
+export const HeroWithOverlay: Story = {
     args: {
         src: "https://digitaltwin.easd.cloud/easd-content/uploads/2025/10/istock-1313125280-1-1024x619.jpg",
         title: "Digitaler Zwilling",
         subtitle: "Energie sichtbar machen. Zukunft verstehen. Gemeinsam gestalten.",
         hasDarkOverlay: true,
+        hasTitleBackground: false,
+    },
+};
+
+export const HeroWithoutOverlay: Story = {
+    args: {
+        src: "https://benkert.life/user/pages/01.home/_stage/main.jpeg",
+        title: "Life, Lifestyle, Fitness",
+        subtitle: "Dein neues Leben beginnt. Hier!",
+        hasDarkOverlay: false,
+        hasTitleBackground: true,
     },
 };

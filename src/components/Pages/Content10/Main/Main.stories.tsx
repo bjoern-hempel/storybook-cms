@@ -71,6 +71,8 @@ export const Default: Story = {
                 src={`https://benkert.life/user/pages/01.home/_stage/main.jpeg`}
                 title={`Life, Lifestyle, Fitness`}
                 subtitle={`Dein neues Leben beginnt. Hier!`}
+                hasDarkOverlay={false}
+                hasTitleBackground={true}
             />,
             <TextImage
                 src={PortraitImage as string}
